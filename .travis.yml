@@ -1,5 +1,5 @@
 language: objective-c
-osx_image: xcode8
+osx_image: xcode8, xcode8.1
 xcode_project: nanou-ios.xcodeproj
 xcode_scheme: nanou-ios
 xcode_sdk: iphonesimulator10.0, iphonesimulator10.1
