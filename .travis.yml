@@ -1,7 +1,12 @@
 language: objective-c
 osx_image: xcode8
-xcode_project: nanou-ios.xcodeproj
+xcode_project: nanou-ios.xcworkspace
 xcode_scheme: nanou-ios
 xcode_sdk:
     - iphonesimulator10.0
     - iphonesimulator10.1
+
+
+script:
+  - xctool -workspace $xcode_project -scheme $xcode_scheme -sdk $xcode_sdk build  # use xcode_project
+  # - xctool -project nanou-ios.xcodeproj -scheme nanou-ios -sdk iphonesimulator10.0 build test
