@@ -13,9 +13,11 @@
 		50240B371DE43F0E00CB6681 /* nanou_ios.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 50240B351DE43F0E00CB6681 /* nanou_ios.xcdatamodeld */; };
 		50240B391DE43F0E00CB6681 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50240B381DE43F0E00CB6681 /* Assets.xcassets */; };
 		50240B3C1DE43F0E00CB6681 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50240B3A1DE43F0E00CB6681 /* LaunchScreen.storyboard */; };
+		784843F8FF15E2D67C5AC4ED /* Pods_nanou_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BBA82A6D90C5527292577AF /* Pods_nanou_ios.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3BBA82A6D90C5527292577AF /* Pods_nanou_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_nanou_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50240B2B1DE43F0E00CB6681 /* nanou-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "nanou-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50240B2E1DE43F0E00CB6681 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50240B301DE43F0E00CB6681 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +26,8 @@
 		50240B381DE43F0E00CB6681 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50240B3B1DE43F0E00CB6681 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		50240B3D1DE43F0E00CB6681 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		78D5341128C812394DF67E7A /* Pods-nanou-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nanou-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-nanou-ios/Pods-nanou-ios.debug.xcconfig"; sourceTree = "<group>"; };
+		F77E5BC4C911AEEAF8978D18 /* Pods-nanou-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nanou-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-nanou-ios/Pods-nanou-ios.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +35,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				784843F8FF15E2D67C5AC4ED /* Pods_nanou_ios.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		10E21C8BEE998BAA9EC0DB98 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3BBA82A6D90C5527292577AF /* Pods_nanou_ios.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		50240B221DE43F0D00CB6681 = {
 			isa = PBXGroup;
 			children = (
 				50240B2D1DE43F0E00CB6681 /* nanou-ios */,
 				50240B2C1DE43F0E00CB6681 /* Products */,
+				8DE24E94050730E74C052B48 /* Pods */,
+				10E21C8BEE998BAA9EC0DB98 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +82,15 @@
 			path = "nanou-ios";
 			sourceTree = "<group>";
 		};
+		8DE24E94050730E74C052B48 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				78D5341128C812394DF67E7A /* Pods-nanou-ios.debug.xcconfig */,
+				F77E5BC4C911AEEAF8978D18 /* Pods-nanou-ios.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +98,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 50240B401DE43F0E00CB6681 /* Build configuration list for PBXNativeTarget "nanou-ios" */;
 			buildPhases = (
+				274440BAB7E3F2337EA02616 /* [CP] Check Pods Manifest.lock */,
 				50240B271DE43F0D00CB6681 /* Sources */,
 				50240B281DE43F0D00CB6681 /* Frameworks */,
 				50240B291DE43F0D00CB6681 /* Resources */,
+				30D926654750BE19546A4332 /* [CP] Embed Pods Frameworks */,
+				46380BCE6AE443FCC70859CB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -99,7 +126,7 @@
 				TargetAttributes = {
 					50240B2A1DE43F0D00CB6681 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = 3YVY2RHHVQ;
+						DevelopmentTeam = WP53SSE8S6;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -134,6 +161,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		274440BAB7E3F2337EA02616 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		30D926654750BE19546A4332 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-nanou-ios/Pods-nanou-ios-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		46380BCE6AE443FCC70859CB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-nanou-ios/Pods-nanou-ios-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		50240B271DE43F0D00CB6681 /* Sources */ = {
@@ -263,9 +338,10 @@
 		};
 		50240B411DE43F0E00CB6681 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 78D5341128C812394DF67E7A /* Pods-nanou-ios.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 3YVY2RHHVQ;
+				DEVELOPMENT_TEAM = WP53SSE8S6;
 				INFOPLIST_FILE = "nanou-ios/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "de.maxbothe.nanou-ios";
@@ -276,9 +352,10 @@
 		};
 		50240B421DE43F0E00CB6681 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F77E5BC4C911AEEAF8978D18 /* Pods-nanou-ios.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 3YVY2RHHVQ;
+				DEVELOPMENT_TEAM = WP53SSE8S6;
 				INFOPLIST_FILE = "nanou-ios/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "de.maxbothe.nanou-ios";
@@ -306,6 +383,7 @@
 				50240B421DE43F0E00CB6681 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
