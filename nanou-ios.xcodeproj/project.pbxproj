@@ -104,6 +104,7 @@
 				50240B291DE43F0D00CB6681 /* Resources */,
 				30D926654750BE19546A4332 /* [CP] Embed Pods Frameworks */,
 				46380BCE6AE443FCC70859CB /* [CP] Copy Pods Resources */,
+				E71C0A5318BBEA8B7C098618 /* Tailor */,
 			);
 			buildRules = (
 			);
@@ -207,6 +208,20 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-nanou-ios/Pods-nanou-ios-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		E71C0A5318BBEA8B7C098618 /* Tailor */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Tailor;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if hash tailor 2>/dev/null; then\n  tailor\nelse\n  echo \"warning: Please install Tailor from https://tailor.sh\"\nfi";
 		};
 /* End PBXShellScriptBuildPhase section */
 

@@ -5,6 +5,7 @@
 
 ## Requirements
 - CocoaPods (version 1.1.0 or later)
+- Tailor (0.11.1 or later | optional)
 
 ## How to setup
 ```bash
