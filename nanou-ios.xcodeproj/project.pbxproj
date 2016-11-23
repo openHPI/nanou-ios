@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		50240B2F1DE43F0E00CB6681 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50240B2E1DE43F0E00CB6681 /* AppDelegate.swift */; };
-		50240B311DE43F0E00CB6681 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50240B301DE43F0E00CB6681 /* ViewController.swift */; };
 		50240B341DE43F0E00CB6681 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50240B321DE43F0E00CB6681 /* Main.storyboard */; };
 		50240B371DE43F0E00CB6681 /* nanou_ios.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 50240B351DE43F0E00CB6681 /* nanou_ios.xcdatamodeld */; };
 		50240B391DE43F0E00CB6681 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50240B381DE43F0E00CB6681 /* Assets.xcassets */; };
 		50240B3C1DE43F0E00CB6681 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50240B3A1DE43F0E00CB6681 /* LaunchScreen.storyboard */; };
+		509D51BD1DE5999A0019BB63 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509D51BC1DE5999A0019BB63 /* LoginViewController.swift */; };
+		509D51C11DE5C7870019BB63 /* LoginCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509D51C01DE5C7870019BB63 /* LoginCell.swift */; };
+		509D51C41DE5CDA70019BB63 /* Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509D51C31DE5CDA70019BB63 /* Routes.swift */; };
 		784843F8FF15E2D67C5AC4ED /* Pods_nanou_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BBA82A6D90C5527292577AF /* Pods_nanou_ios.framework */; };
 /* End PBXBuildFile section */
 
@@ -20,12 +22,14 @@
 		3BBA82A6D90C5527292577AF /* Pods_nanou_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_nanou_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50240B2B1DE43F0E00CB6681 /* nanou-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "nanou-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50240B2E1DE43F0E00CB6681 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		50240B301DE43F0E00CB6681 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		50240B331DE43F0E00CB6681 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		50240B361DE43F0E00CB6681 /* nanou_ios.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = nanou_ios.xcdatamodel; sourceTree = "<group>"; };
 		50240B381DE43F0E00CB6681 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50240B3B1DE43F0E00CB6681 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		50240B3D1DE43F0E00CB6681 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		509D51BC1DE5999A0019BB63 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = ViewControllers/LoginViewController.swift; sourceTree = "<group>"; };
+		509D51C01DE5C7870019BB63 /* LoginCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginCell.swift; path = Views/LoginCell.swift; sourceTree = "<group>"; };
+		509D51C31DE5CDA70019BB63 /* Routes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Routes.swift; path = Helper/Routes.swift; sourceTree = "<group>"; };
 		78D5341128C812394DF67E7A /* Pods-nanou-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nanou-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-nanou-ios/Pods-nanou-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		F77E5BC4C911AEEAF8978D18 /* Pods-nanou-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nanou-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-nanou-ios/Pods-nanou-ios.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -72,7 +76,9 @@
 			isa = PBXGroup;
 			children = (
 				50240B2E1DE43F0E00CB6681 /* AppDelegate.swift */,
-				50240B301DE43F0E00CB6681 /* ViewController.swift */,
+				509D51C21DE5CD840019BB63 /* Helper */,
+				509D51BF1DE5C76B0019BB63 /* Views */,
+				509D51BE1DE5C7580019BB63 /* ViewControllers */,
 				50240B321DE43F0E00CB6681 /* Main.storyboard */,
 				50240B381DE43F0E00CB6681 /* Assets.xcassets */,
 				50240B3A1DE43F0E00CB6681 /* LaunchScreen.storyboard */,
@@ -80,6 +86,30 @@
 				50240B351DE43F0E00CB6681 /* nanou_ios.xcdatamodeld */,
 			);
 			path = "nanou-ios";
+			sourceTree = "<group>";
+		};
+		509D51BE1DE5C7580019BB63 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				509D51BC1DE5999A0019BB63 /* LoginViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		509D51BF1DE5C76B0019BB63 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				509D51C01DE5C7870019BB63 /* LoginCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		509D51C21DE5CD840019BB63 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				509D51C31DE5CDA70019BB63 /* Routes.swift */,
+			);
+			name = Helper;
 			sourceTree = "<group>";
 		};
 		8DE24E94050730E74C052B48 /* Pods */ = {
@@ -230,8 +260,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				509D51BD1DE5999A0019BB63 /* LoginViewController.swift in Sources */,
 				50240B371DE43F0E00CB6681 /* nanou_ios.xcdatamodeld in Sources */,
-				50240B311DE43F0E00CB6681 /* ViewController.swift in Sources */,
+				509D51C41DE5CDA70019BB63 /* Routes.swift in Sources */,
+				509D51C11DE5C7870019BB63 /* LoginCell.swift in Sources */,
 				50240B2F1DE43F0E00CB6681 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -361,7 +393,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "de.maxbothe.nanou-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -375,7 +406,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "de.maxbothe.nanou-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
