@@ -7,15 +7,18 @@ PODS:
     - CocoaLumberjack/Default
   - CocoaLumberjack/Swift (3.0.0):
     - CocoaLumberjack/Extensions
+  - LNRSimpleNotifications (0.5.3)
 
 DEPENDENCIES:
   - Alamofire (= 4.2.0)
   - CocoaLumberjack/Swift (= 3.0.0)
+  - LNRSimpleNotifications
 
 SPEC CHECKSUMS:
   Alamofire: aa2e09d871c9160ac53c90e83c68064a94e3dfbe
   CocoaLumberjack: c823149bccc5519a9447aeb433be7b1212a7d6a5
+  LNRSimpleNotifications: 13aa05e2f65ccf196f736def89178007f30a5182
 
-PODFILE CHECKSUM: 5a2eaa90580826391f9fbde58c32cccc575eef32
+PODFILE CHECKSUM: 6773665882862614b2911f20944480115b143d5e
 
 COCOAPODS: 1.1.1

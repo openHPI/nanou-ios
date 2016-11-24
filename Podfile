@@ -4,6 +4,7 @@ platform :ios, '10.0'
 target 'nanou-ios' do
   pod 'Alamofire', '4.2.0'
   pod 'CocoaLumberjack/Swift', '3.0.0'
+  pod 'LNRSimpleNotifications', '0.5.3'
 end
 
 post_install do |installer|

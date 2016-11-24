@@ -9,8 +9,7 @@
 import Foundation
 
 struct Route {
-    static let base = "https://7cbddbcf.ngrok.io/"
+    static let base = "https://22a4afdc.ngrok.io/"
     static let api = base + "api/"
     static let status = base + "social/status/"
-
 }

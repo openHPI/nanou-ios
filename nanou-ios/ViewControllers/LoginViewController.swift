@@ -7,9 +7,10 @@
 //
 
 import UIKit
+
 import Alamofire
 import CocoaLumberjack
-
+import LNRSimpleNotifications
 
 struct LoginProvider {
     var name: String
@@ -18,6 +19,10 @@ struct LoginProvider {
 
 class LoginViewController: UICollectionViewController {
     var loginProviders: [LoginProvider]?
+
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
 
     override func viewDidLoad() {
         let gradient: CAGradientLayer = CAGradientLayer()
@@ -30,18 +35,39 @@ class LoginViewController: UICollectionViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        self.checkUserStatus()
+    }
 
+    func checkUserStatus() {
         Alamofire.request(Route.status).responseJSON { response in
             if let json = response.result.value as? NSDictionary {
-                DDLogInfo("JSON: \(json)")
+                DDLogInfo("Login Providers: \(json)")
                 if let data = json["data"] as? [String: String] {
                     self.loginProviders = data.map { (key: String, value: String) -> LoginProvider in
                         return LoginProvider(name: key, url: value)
                     }
                     self.collectionView?.insertSections(IndexSet(integer: 1))
                 }
+            } else {
+                self.showNetworkError()
             }
         }
+    }
+
+    func showNetworkError() {
+        let notificationManager = LNRNotificationManager()
+        notificationManager.notificationsPosition = LNRNotificationPosition.top
+        notificationManager.notificationsBackgroundColor = UIColor(white: 0.25, alpha: 1.0)
+        notificationManager.notificationsTitleTextColor = UIColor.white
+        notificationManager.notificationsBodyTextColor = UIColor.white
+        notificationManager.notificationsSeperatorColor = UIColor.clear
+        notificationManager.notificationsDefaultDuration = LNRNotificationDuration.endless.rawValue
+        notificationManager.showNotification(title: "No internet connection", body: "Tap to retry", onTap: { () -> Void in
+            _ = notificationManager.dismissActiveNotification(completion: { () -> Void in
+                DDLogInfo("Retry: check status")
+                self.checkUserStatus()
+            })
+        })
     }
 
 }
