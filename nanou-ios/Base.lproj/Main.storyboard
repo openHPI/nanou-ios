@@ -217,7 +217,7 @@
                                         <rect key="frame" x="0.0" y="56" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zgr-Lb-KuT" id="Yob-AD-HPW">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="SSt-oR-klI">
@@ -258,7 +258,7 @@
                             <tableViewSection headerTitle="Pref-2" id="PgS-9o-Xle">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="fqb-OR-m1z" style="IBUITableViewCellStyleDefault" id="Vgi-OZ-KrS">
-                                        <rect key="frame" x="0.0" y="156" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="157" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Vgi-OZ-KrS" id="mml-sy-RVu">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
@@ -279,7 +279,7 @@
                             <tableViewSection headerTitle="Pref-3" id="oVu-Ln-Z2m">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="0tW-9D-epJ" style="IBUITableViewCellStyleDefault" id="ise-VY-5he">
-                                        <rect key="frame" x="0.0" y="256" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="258" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ise-VY-5he" id="8LJ-83-VIS">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
@@ -462,4 +462,5 @@
     <inferredMetricsTieBreakers>
         <segue reference="Wb9-Li-FOF"/>
     </inferredMetricsTieBreakers>
+    <color key="tintColor" red="0.94509803921568625" green="0.52156862745098043" blue="0.24705882352941178" alpha="1" colorSpace="calibratedRGB"/>
 </document>
