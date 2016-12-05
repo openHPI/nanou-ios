@@ -25,12 +25,7 @@ class LaunchViewController: UICollectionViewController {
     }
 
     override func viewDidLoad() {
-        let gradient: CAGradientLayer = CAGradientLayer()
-        gradient.frame = self.view.bounds
-        let orange = UIColor(red: 241.0/255.0, green: 133.0/255.0, blue: 63.0/255.0, alpha: 1.0)
-        let pink = UIColor(red: 233.0/255.0, green: 68.0/255.0, blue: 117.0/255.0, alpha: 1.0)
-        gradient.colors = [orange.cgColor, pink.cgColor]
-        self.view.layer.insertSublayer(gradient, at: 0)
+        self.view.layer.insertSublayer(CAGradientLayer.nanouGradientLayer(frame: self.view.bounds), at: 0)
     }
 
     override func viewDidAppear(_ animated: Bool) {
