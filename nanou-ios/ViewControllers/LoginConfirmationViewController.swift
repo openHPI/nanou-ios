@@ -50,7 +50,7 @@ class LoginConfirmationViewController: UIViewController, UIToolbarDelegate, UIWe
                 }
 
                 if authenticated {
-                    // TODO: save token
+                    UserProfileHelper.storeToken(token)
                     self.performSegue(withIdentifier: "open", sender: nil)
                 }
             }

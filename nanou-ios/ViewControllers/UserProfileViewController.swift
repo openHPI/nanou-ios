@@ -13,6 +13,7 @@ class UserProfileViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath == UserProfileViewController.logoutIndexPath {
+            UserProfileHelper.deleteToken()
             self.performSegue(withIdentifier: "logout", sender: nil)
         }
         tableView.deselectRow(at: indexPath, animated: true)

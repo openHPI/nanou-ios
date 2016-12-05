@@ -30,13 +30,18 @@ class LaunchViewController: UICollectionViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.checkUserStatus()
-//        self.performSegue(withIdentifier: "open", sender: nil)
+
+        if UserProfileHelper.isLoggedIn {
+            // TODO: validate token
+            self.performSegue(withIdentifier: "open", sender: nil)
+        } else {
+            self.updateLoginProviders()
+        }
     }
 
     @IBAction func logout(segue: UIStoryboardSegue) {}
 
-    func checkUserStatus() {
+    func updateLoginProviders() {
         Alamofire.request(Route.loginProviders).responseJSON { response in
             switch response.result {
             case .success(let data):
@@ -76,7 +81,7 @@ class LaunchViewController: UICollectionViewController {
         notificationManager.showNotification(title: "No internet connection", body: "Tap to retry", onTap: { () in
             _ = notificationManager.dismissActiveNotification(completion: { () in
                 DDLogInfo("Retry: check status")
-                self.checkUserStatus()
+                self.updateLoginProviders()
             })
         })
     }
