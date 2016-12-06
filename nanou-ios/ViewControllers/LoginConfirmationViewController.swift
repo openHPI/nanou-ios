@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import CocoaLumberjack
 
 class LoginConfirmationViewController: UIViewController, UIToolbarDelegate, UIWebViewDelegate {
     @IBOutlet var webview: UIWebView!
@@ -22,10 +21,10 @@ class LoginConfirmationViewController: UIViewController, UIToolbarDelegate, UIWe
                 if let url = URL(string: Route.base + urlString) {
                     self.webview.loadRequest(URLRequest(url: url))
                 } else {
-                    DDLogError("Show LoginConfirmationViewController without valid url")
+                    log.error("Show LoginConfirmationViewController without valid url")
                 }
             } else {
-                DDLogError("Show LoginConfirmationViewController without url")
+                log.error("Show LoginConfirmationViewController without url")
             }
         }
     }

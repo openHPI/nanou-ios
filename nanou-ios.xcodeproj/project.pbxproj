@@ -24,11 +24,12 @@
 		50EA859E1DF5794C00DFFE09 /* UserProfileHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EA859D1DF5794C00DFFE09 /* UserProfileHelper.swift */; };
 		50EA85A01DF5811500DFFE09 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EA859F1DF5811500DFFE09 /* NetworkHelper.swift */; };
 		50EA85A21DF597B900DFFE09 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EA85A11DF597B900DFFE09 /* Error.swift */; };
-		784843F8FF15E2D67C5AC4ED /* Pods_nanou_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BBA82A6D90C5527292577AF /* Pods_nanou_ios.framework */; };
+		8361F0707357994E12F56B4C /* Pods_nanou_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBEE94DB21BBCFA5A5869180 /* Pods_nanou_ios.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3BBA82A6D90C5527292577AF /* Pods_nanou_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_nanou_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		08A9B99B0EAA70F22CC17622 /* Pods-nanou-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nanou-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-nanou-ios/Pods-nanou-ios.release.xcconfig"; sourceTree = "<group>"; };
+		1D78B86D79986E5EE78F052A /* Pods-nanou-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nanou-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-nanou-ios/Pods-nanou-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		5000A16F1DF6B2980070636E /* NotificationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationHelper.swift; path = Helper/NotificationHelper.swift; sourceTree = "<group>"; };
 		50240B2B1DE43F0E00CB6681 /* nanou-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "nanou-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50240B2E1DE43F0E00CB6681 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -48,8 +49,7 @@
 		50EA859D1DF5794C00DFFE09 /* UserProfileHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserProfileHelper.swift; path = Helper/UserProfileHelper.swift; sourceTree = "<group>"; };
 		50EA859F1DF5811500DFFE09 /* NetworkHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkHelper.swift; path = Helper/NetworkHelper.swift; sourceTree = "<group>"; };
 		50EA85A11DF597B900DFFE09 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
-		78D5341128C812394DF67E7A /* Pods-nanou-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nanou-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-nanou-ios/Pods-nanou-ios.debug.xcconfig"; sourceTree = "<group>"; };
-		F77E5BC4C911AEEAF8978D18 /* Pods-nanou-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nanou-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-nanou-ios/Pods-nanou-ios.release.xcconfig"; sourceTree = "<group>"; };
+		FBEE94DB21BBCFA5A5869180 /* Pods_nanou_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_nanou_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,28 +57,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				784843F8FF15E2D67C5AC4ED /* Pods_nanou_ios.framework in Frameworks */,
+				8361F0707357994E12F56B4C /* Pods_nanou_ios.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		10E21C8BEE998BAA9EC0DB98 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				3BBA82A6D90C5527292577AF /* Pods_nanou_ios.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		50240B221DE43F0D00CB6681 = {
 			isa = PBXGroup;
 			children = (
 				50240B2D1DE43F0E00CB6681 /* nanou-ios */,
 				50240B2C1DE43F0E00CB6681 /* Products */,
-				8DE24E94050730E74C052B48 /* Pods */,
-				10E21C8BEE998BAA9EC0DB98 /* Frameworks */,
+				5D2BBE55C3E40B653813DF31 /* Pods */,
+				7A452EDD003E3EE3BC23A73A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -139,13 +131,21 @@
 			name = Helper;
 			sourceTree = "<group>";
 		};
-		8DE24E94050730E74C052B48 /* Pods */ = {
+		5D2BBE55C3E40B653813DF31 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				78D5341128C812394DF67E7A /* Pods-nanou-ios.debug.xcconfig */,
-				F77E5BC4C911AEEAF8978D18 /* Pods-nanou-ios.release.xcconfig */,
+				1D78B86D79986E5EE78F052A /* Pods-nanou-ios.debug.xcconfig */,
+				08A9B99B0EAA70F22CC17622 /* Pods-nanou-ios.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		7A452EDD003E3EE3BC23A73A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FBEE94DB21BBCFA5A5869180 /* Pods_nanou_ios.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,13 +155,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 50240B401DE43F0E00CB6681 /* Build configuration list for PBXNativeTarget "nanou-ios" */;
 			buildPhases = (
-				274440BAB7E3F2337EA02616 /* [CP] Check Pods Manifest.lock */,
+				509FF69407A3D4A708F8156B /* [CP] Check Pods Manifest.lock */,
 				50240B271DE43F0D00CB6681 /* Sources */,
 				50240B281DE43F0D00CB6681 /* Frameworks */,
 				50240B291DE43F0D00CB6681 /* Resources */,
-				30D926654750BE19546A4332 /* [CP] Embed Pods Frameworks */,
-				46380BCE6AE443FCC70859CB /* [CP] Copy Pods Resources */,
 				E71C0A5318BBEA8B7C098618 /* Tailor */,
+				3171A68D9032296B18440E75 /* [CP] Embed Pods Frameworks */,
+				7B17CA88AB0B0F6C82672036 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -185,6 +185,7 @@
 					50240B2A1DE43F0D00CB6681 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = WP53SSE8S6;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -221,22 +222,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		274440BAB7E3F2337EA02616 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		30D926654750BE19546A4332 /* [CP] Embed Pods Frameworks */ = {
+		3171A68D9032296B18440E75 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -251,7 +237,22 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-nanou-ios/Pods-nanou-ios-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		46380BCE6AE443FCC70859CB /* [CP] Copy Pods Resources */ = {
+		509FF69407A3D4A708F8156B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7B17CA88AB0B0F6C82672036 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -370,6 +371,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				"OTHER_SWIFT_FLAGS[arch=*]" = "-DDEBUG";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -423,31 +425,31 @@
 		};
 		50240B411DE43F0E00CB6681 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 78D5341128C812394DF67E7A /* Pods-nanou-ios.debug.xcconfig */;
+			baseConfigurationReference = 1D78B86D79986E5EE78F052A /* Pods-nanou-ios.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = WP53SSE8S6;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = "$(inherited)";
 				INFOPLIST_FILE = "nanou-ios/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "de.maxbothe.nanou-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		50240B421DE43F0E00CB6681 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F77E5BC4C911AEEAF8978D18 /* Pods-nanou-ios.release.xcconfig */;
+			baseConfigurationReference = 08A9B99B0EAA70F22CC17622 /* Pods-nanou-ios.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = WP53SSE8S6;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = "$(inherited)";
 				INFOPLIST_FILE = "nanou-ios/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "de.maxbothe.nanou-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

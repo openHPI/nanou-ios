@@ -9,7 +9,9 @@
 import UIKit
 
 import CoreData
-import CocoaLumberjack
+import SwiftyBeaver
+
+let log = SwiftyBeaver.self
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -22,8 +24,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UITabBar.appearance().tintColor = UIColor.nanouOrange
 
         // Configure CocoaLumberJack
-        DDLog.add(DDTTYLogger.sharedInstance())
-        DDLogVerbose("App launched")
+        let console = ConsoleDestination()
+        console.format = "$DHH:mm:ss$d $C$L:$c $M"
+        #if DEBUG
+        console.asynchronously = false
+        #endif
+        log.addDestination(console)
+        log.verbose("App launched")
 
         return true
     }

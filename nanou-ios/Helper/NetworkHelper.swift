@@ -9,7 +9,6 @@
 import Foundation
 import Alamofire
 import BrightFutures
-import CocoaLumberjack
 
 class NetworkHelper {
     static let headerUserPlatform = "User-Platform"
@@ -42,22 +41,22 @@ extension NetworkHelper {
             switch response.result {
             case .success(let data):
                 guard let json = data as? NSDictionary else {
-                    DDLogError("Request 'status' | malformed JSON response or timeout")
+                    log.error("Request 'status' | malformed JSON response or timeout")
                     promise.failure(NanouError.invalidData)
                     return
                 }
-                DDLogVerbose("Request 'status' | retrieved json: \(json)")
+                log.verbose("Request 'status' | retrieved json: \(json)")
 
                 guard let authStatus = json["authenticated"] as? Bool else {
-                    DDLogError("Request 'status' | malformed JSON response")
+                    log.error("Request 'status' | malformed JSON response")
                     promise.failure(NanouError.invalidData)
                     return
                 }
-                DDLogVerbose("Request 'status' | retrieved authentication status: \(authStatus)")
+                log.verbose("Request 'status' | retrieved authentication status: \(authStatus)")
 
                 promise.success(authStatus)
             case .failure(let error):
-                DDLogError("Request 'status' | Failed with error: \(error)")
+                log.error("Request 'status' | Failed with error: \(error)")
                 promise.failure(NanouError.network(error))
             }
         }
@@ -77,14 +76,14 @@ extension NetworkHelper {
             switch response.result {
             case .success(let data):
                 guard let json = data as? NSDictionary else {
-                    DDLogError("Request 'login providers' | malformed JSON response or timeout")
+                    log.error("Request 'login providers' | malformed JSON response or timeout")
                     promise.failure(NanouError.invalidData)
                     return
                 }
-                DDLogVerbose("Request 'login providers' | retrieved json: \(json)")
+                log.verbose("Request 'login providers' | retrieved json: \(json)")
 
                 guard let data = json["data"] as? [String: String] else {
-                    DDLogError("Request 'login providers' | malformed JSON response")
+                    log.error("Request 'login providers' | malformed JSON response")
                     promise.failure(NanouError.invalidData)
                     return
                 }
@@ -95,7 +94,7 @@ extension NetworkHelper {
 
                 promise.success(providers)
             case .failure(let error):
-                DDLogError("Request 'login providers' | Failed with error: \(error)")
+                log.error("Request 'login providers' | Failed with error: \(error)")
                 promise.failure(NanouError.network(error))
             }
         }

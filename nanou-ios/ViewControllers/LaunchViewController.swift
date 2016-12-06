@@ -9,7 +9,6 @@
 import UIKit
 
 import Alamofire
-import CocoaLumberjack
 
 struct LoginProvider {
     var name: String
@@ -68,22 +67,22 @@ class LaunchViewController: UICollectionViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "sociallogin" {
             guard let confirmationVC = segue.destination as? LoginConfirmationViewController else {
-                DDLogError("Wrong ViewController: Excepted LoginConfirmationViewController")
+                log.error("Wrong ViewController: Excepted LoginConfirmationViewController")
                 return
             }
 
             guard let cell = sender as? LoginCell else {
-                DDLogError("Wrong sender: Excepted LoginCell")
+                log.error("Wrong sender: Excepted LoginCell")
                 return
             }
 
             guard let indexPath = self.collectionView?.indexPath(for: cell) else {
-                DDLogError("Wrong indexPath: No indexPath for \(cell)")
+                log.error("Wrong indexPath: No indexPath for \(cell)")
                 return
             }
 
             guard let loginProvider = self.loginProviders?[indexPath.item] else {
-                DDLogError("No login provider at index \(indexPath.item)")
+                log.error("No login provider at index \(indexPath.item)")
                 return
             }
 
@@ -108,7 +107,7 @@ extension LaunchViewController {
         } else if let providers = self.loginProviders {
             return providers.count
         } else {
-            DDLogWarn("Invalid login providers")
+            log.warning("Invalid login providers")
             return 0
         }
     }

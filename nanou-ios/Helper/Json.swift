@@ -7,14 +7,13 @@
 //
 
 import Foundation
-import CocoaLumberjack
 
 func convertToDictionary(text: String) -> [String: Any]? {
     if let data = text.data(using: .utf8) {
         do {
             return try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
         } catch {
-            DDLogVerbose("Unable to serialize String to Json: \(text)")
+            log.info("Unable to serialize String to Json: \(text)")
         }
     }
     return nil
