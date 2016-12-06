@@ -31,42 +31,36 @@ class LaunchViewController: UICollectionViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        if UserProfileHelper.isLoggedIn {
-            // TODO: validate token
-            self.performSegue(withIdentifier: "open", sender: nil)
-        } else {
-            self.updateLoginProviders()
-        }
+        self.checkStatus()
     }
 
     @IBAction func logout(segue: UIStoryboardSegue) {}
 
-    func updateLoginProviders() {
-        Alamofire.request(Route.loginProviders).responseJSON { response in
-            switch response.result {
-            case .success(let data):
-                if let json = data as? NSDictionary {
-                    DDLogVerbose("Login Providers: \(json)")
-                    if let data = json["data"] as? [String: String] {
-                        let newLoginProviders = data.map { (key: String, value: String) -> LoginProvider in
-                            return LoginProvider(name: key, url: value)
-                        }
-                        if self.loginProviders != nil {
-                            self.loginProviders = newLoginProviders
-                            self.collectionView?.reloadSections(IndexSet(integer: 1))
-                        } else {
-                            self.loginProviders = newLoginProviders
-                            self.collectionView?.insertSections(IndexSet(integer: 1))
-                        }
-                    }
-                } else {
-                    DDLogError("Malformed JSON response or timeout")
-                    self.showNetworkError()
-                }
-            case .failure(let error):
-                DDLogError("Request failed with error: \(error)")
-                self.showNetworkError()
+    func checkStatus() {
+        NetworkHelper.status().onSuccess { authenticated in
+            if authenticated {
+                self.performSegue(withIdentifier: "open", sender: nil)
+            } else {
+                self.updateLoginProviders()
             }
+            }.onFailure { Error in
+                // TODO: distinguish between errors
+                self.showNetworkError()
+        }
+    }
+
+    func updateLoginProviders() {
+        NetworkHelper.loginProviders().onSuccess { providers in
+            if self.loginProviders != nil {
+                self.loginProviders = providers
+                self.collectionView?.reloadSections(IndexSet(integer: 1))
+            } else {
+                self.loginProviders = providers
+                self.collectionView?.insertSections(IndexSet(integer: 1))
+            }
+        }.onFailure { Error in
+            // TODO: distinguish between errors
+            self.showNetworkError()
         }
     }
 
@@ -81,7 +75,7 @@ class LaunchViewController: UICollectionViewController {
         notificationManager.showNotification(title: "No internet connection", body: "Tap to retry", onTap: { () in
             _ = notificationManager.dismissActiveNotification(completion: { () in
                 DDLogInfo("Retry: check status")
-                self.updateLoginProviders()
+                self.checkStatus()
             })
         })
     }

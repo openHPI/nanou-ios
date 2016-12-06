@@ -21,6 +21,8 @@
 		509D51C41DE5CDA70019BB63 /* Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509D51C31DE5CDA70019BB63 /* Routes.swift */; };
 		50EA85981DF56FAC00DFFE09 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EA85971DF56FAC00DFFE09 /* Color.swift */; };
 		50EA859E1DF5794C00DFFE09 /* UserProfileHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EA859D1DF5794C00DFFE09 /* UserProfileHelper.swift */; };
+		50EA85A01DF5811500DFFE09 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EA859F1DF5811500DFFE09 /* NetworkHelper.swift */; };
+		50EA85A21DF597B900DFFE09 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EA85A11DF597B900DFFE09 /* Error.swift */; };
 		784843F8FF15E2D67C5AC4ED /* Pods_nanou_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BBA82A6D90C5527292577AF /* Pods_nanou_ios.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +44,8 @@
 		509D51C31DE5CDA70019BB63 /* Routes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Routes.swift; path = Helper/Routes.swift; sourceTree = "<group>"; };
 		50EA85971DF56FAC00DFFE09 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Color.swift; path = Helper/Color.swift; sourceTree = "<group>"; };
 		50EA859D1DF5794C00DFFE09 /* UserProfileHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserProfileHelper.swift; path = Helper/UserProfileHelper.swift; sourceTree = "<group>"; };
+		50EA859F1DF5811500DFFE09 /* NetworkHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkHelper.swift; path = Helper/NetworkHelper.swift; sourceTree = "<group>"; };
+		50EA85A11DF597B900DFFE09 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		78D5341128C812394DF67E7A /* Pods-nanou-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nanou-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-nanou-ios/Pods-nanou-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		F77E5BC4C911AEEAF8978D18 /* Pods-nanou-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nanou-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-nanou-ios/Pods-nanou-ios.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -126,6 +130,8 @@
 				504BC3331DF448F200671614 /* Json.swift */,
 				50EA85971DF56FAC00DFFE09 /* Color.swift */,
 				50EA859D1DF5794C00DFFE09 /* UserProfileHelper.swift */,
+				50EA859F1DF5811500DFFE09 /* NetworkHelper.swift */,
+				50EA85A11DF597B900DFFE09 /* Error.swift */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -281,7 +287,9 @@
 				509D51BD1DE5999A0019BB63 /* LaunchViewController.swift in Sources */,
 				50EA859E1DF5794C00DFFE09 /* UserProfileHelper.swift in Sources */,
 				5057F7981DE78527003A8850 /* LoginConfirmationViewController.swift in Sources */,
+				50EA85A21DF597B900DFFE09 /* Error.swift in Sources */,
 				50240B371DE43F0E00CB6681 /* nanou_ios.xcdatamodeld in Sources */,
+				50EA85A01DF5811500DFFE09 /* NetworkHelper.swift in Sources */,
 				50EA85981DF56FAC00DFFE09 /* Color.swift in Sources */,
 				5057F79A1DE78E82003A8850 /* Segues.swift in Sources */,
 				509D51C41DE5CDA70019BB63 /* Routes.swift in Sources */,
@@ -413,9 +421,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 78D5341128C812394DF67E7A /* Pods-nanou-ios.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = WP53SSE8S6;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = "$(inherited)";
 				INFOPLIST_FILE = "nanou-ios/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "de.maxbothe.nanou-ios";
@@ -427,9 +436,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F77E5BC4C911AEEAF8978D18 /* Pods-nanou-ios.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = WP53SSE8S6;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = "$(inherited)";
 				INFOPLIST_FILE = "nanou-ios/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "de.maxbothe.nanou-ios";
