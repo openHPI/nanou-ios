@@ -10,7 +10,6 @@ import UIKit
 
 import Alamofire
 import CocoaLumberjack
-import LNRSimpleNotifications
 
 struct LoginProvider {
     var name: String
@@ -43,9 +42,10 @@ class LaunchViewController: UICollectionViewController {
             } else {
                 self.updateLoginProviders()
             }
-            }.onFailure { Error in
-                // TODO: distinguish between errors
-                self.showNetworkError()
+        }.onFailure { error in
+            NotificationHelper.showNotificationFor(error) {
+                self.checkStatus()
+            }
         }
     }
 
@@ -58,26 +58,11 @@ class LaunchViewController: UICollectionViewController {
                 self.loginProviders = providers
                 self.collectionView?.insertSections(IndexSet(integer: 1))
             }
-        }.onFailure { Error in
-            // TODO: distinguish between errors
-            self.showNetworkError()
+        }.onFailure { error in
+            NotificationHelper.showNotificationFor(error) {
+                self.updateLoginProviders()
+            }
         }
-    }
-
-    func showNetworkError() {
-        let notificationManager = LNRNotificationManager()
-        notificationManager.notificationsPosition = LNRNotificationPosition.top
-        notificationManager.notificationsBackgroundColor = UIColor(white: 0.25, alpha: 1.0)
-        notificationManager.notificationsTitleTextColor = UIColor.white
-        notificationManager.notificationsBodyTextColor = UIColor.white
-        notificationManager.notificationsSeperatorColor = UIColor.clear
-        notificationManager.notificationsDefaultDuration = LNRNotificationDuration.endless.rawValue
-        notificationManager.showNotification(title: "No internet connection", body: "Tap to retry", onTap: { () in
-            _ = notificationManager.dismissActiveNotification(completion: { () in
-                DDLogInfo("Retry: check status")
-                self.checkStatus()
-            })
-        })
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

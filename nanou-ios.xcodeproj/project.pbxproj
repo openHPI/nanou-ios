@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5000A1701DF6B2980070636E /* NotificationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5000A16F1DF6B2980070636E /* NotificationHelper.swift */; };
 		50240B2F1DE43F0E00CB6681 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50240B2E1DE43F0E00CB6681 /* AppDelegate.swift */; };
 		50240B341DE43F0E00CB6681 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50240B321DE43F0E00CB6681 /* Main.storyboard */; };
 		50240B371DE43F0E00CB6681 /* nanou_ios.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 50240B351DE43F0E00CB6681 /* nanou_ios.xcdatamodeld */; };
@@ -28,6 +29,7 @@
 
 /* Begin PBXFileReference section */
 		3BBA82A6D90C5527292577AF /* Pods_nanou_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_nanou_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5000A16F1DF6B2980070636E /* NotificationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationHelper.swift; path = Helper/NotificationHelper.swift; sourceTree = "<group>"; };
 		50240B2B1DE43F0E00CB6681 /* nanou-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "nanou-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50240B2E1DE43F0E00CB6681 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50240B331DE43F0E00CB6681 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				50EA859D1DF5794C00DFFE09 /* UserProfileHelper.swift */,
 				50EA859F1DF5811500DFFE09 /* NetworkHelper.swift */,
 				50EA85A11DF597B900DFFE09 /* Error.swift */,
+				5000A16F1DF6B2980070636E /* NotificationHelper.swift */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 				50EA85A21DF597B900DFFE09 /* Error.swift in Sources */,
 				50240B371DE43F0E00CB6681 /* nanou_ios.xcdatamodeld in Sources */,
 				50EA85A01DF5811500DFFE09 /* NetworkHelper.swift in Sources */,
+				5000A1701DF6B2980070636E /* NotificationHelper.swift in Sources */,
 				50EA85981DF56FAC00DFFE09 /* Color.swift in Sources */,
 				5057F79A1DE78E82003A8850 /* Segues.swift in Sources */,
 				509D51C41DE5CDA70019BB63 /* Routes.swift in Sources */,
