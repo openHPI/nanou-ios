@@ -7,9 +7,11 @@
 //
 
 import Foundation
+import Spine
 
 enum NanouError: Error {
 
+    case api(SpineError)
     case coreData(Error)
     case invalidData
     case modelIncomplete

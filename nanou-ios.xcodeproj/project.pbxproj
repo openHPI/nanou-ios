@@ -13,8 +13,17 @@
 		50240B371DE43F0E00CB6681 /* nanou_ios.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 50240B351DE43F0E00CB6681 /* nanou_ios.xcdatamodeld */; };
 		50240B391DE43F0E00CB6681 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50240B381DE43F0E00CB6681 /* Assets.xcassets */; };
 		50240B3C1DE43F0E00CB6681 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50240B3A1DE43F0E00CB6681 /* LaunchScreen.storyboard */; };
+		502936BC1DF838B60087A2D4 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502936BB1DF838B60087A2D4 /* CoreDataHelper.swift */; };
+		502936CA1DF845200087A2D4 /* Preference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502936C91DF845200087A2D4 /* Preference.swift */; };
+		502936D01DF854340087A2D4 /* PreferenceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502936CF1DF854340087A2D4 /* PreferenceHelper.swift */; };
+		502936D21DF867280087A2D4 /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502936D11DF867280087A2D4 /* PreferencesViewController.swift */; };
+		502936D61DF8C2F50087A2D4 /* PreferenceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502936D51DF8C2F50087A2D4 /* PreferenceCell.swift */; };
 		504BC3341DF448F200671614 /* Json.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504BC3331DF448F200671614 /* Json.swift */; };
 		504BC3361DF4532E00671614 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504BC3351DF4532E00671614 /* UserProfileViewController.swift */; };
+		504CCEAB1DF8064E00CF0DFD /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504CCEAA1DF8064E00CF0DFD /* BaseModel.swift */; };
+		504CCEAD1DF8069D00CF0DFD /* BaseModelSpine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504CCEAC1DF8069D00CF0DFD /* BaseModelSpine.swift */; };
+		504CCEAF1DF808CC00CF0DFD /* SpineHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504CCEAE1DF808CC00CF0DFD /* SpineHelper.swift */; };
+		504CCEB11DF80AA700CF0DFD /* SpineModelHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504CCEB01DF80AA700CF0DFD /* SpineModelHelper.swift */; };
 		5057F7981DE78527003A8850 /* LoginConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5057F7971DE78527003A8850 /* LoginConfirmationViewController.swift */; };
 		5057F79A1DE78E82003A8850 /* Segues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5057F7991DE78E82003A8850 /* Segues.swift */; };
 		509D51BD1DE5999A0019BB63 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509D51BC1DE5999A0019BB63 /* LaunchViewController.swift */; };
@@ -38,8 +47,17 @@
 		50240B381DE43F0E00CB6681 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50240B3B1DE43F0E00CB6681 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		50240B3D1DE43F0E00CB6681 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		502936BB1DF838B60087A2D4 /* CoreDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataHelper.swift; path = Helper/CoreDataHelper.swift; sourceTree = "<group>"; };
+		502936C91DF845200087A2D4 /* Preference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Preference.swift; path = Model/Preference.swift; sourceTree = "<group>"; };
+		502936CF1DF854340087A2D4 /* PreferenceHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreferenceHelper.swift; path = Helper/PreferenceHelper.swift; sourceTree = "<group>"; };
+		502936D11DF867280087A2D4 /* PreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreferencesViewController.swift; path = ViewControllers/PreferencesViewController.swift; sourceTree = "<group>"; };
+		502936D51DF8C2F50087A2D4 /* PreferenceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreferenceCell.swift; path = Views/PreferenceCell.swift; sourceTree = "<group>"; };
 		504BC3331DF448F200671614 /* Json.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Json.swift; path = Helper/Json.swift; sourceTree = "<group>"; };
 		504BC3351DF4532E00671614 /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserProfileViewController.swift; path = ViewControllers/UserProfileViewController.swift; sourceTree = "<group>"; };
+		504CCEAA1DF8064E00CF0DFD /* BaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseModel.swift; path = Model/BaseModel.swift; sourceTree = "<group>"; };
+		504CCEAC1DF8069D00CF0DFD /* BaseModelSpine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseModelSpine.swift; path = Model/BaseModelSpine.swift; sourceTree = "<group>"; };
+		504CCEAE1DF808CC00CF0DFD /* SpineHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpineHelper.swift; path = Helper/SpineHelper.swift; sourceTree = "<group>"; };
+		504CCEB01DF80AA700CF0DFD /* SpineModelHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpineModelHelper.swift; path = Helper/SpineModelHelper.swift; sourceTree = "<group>"; };
 		5057F7971DE78527003A8850 /* LoginConfirmationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginConfirmationViewController.swift; path = ViewControllers/LoginConfirmationViewController.swift; sourceTree = "<group>"; };
 		5057F7991DE78E82003A8850 /* Segues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Segues.swift; path = Helper/Segues.swift; sourceTree = "<group>"; };
 		509D51BC1DE5999A0019BB63 /* LaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LaunchViewController.swift; path = ViewControllers/LaunchViewController.swift; sourceTree = "<group>"; };
@@ -48,7 +66,7 @@
 		50EA85971DF56FAC00DFFE09 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Color.swift; path = Helper/Color.swift; sourceTree = "<group>"; };
 		50EA859D1DF5794C00DFFE09 /* UserProfileHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserProfileHelper.swift; path = Helper/UserProfileHelper.swift; sourceTree = "<group>"; };
 		50EA859F1DF5811500DFFE09 /* NetworkHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkHelper.swift; path = Helper/NetworkHelper.swift; sourceTree = "<group>"; };
-		50EA85A11DF597B900DFFE09 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		50EA85A11DF597B900DFFE09 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Error.swift; path = Helper/Error.swift; sourceTree = "<group>"; };
 		FBEE94DB21BBCFA5A5869180 /* Pods_nanou_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_nanou_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -87,6 +105,7 @@
 			children = (
 				50240B2E1DE43F0E00CB6681 /* AppDelegate.swift */,
 				509D51C21DE5CD840019BB63 /* Helper */,
+				504CCEA91DF805DB00CF0DFD /* Model */,
 				509D51BF1DE5C76B0019BB63 /* Views */,
 				509D51BE1DE5C7580019BB63 /* ViewControllers */,
 				50240B321DE43F0E00CB6681 /* Main.storyboard */,
@@ -98,12 +117,23 @@
 			path = "nanou-ios";
 			sourceTree = "<group>";
 		};
+		504CCEA91DF805DB00CF0DFD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				502936C91DF845200087A2D4 /* Preference.swift */,
+				504CCEAA1DF8064E00CF0DFD /* BaseModel.swift */,
+				504CCEAC1DF8069D00CF0DFD /* BaseModelSpine.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		509D51BE1DE5C7580019BB63 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				509D51BC1DE5999A0019BB63 /* LaunchViewController.swift */,
 				5057F7971DE78527003A8850 /* LoginConfirmationViewController.swift */,
 				504BC3351DF4532E00671614 /* UserProfileViewController.swift */,
+				502936D11DF867280087A2D4 /* PreferencesViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -112,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				509D51C01DE5C7870019BB63 /* LoginCell.swift */,
+				502936D51DF8C2F50087A2D4 /* PreferenceCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -127,6 +158,10 @@
 				50EA859F1DF5811500DFFE09 /* NetworkHelper.swift */,
 				50EA85A11DF597B900DFFE09 /* Error.swift */,
 				5000A16F1DF6B2980070636E /* NotificationHelper.swift */,
+				504CCEAE1DF808CC00CF0DFD /* SpineHelper.swift */,
+				504CCEB01DF80AA700CF0DFD /* SpineModelHelper.swift */,
+				502936BB1DF838B60087A2D4 /* CoreDataHelper.swift */,
+				502936CF1DF854340087A2D4 /* PreferenceHelper.swift */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -288,19 +323,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				502936CA1DF845200087A2D4 /* Preference.swift in Sources */,
 				509D51BD1DE5999A0019BB63 /* LaunchViewController.swift in Sources */,
 				50EA859E1DF5794C00DFFE09 /* UserProfileHelper.swift in Sources */,
 				5057F7981DE78527003A8850 /* LoginConfirmationViewController.swift in Sources */,
 				50EA85A21DF597B900DFFE09 /* Error.swift in Sources */,
 				50240B371DE43F0E00CB6681 /* nanou_ios.xcdatamodeld in Sources */,
+				504CCEB11DF80AA700CF0DFD /* SpineModelHelper.swift in Sources */,
 				50EA85A01DF5811500DFFE09 /* NetworkHelper.swift in Sources */,
 				5000A1701DF6B2980070636E /* NotificationHelper.swift in Sources */,
+				504CCEAF1DF808CC00CF0DFD /* SpineHelper.swift in Sources */,
+				502936D21DF867280087A2D4 /* PreferencesViewController.swift in Sources */,
+				502936BC1DF838B60087A2D4 /* CoreDataHelper.swift in Sources */,
 				50EA85981DF56FAC00DFFE09 /* Color.swift in Sources */,
+				502936D01DF854340087A2D4 /* PreferenceHelper.swift in Sources */,
 				5057F79A1DE78E82003A8850 /* Segues.swift in Sources */,
+				504CCEAB1DF8064E00CF0DFD /* BaseModel.swift in Sources */,
+				504CCEAD1DF8069D00CF0DFD /* BaseModelSpine.swift in Sources */,
 				509D51C41DE5CDA70019BB63 /* Routes.swift in Sources */,
 				509D51C11DE5C7870019BB63 /* LoginCell.swift in Sources */,
 				50240B2F1DE43F0E00CB6681 /* AppDelegate.swift in Sources */,
 				504BC3361DF4532E00671614 /* UserProfileViewController.swift in Sources */,
+				502936D61DF8C2F50087A2D4 /* PreferenceCell.swift in Sources */,
 				504BC3341DF448F200671614 /* Json.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -427,7 +471,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1D78B86D79986E5EE78F052A /* Pods-nanou-ios.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = WP53SSE8S6;
 				INFOPLIST_FILE = "nanou-ios/Info.plist";
@@ -442,7 +486,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 08A9B99B0EAA70F22CC17622 /* Pods-nanou-ios.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = WP53SSE8S6;
 				INFOPLIST_FILE = "nanou-ios/Info.plist";

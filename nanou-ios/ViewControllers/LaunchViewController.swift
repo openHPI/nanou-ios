@@ -29,10 +29,13 @@ class LaunchViewController: UICollectionViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        self.checkStatus()
+        URLSession.shared.reset {
+            self.checkStatus()
+        }
     }
 
-    @IBAction func logout(segue: UIStoryboardSegue) {}
+    @IBAction func logout(segue: UIStoryboardSegue) {
+    }
 
     func checkStatus() {
         NetworkHelper.status().onSuccess { authenticated in
@@ -50,12 +53,14 @@ class LaunchViewController: UICollectionViewController {
 
     func updateLoginProviders() {
         NetworkHelper.loginProviders().onSuccess { providers in
-            if self.loginProviders != nil {
-                self.loginProviders = providers
-                self.collectionView?.reloadSections(IndexSet(integer: 1))
-            } else {
-                self.loginProviders = providers
-                self.collectionView?.insertSections(IndexSet(integer: 1))
+            DispatchQueue.main.async {
+                if self.loginProviders != nil {
+                    self.loginProviders = providers
+                    self.collectionView?.reloadSections(IndexSet(integer: 1))
+                } else {
+                    self.loginProviders = providers
+                    self.collectionView?.insertSections(IndexSet(integer: 1))
+                }
             }
         }.onFailure { error in
             NotificationHelper.showNotificationFor(error) {

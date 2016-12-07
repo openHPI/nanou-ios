@@ -205,99 +205,38 @@
         <!--Preferences-->
         <scene sceneID="px1-Af-OdH">
             <objects>
-                <tableViewController id="FSO-Gb-aNI" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="HQK-St-XdJ">
+                <tableViewController id="FSO-Gb-aNI" customClass="PreferencesViewController" customModule="nanou_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="HQK-St-XdJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <sections>
-                            <tableViewSection headerTitle="Pref-1" id="eHC-sn-OPY">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Zgr-Lb-KuT">
-                                        <rect key="frame" x="0.0" y="56" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zgr-Lb-KuT" id="Yob-AD-HPW">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="SSt-oR-klI">
-                                                    <rect key="frame" x="28" y="6" width="319" height="31"/>
-                                                </slider>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L80-XW-V8J">
-                                                    <rect key="frame" x="8" y="8" width="14" height="27"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="14" id="h34-pW-T2L"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mbM-xL-EAN">
-                                                    <rect key="frame" x="353" y="8" width="14" height="27"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="14" id="cit-gp-yEr"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="L80-XW-V8J" firstAttribute="leading" secondItem="Yob-AD-HPW" secondAttribute="leadingMargin" id="Djc-cS-E5n"/>
-                                                <constraint firstItem="SSt-oR-klI" firstAttribute="leading" secondItem="L80-XW-V8J" secondAttribute="trailing" constant="8" id="U43-vt-hZZ"/>
-                                                <constraint firstItem="L80-XW-V8J" firstAttribute="centerY" secondItem="Yob-AD-HPW" secondAttribute="centerY" id="WEx-eo-m2H"/>
-                                                <constraint firstItem="SSt-oR-klI" firstAttribute="centerY" secondItem="Yob-AD-HPW" secondAttribute="centerY" id="hLi-fz-cNm"/>
-                                                <constraint firstItem="mbM-xL-EAN" firstAttribute="trailing" secondItem="Yob-AD-HPW" secondAttribute="trailingMargin" id="jXP-Mh-RqJ"/>
-                                                <constraint firstItem="mbM-xL-EAN" firstAttribute="leading" secondItem="SSt-oR-klI" secondAttribute="trailing" constant="8" id="kHK-w2-e33"/>
-                                                <constraint firstItem="mbM-xL-EAN" firstAttribute="centerY" secondItem="Yob-AD-HPW" secondAttribute="centerY" id="oF9-0S-Ubx"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                            <tableViewSection headerTitle="Pref-2" id="PgS-9o-Xle">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="fqb-OR-m1z" style="IBUITableViewCellStyleDefault" id="Vgi-OZ-KrS">
-                                        <rect key="frame" x="0.0" y="157" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Vgi-OZ-KrS" id="mml-sy-RVu">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Slider" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fqb-OR-m1z">
-                                                    <rect key="frame" x="15" y="0.0" width="345" height="43"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                            <tableViewSection headerTitle="Pref-3" id="oVu-Ln-Z2m">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="0tW-9D-epJ" style="IBUITableViewCellStyleDefault" id="ise-VY-5he">
-                                        <rect key="frame" x="0.0" y="258" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ise-VY-5he" id="8LJ-83-VIS">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Slider" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0tW-9D-epJ">
-                                                    <rect key="frame" x="15" y="0.0" width="345" height="43"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="preferenceCell" id="Zgr-Lb-KuT" customClass="PreferenceCell" customModule="nanou_ios" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="56" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zgr-Lb-KuT" id="Yob-AD-HPW">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" continuous="NO" minimumValueImage="TabUser" maximumValueImage="TabUserSelected" translatesAutoresizingMaskIntoConstraints="NO" id="SSt-oR-klI">
+                                            <rect key="frame" x="6" y="6" width="363" height="31"/>
+                                            <connections>
+                                                <action selector="preferenceWeightChanged:" destination="Zgr-Lb-KuT" eventType="valueChanged" id="m29-LT-Epb"/>
+                                            </connections>
+                                        </slider>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="SSt-oR-klI" secondAttribute="trailing" constant="8" id="YUM-ND-CfG"/>
+                                        <constraint firstItem="SSt-oR-klI" firstAttribute="centerY" secondItem="Yob-AD-HPW" secondAttribute="centerY" id="hLi-fz-cNm"/>
+                                        <constraint firstItem="SSt-oR-klI" firstAttribute="leading" secondItem="Yob-AD-HPW" secondAttribute="leading" constant="8" id="peA-2E-9Rs"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="weightSlider" destination="SSt-oR-klI" id="XLA-px-fTa"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
                         <connections>
                             <outlet property="dataSource" destination="FSO-Gb-aNI" id="Ph9-hW-jLC"/>
                             <outlet property="delegate" destination="FSO-Gb-aNI" id="7ME-CY-odc"/>
