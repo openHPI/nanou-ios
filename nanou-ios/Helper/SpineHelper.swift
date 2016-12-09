@@ -30,6 +30,18 @@ class NanouClient: HTTPClient {
 
 }
 
+struct NanouClientDelegate: HTTPClientDelegate {
+
+    func httpClient(_ client: HTTPClient, willPerformRequestWithMethod method: String, url: URL, payload: Data?) {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+    }
+
+    func httpClient(_ client: HTTPClient, didPerformRequestWithMethod method: String, url: URL, success: Bool) {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
+    }
+
+}
+
 struct SwiftyBeaverLogger: Logger {
 
     func log<T>(_ object: T, level: LogLevel) {
@@ -59,7 +71,9 @@ class SpineHelper {
             Spine.setLogLevel(.debug, forDomain: .spine)
         #endif
 
-        let spine = Spine(baseURL: NSURL(string: Route.api) as! URL, networkClient: NanouClient())  // tailor:disable
+        let nanouClient = NanouClient()
+        nanouClient.delegate = NanouClientDelegate()
+        let spine = Spine(baseURL: NSURL(string: Route.api) as! URL, networkClient: nanouClient)  // tailor:disable
 
         spine.registerResource(PreferenceSpine.self)
 
