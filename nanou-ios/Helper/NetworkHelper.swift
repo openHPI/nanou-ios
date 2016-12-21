@@ -37,7 +37,7 @@ extension NetworkHelper {
     class func status() -> Future<Bool, NanouError> {
         let promise = Promise<Bool, NanouError>()
 
-        Alamofire.request(Route.status, headers: NetworkHelper.requestHeaders).responseJSON { response in
+        Alamofire.request(Route.authstatus, headers: NetworkHelper.requestHeaders).responseJSON { response in
             switch response.result {
             case .success(let data):
                 guard let json = data as? NSDictionary else {

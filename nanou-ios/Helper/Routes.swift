@@ -9,8 +9,14 @@
 import Foundation
 
 struct Route {
-    static let base = "http://localhost:8000"
-    static let status = base + "/social/status/"
-    static let loginProviders = base + "/social/login-providers/"
-    static let api = base + "/api"
+    #if DEBUG
+    static let base = "http://localhost:8000/"
+    #else
+    static let base = "https://hpi.de/meinel/nanou/"
+    #endif
+
+    static let api = base + "api/"
+    static let authstatus = api + "auth-status/"
+    static let loginProviders = api + "login-providers/"
+
 }

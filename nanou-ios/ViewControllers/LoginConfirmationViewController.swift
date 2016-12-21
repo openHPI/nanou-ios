@@ -18,7 +18,7 @@ class LoginConfirmationViewController: UIViewController, UIToolbarDelegate, UIWe
 
         URLSession.shared.reset {
             if let urlString = self.urlString {
-                if let url = URL(string: Route.base + urlString) {
+                if let url = URL(string: urlString) {
                     self.webview.loadRequest(URLRequest(url: url))
                 } else {
                     log.error("Show LoginConfirmationViewController without valid url")
