@@ -15,7 +15,7 @@ class BaseModel: NSManagedObject {
         super.init(entity: entity, insertInto: context)
     }
 
-    func loadFromSpine(resource: BaseModelSpine) throws {
+    func loadFromSpine<T: BaseModel>(resource: BaseModelSpine<T>) throws {
         for field in type(of: resource).fields {
             var value = resource.value(forKey: field.name)
             if value is NSNull {
@@ -27,16 +27,16 @@ class BaseModel: NSManagedObject {
                     value.saveToCoreData(self)
                 }
             } else if field is ToOneRelationship {
-                if let value = value as? BaseModelSpine {
-                    let currentRelatedObject = self.value(forKey: field.name) as? BaseModel
-                    let relatedObjects = currentRelatedObject != nil ? [currentRelatedObject!] : [BaseModel]()
+                if let value = value as? BaseModelSpine<T> {
+                    let currentRelatedObject = self.value(forKey: field.name) as? T
+                    let relatedObjects = currentRelatedObject != nil ? [currentRelatedObject!] : []
                     let cdObjects = try SpineModelHelper.syncObjects(objectsToUpdate: relatedObjects, spineObjects: [value], inject: nil, save: false)
                     self.setValue(cdObjects[0], forKey: field.name)
                 }
             } else if field is ToManyRelationship {
                 if let value = value as? ResourceCollection {
-                    let spineObjects = value.resources as! [BaseModelSpine]  // tailor:disable
-                    let relatedObjects = self.value(forKey: field.name) as? [BaseModel] ?? []
+                    let spineObjects = value.resources as! [BaseModelSpine<T>]  // tailor:disable
+                    let relatedObjects = self.value(forKey: field.name) as? [T] ?? []
                     let cdObjects = try SpineModelHelper.syncObjects(objectsToUpdate: relatedObjects, spineObjects: spineObjects, inject: nil, save: false)
                     self.setValue(NSSet(array: cdObjects), forKey: field.name)
                 }

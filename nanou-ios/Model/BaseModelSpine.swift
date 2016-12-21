@@ -8,14 +8,8 @@
 
 import Spine
 
-class BaseModelSpine: Resource {
-
-//    typealias cdType = BaseModel
-
-    class var cdType: BaseModel.Type {
-        fatalError("Override cdType in a subclass.")
-    }
-
+class BaseModelSpine<T: BaseModel>: Resource {
+    typealias cdType = T
 }
 
 class CompoundAttribute: Attribute {

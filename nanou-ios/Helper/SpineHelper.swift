@@ -104,7 +104,7 @@ class SpineHelper {
         }.mapError(mapNanouError)
     }
 
-    static func save<T: Resource>(resource: T) -> Future<T, NanouError> {
+    static func save<T: BaseModel>(resource: BaseModelSpine<T>) -> Future<BaseModelSpine<T>, NanouError> {
         return self.spine.save(resource).mapError(mapNanouError)
     }
 

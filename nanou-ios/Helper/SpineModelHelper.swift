@@ -13,12 +13,12 @@ import BrightFutures
 
 class SpineModelHelper {
 
-    class func syncObjects<T: BaseModel>(objectsToUpdateRequest: NSFetchRequest<T>, spineObjects: [BaseModelSpine], inject: [String: AnyObject?]?, save: Bool) throws -> [T] {
+    class func syncObjects<T: BaseModel>(objectsToUpdateRequest: NSFetchRequest<T>, spineObjects: [BaseModelSpine<T>], inject: [String: AnyObject?]?, save: Bool) throws -> [T] {
         let objectsToUpdate = try CoreDataHelper.executeFetchRequest(objectsToUpdateRequest)
         return try self.syncObjects(objectsToUpdate: objectsToUpdate, spineObjects: spineObjects, inject: inject, save: save)
     }
 
-    class func syncObjects<T: BaseModel>(objectsToUpdate: [T], spineObjects: [BaseModelSpine], inject: [String: AnyObject?]?, save: Bool) throws -> [T] {
+    class func syncObjects<T: BaseModel>(objectsToUpdate: [T], spineObjects: [BaseModelSpine<T>], inject: [String: AnyObject?]?, save: Bool) throws -> [T] {
         var objectsToUpdate = objectsToUpdate
 
         var cdObjects = [T]()
@@ -68,7 +68,7 @@ class SpineModelHelper {
     }
 
     class func syncObjectsFuture<T: BaseModel>(objectsToUpdateRequest: NSFetchRequest<T>,
-                                 spineObjects: [BaseModelSpine],
+                                 spineObjects: [BaseModelSpine<T>],
                                  inject: [String: AnyObject?]?,
                                  save: Bool) -> Future<[T], NanouError> {
         return Future<[T], NanouError> { complete in
@@ -88,7 +88,7 @@ class SpineModelHelper {
     }
 
     class func syncObjectsFuture<T: BaseModel>(objectsToUpdate: [T],
-                                 spineObjects: [BaseModelSpine],
+                                 spineObjects: [BaseModelSpine<T>],
                                  inject: [String: AnyObject?]?,
                                  save: Bool) -> Future<[T], NanouError> {
         return Future<[T], NanouError> { complete in

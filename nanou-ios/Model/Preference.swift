@@ -13,8 +13,7 @@ import Spine
 class Preference: BaseModel {
 }
 
-class PreferenceSpine: BaseModelSpine {
-//    typealias cdType = Preference
+class PreferenceSpine: BaseModelSpine<Preference> {
 
     var name: String?
     var weight: NSNumber?
@@ -24,10 +23,6 @@ class PreferenceSpine: BaseModelSpine {
         self.id = preference.id
         self.name = preference.name
         self.weight = preference.weight
-    }
-
-    override class var cdType: BaseModel.Type {
-        return Preference.self
     }
 
     override class var resourceType: ResourceType {
