@@ -137,35 +137,43 @@ extension LaunchViewController {
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
-fileprivate let horizontalSectionInsets: CGFloat = 20.0
+fileprivate let cellSize: CGSize = CGSize(width: 150, height: 50)
 
 extension LaunchViewController: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 150, height: 50)
+        return cellSize
     }
 
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         insetForSectionAt section: Int) -> UIEdgeInsets {
-        if self.loginProviders == nil {
-            let indexPath = IndexPath(item: 0, section: section)
-            let cellSize = self.collectionView(collectionView, layout: collectionViewLayout, sizeForItemAt: indexPath)
-            let verticalSectionInset = (collectionView.bounds.height - cellSize.height) / 2
-            return UIEdgeInsets(top: verticalSectionInset,
-                                left: horizontalSectionInsets,
-                                bottom: verticalSectionInset,
-                                right: horizontalSectionInsets)
+        let loginProvidersCount = self.loginProviders?.count ?? 0
+        var remainingHeight = collectionView.bounds.height
+        remainingHeight -= cellSize.height * CGFloat(loginProvidersCount + 1) // cells
+        remainingHeight -= self.collectionView(collectionView, layout: collectionViewLayout, minimumLineSpacingForSectionAt: 1) * CGFloat(loginProvidersCount) // cell spacings
+        if loginProvidersCount > 0 {
+            remainingHeight -= 150.0
         }
-        return UIEdgeInsets(top: 100.0, left: 20.0, bottom: 50.0, right: 20.0)
+        let horizontalSectionInset = (collectionView.bounds.width - cellSize.width) / 2
+        if section == 0 {
+            let topSectionInset = remainingHeight / 2
+            let bottomSectionInset = loginProvidersCount > 0 ? 150.0 : topSectionInset
+            return UIEdgeInsets(top: topSectionInset,
+                                left: horizontalSectionInset,
+                                bottom: bottomSectionInset,
+                                right: horizontalSectionInset)
+        }
+
+        return UIEdgeInsets(top: 0, left: horizontalSectionInset, bottom: remainingHeight / 2, right: horizontalSectionInset)
     }
 
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return horizontalSectionInsets
+        return 20.0
     }
 
 }
