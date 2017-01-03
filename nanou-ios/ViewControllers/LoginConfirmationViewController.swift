@@ -41,16 +41,25 @@ class LoginConfirmationViewController: UIViewController, UIToolbarDelegate, UIWe
         if let webViewContent = webview.stringByEvaluatingJavaScript(from: "document.body.innerText") {
             if let status = convertToDictionary(text: webViewContent) {
                 guard let authenticated = status["authenticated"] as? Bool else {
+                    log.error("Login | missing authentication value")
                     return
                 }
 
                 guard let token = status["token"] as? String else {
+                    log.error("Login | missing token")
                     return
                 }
 
                 if authenticated {
                     UserProfileHelper.storeToken(token)
-                    self.performSegue(withIdentifier: "open", sender: nil)
+                    if let prefInitialized = status["preferencesInitialized"] as? Bool, prefInitialized == true {
+                        self.performSegue(withIdentifier: "open", sender: nil)
+                    } else {
+                        self.performSegue(withIdentifier: "setupPreferences", sender: nil)
+
+                    }
+                } else {
+                    log.error("Login | user could not authenticate")
                 }
             }
         }

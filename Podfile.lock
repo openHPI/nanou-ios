@@ -4,6 +4,7 @@ PODS:
     - Result (~> 3.0)
   - LNRSimpleNotifications (0.5.3)
   - Result (3.0.0)
+  - SIFloatingCollection (2.1)
   - Spine (0.3):
     - BrightFutures (~> 5.0)
     - SwiftyJSON (~> 3.1)
@@ -14,15 +15,22 @@ DEPENDENCIES:
   - Alamofire (= 4.2.0)
   - BrightFutures (= 5.1.0)
   - LNRSimpleNotifications (= 0.5.3)
+  - SIFloatingCollection (from `https://github.com/pavan309/SIFloatingCollection_Swift`, commit `e22f687`)
   - Spine (from `https://github.com/wvteijlingen/Spine.git`, commit `a87ea59`)
   - SwiftyBeaver (= 1.1.0)
 
 EXTERNAL SOURCES:
+  SIFloatingCollection:
+    :commit: e22f687
+    :git: https://github.com/pavan309/SIFloatingCollection_Swift
   Spine:
     :commit: a87ea59
     :git: https://github.com/wvteijlingen/Spine.git
 
 CHECKOUT OPTIONS:
+  SIFloatingCollection:
+    :commit: e22f687
+    :git: https://github.com/pavan309/SIFloatingCollection_Swift
   Spine:
     :commit: a87ea59
     :git: https://github.com/wvteijlingen/Spine.git
@@ -32,10 +40,11 @@ SPEC CHECKSUMS:
   BrightFutures: 62aafb1a63520eda91c9286bf4be33e58e043938
   LNRSimpleNotifications: 13aa05e2f65ccf196f736def89178007f30a5182
   Result: 1b3e431f37cbcd3ad89c6aa9ab0ae55515fae3b6
+  SIFloatingCollection: 2603c59df230f161a0a4400ac25fa8d013be7edb
   Spine: 3a456d79af4371a5875518f5144c47e287b15ecb
   SwiftyBeaver: af90fecea02b46fe073dc8e622362da06886c039
   SwiftyJSON: 38a8ea2006779c0fc4c310cb2ee8195327740faf
 
-PODFILE CHECKSUM: abc0e88a0acf83d29bc4c32c9013a19e41d336e0
+PODFILE CHECKSUM: 4fab2e324d35894103e68782fa01a907f7f52cab
 
 COCOAPODS: 1.1.1

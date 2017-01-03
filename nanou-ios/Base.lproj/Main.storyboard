@@ -330,7 +330,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yXM-dc-dpv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1826" y="240"/>
+            <point key="canvasLocation" x="-2137" y="252"/>
         </scene>
         <!--Title-->
         <scene sceneID="YsC-gq-emb">
@@ -384,11 +384,63 @@
                     <connections>
                         <outlet property="webview" destination="Ta6-HA-Fs6" id="Tyd-uS-Vqc"/>
                         <segue destination="iyy-QL-N5u" kind="custom" identifier="open" customClass="SegueFromLeft" customModule="nanou_ios" customModuleProvider="target" id="dh6-Kl-nNu"/>
+                        <segue destination="hwL-l5-Uc8" kind="custom" identifier="setupPreferences" customClass="SegueFromLeft" customModule="nanou_ios" customModuleProvider="target" id="wAw-Fw-PhL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JOf-j7-0U5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-906" y="-170"/>
+            <point key="canvasLocation" x="-1340" y="-171"/>
+        </scene>
+        <!--Initial Preference View Controller-->
+        <scene sceneID="hx3-px-LxC">
+            <objects>
+                <viewController id="hwL-l5-Uc8" customClass="InitialPreferenceViewController" customModule="nanou_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PHB-CW-SDn"/>
+                        <viewControllerLayoutGuide type="bottom" id="Wak-WW-Iou"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rKW-y0-xYh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HC8-7t-kQH">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="dmP-lE-Mqm"/>
+                                    <barButtonItem systemItem="done" id="cZx-bS-BGg">
+                                        <connections>
+                                            <action selector="commitSelection:" destination="hwL-l5-Uc8" id="9mg-W7-xEE"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                                <connections>
+                                    <outlet property="delegate" destination="hwL-l5-Uc8" id="Hgg-9q-Xo3"/>
+                                </connections>
+                            </toolbar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Yq-Pl-dav">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4Yq-Pl-dav" firstAttribute="leading" secondItem="rKW-y0-xYh" secondAttribute="leading" id="216-Tj-X1c"/>
+                            <constraint firstItem="Wak-WW-Iou" firstAttribute="top" secondItem="4Yq-Pl-dav" secondAttribute="bottom" id="3nN-w7-17G"/>
+                            <constraint firstItem="4Yq-Pl-dav" firstAttribute="top" secondItem="HC8-7t-kQH" secondAttribute="bottom" id="5zg-VV-HLo"/>
+                            <constraint firstAttribute="trailing" secondItem="4Yq-Pl-dav" secondAttribute="trailing" id="GXf-Hu-NnD"/>
+                            <constraint firstItem="HC8-7t-kQH" firstAttribute="top" secondItem="PHB-CW-SDn" secondAttribute="bottom" id="cvL-g1-8ss"/>
+                            <constraint firstAttribute="trailing" secondItem="HC8-7t-kQH" secondAttribute="trailing" id="gHN-2g-gG2"/>
+                            <constraint firstItem="HC8-7t-kQH" firstAttribute="leading" secondItem="rKW-y0-xYh" secondAttribute="leading" id="jzA-9b-FHC"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="sceneWrapperView" destination="4Yq-Pl-dav" id="tdX-u3-m6g"/>
+                        <segue destination="iyy-QL-N5u" kind="custom" identifier="open" customClass="SegueFromLeft" customModule="nanou_ios" customModuleProvider="target" id="Y2W-jt-Ygt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9j0-Jh-7SB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-508" y="-485"/>
         </scene>
     </scenes>
     <resources>
@@ -399,7 +451,7 @@
         <image name="TabVideoSelected" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Wb9-Li-FOF"/>
+        <segue reference="Y2W-jt-Ygt"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.94509803921568625" green="0.52156862745098043" blue="0.24705882352941178" alpha="1" colorSpace="calibratedRGB"/>
 </document>

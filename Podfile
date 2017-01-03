@@ -5,6 +5,7 @@ target 'nanou-ios' do
   pod 'Alamofire', '4.2.0'
   pod 'BrightFutures', '5.1.0'
   pod 'LNRSimpleNotifications', '0.5.3'
+  pod 'SIFloatingCollection', :git => 'https://github.com/pavan309/SIFloatingCollection_Swift', :commit => 'e22f687'
   pod 'Spine', :git => 'https://github.com/wvteijlingen/Spine.git', :commit => 'a87ea59'
   pod 'SwiftyBeaver', '1.1.0'
 end

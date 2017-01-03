@@ -20,6 +20,9 @@
 		502936D61DF8C2F50087A2D4 /* PreferenceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502936D51DF8C2F50087A2D4 /* PreferenceCell.swift */; };
 		504BC3341DF448F200671614 /* Json.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504BC3331DF448F200671614 /* Json.swift */; };
 		504BC3361DF4532E00671614 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504BC3351DF4532E00671614 /* UserProfileViewController.swift */; };
+		504CAFF01E1BCBCD00EF5482 /* InitialPreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504CAFEF1E1BCBCD00EF5482 /* InitialPreferenceViewController.swift */; };
+		504CAFF21E1BCE7800EF5482 /* BubbleNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504CAFF11E1BCE7800EF5482 /* BubbleNode.swift */; };
+		504CAFF41E1BCEAF00EF5482 /* BubbleScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504CAFF31E1BCEAE00EF5482 /* BubbleScene.swift */; };
 		504CCEAB1DF8064E00CF0DFD /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504CCEAA1DF8064E00CF0DFD /* BaseModel.swift */; };
 		504CCEAD1DF8069D00CF0DFD /* BaseModelSpine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504CCEAC1DF8069D00CF0DFD /* BaseModelSpine.swift */; };
 		504CCEAF1DF808CC00CF0DFD /* SpineHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504CCEAE1DF808CC00CF0DFD /* SpineHelper.swift */; };
@@ -54,6 +57,9 @@
 		502936D51DF8C2F50087A2D4 /* PreferenceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreferenceCell.swift; path = Views/PreferenceCell.swift; sourceTree = "<group>"; };
 		504BC3331DF448F200671614 /* Json.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Json.swift; path = Helper/Json.swift; sourceTree = "<group>"; };
 		504BC3351DF4532E00671614 /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserProfileViewController.swift; path = ViewControllers/UserProfileViewController.swift; sourceTree = "<group>"; };
+		504CAFEF1E1BCBCD00EF5482 /* InitialPreferenceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InitialPreferenceViewController.swift; path = ViewControllers/InitialPreferenceViewController.swift; sourceTree = "<group>"; };
+		504CAFF11E1BCE7800EF5482 /* BubbleNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BubbleNode.swift; path = Views/BubbleNode.swift; sourceTree = "<group>"; };
+		504CAFF31E1BCEAE00EF5482 /* BubbleScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BubbleScene.swift; sourceTree = "<group>"; };
 		504CCEAA1DF8064E00CF0DFD /* BaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseModel.swift; path = Model/BaseModel.swift; sourceTree = "<group>"; };
 		504CCEAC1DF8069D00CF0DFD /* BaseModelSpine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseModelSpine.swift; path = Model/BaseModelSpine.swift; sourceTree = "<group>"; };
 		504CCEAE1DF808CC00CF0DFD /* SpineHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpineHelper.swift; path = Helper/SpineHelper.swift; sourceTree = "<group>"; };
@@ -134,6 +140,7 @@
 				5057F7971DE78527003A8850 /* LoginConfirmationViewController.swift */,
 				504BC3351DF4532E00671614 /* UserProfileViewController.swift */,
 				502936D11DF867280087A2D4 /* PreferencesViewController.swift */,
+				504CAFEF1E1BCBCD00EF5482 /* InitialPreferenceViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -143,6 +150,8 @@
 			children = (
 				509D51C01DE5C7870019BB63 /* LoginCell.swift */,
 				502936D51DF8C2F50087A2D4 /* PreferenceCell.swift */,
+				504CAFF11E1BCE7800EF5482 /* BubbleNode.swift */,
+				504CAFF31E1BCEAE00EF5482 /* BubbleScene.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -341,6 +350,7 @@
 				509D51BD1DE5999A0019BB63 /* LaunchViewController.swift in Sources */,
 				50EA859E1DF5794C00DFFE09 /* UserProfileHelper.swift in Sources */,
 				5057F7981DE78527003A8850 /* LoginConfirmationViewController.swift in Sources */,
+				504CAFF41E1BCEAF00EF5482 /* BubbleScene.swift in Sources */,
 				50EA85A21DF597B900DFFE09 /* Error.swift in Sources */,
 				50240B371DE43F0E00CB6681 /* nanou_ios.xcdatamodeld in Sources */,
 				504CCEB11DF80AA700CF0DFD /* SpineModelHelper.swift in Sources */,
@@ -353,6 +363,8 @@
 				502936D01DF854340087A2D4 /* PreferenceHelper.swift in Sources */,
 				5057F79A1DE78E82003A8850 /* Segues.swift in Sources */,
 				504CCEAB1DF8064E00CF0DFD /* BaseModel.swift in Sources */,
+				504CAFF01E1BCBCD00EF5482 /* InitialPreferenceViewController.swift in Sources */,
+				504CAFF21E1BCE7800EF5482 /* BubbleNode.swift in Sources */,
 				504CCEAD1DF8069D00CF0DFD /* BaseModelSpine.swift in Sources */,
 				509D51C41DE5CDA70019BB63 /* Routes.swift in Sources */,
 				509D51C11DE5C7870019BB63 /* LoginCell.swift in Sources */,
