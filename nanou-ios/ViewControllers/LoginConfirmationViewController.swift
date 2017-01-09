@@ -30,7 +30,7 @@ class LoginConfirmationViewController: UIViewController, UIToolbarDelegate, UIWe
     }
 
     @IBAction func cancelConfirmation(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        self.performSegue(withIdentifier: "cancel", sender: sender)
     }
 
     func position(for bar: UIBarPositioning) -> UIBarPosition {

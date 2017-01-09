@@ -194,7 +194,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="hdU-Jd-r8e"/>
                     <connections>
-                        <segue destination="DLE-XZ-HOB" kind="unwind" identifier="logout" unwindAction="logoutWithSegue:" id="P4f-cg-rLB"/>
+                        <segue destination="DLE-XZ-HOB" kind="unwind" identifier="logout" customClass="SegueUnwindFade" customModule="nanou_ios" customModuleProvider="target" unwindAction="logoutWithSegue:" id="P4f-cg-rLB"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XiE-gx-pCC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -215,7 +215,7 @@
                                 <rect key="frame" x="0.0" y="56" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zgr-Lb-KuT" id="Yob-AD-HPW">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" continuous="NO" minimumValueImage="TabUser" maximumValueImage="TabUserSelected" translatesAutoresizingMaskIntoConstraints="NO" id="SSt-oR-klI">
@@ -383,11 +383,13 @@
                     </navigationItem>
                     <connections>
                         <outlet property="webview" destination="Ta6-HA-Fs6" id="Tyd-uS-Vqc"/>
-                        <segue destination="iyy-QL-N5u" kind="custom" identifier="open" customClass="SegueFromLeft" customModule="nanou_ios" customModuleProvider="target" id="dh6-Kl-nNu"/>
+                        <segue destination="iyy-QL-N5u" kind="custom" identifier="open" customClass="SegueFade" customModule="nanou_ios" customModuleProvider="target" id="dh6-Kl-nNu"/>
                         <segue destination="hwL-l5-Uc8" kind="custom" identifier="setupPreferences" customClass="SegueFromLeft" customModule="nanou_ios" customModuleProvider="target" id="wAw-Fw-PhL"/>
+                        <segue destination="dPE-nv-tZ8" kind="unwind" identifier="cancel" customClass="SegueUnwindFromRight" customModule="nanou_ios" customModuleProvider="target" unwindAction="logoutWithSegue:" id="jQg-Db-psd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JOf-j7-0U5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="dPE-nv-tZ8" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-1340" y="-171"/>
         </scene>
@@ -435,7 +437,7 @@
                     </view>
                     <connections>
                         <outlet property="sceneWrapperView" destination="4Yq-Pl-dav" id="tdX-u3-m6g"/>
-                        <segue destination="iyy-QL-N5u" kind="custom" identifier="open" customClass="SegueFromLeft" customModule="nanou_ios" customModuleProvider="target" id="Y2W-jt-Ygt"/>
+                        <segue destination="iyy-QL-N5u" kind="custom" identifier="open" customClass="SegueFade" customModule="nanou_ios" customModuleProvider="target" id="Y2W-jt-Ygt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9j0-Jh-7SB" userLabel="First Responder" sceneMemberID="firstResponder"/>
