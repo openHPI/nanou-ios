@@ -31,6 +31,43 @@ class NetworkHelper {
     }
 }
 
+// MARK: - test login
+extension NetworkHelper {
+
+    class func testLogin() -> Future<String, NanouError> {
+        let promise = Promise<String, NanouError>()
+
+        let uuid = UIDevice.current.identifierForVendor ?? UUID.init()
+        let parameters: Parameters = ["vendorId": uuid]
+        Alamofire.request(Route.testLogin, parameters: parameters, headers: NetworkHelper.requestHeaders).responseJSON { response in
+            switch response.result {
+            case .success(let data):
+                guard let json = data as? NSDictionary else {
+                    log.error("Request 'test-login' | malformed JSON response or timeout")
+                    promise.failure(NanouError.invalidData)
+                    return
+                }
+                log.verbose("Request 'test-login' | retrieved json: \(json)")
+
+                guard let token = json["token"] as? String else {
+                    log.error("Request 'test-login' | malformed JSON response for key 'token'")
+                    promise.failure(NanouError.invalidData)
+                    return
+                }
+                log.verbose("Request 'test-login' | retrieved authentication status: \(token)")
+
+                promise.success(token)
+            case .failure(let error):
+                log.error("Request 'status' | Failed with error: \(error)")
+                promise.failure(NanouError.network(error))
+            }
+        }
+
+        return promise.future
+    }
+
+}
+
 // MARK: - Status
 extension NetworkHelper {
 

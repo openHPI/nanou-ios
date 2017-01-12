@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ZfJ-OJ-69J">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="oSX-zO-wpc">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -11,6 +11,68 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Launch View Controller-->
+        <scene sceneID="DR4-m4-fLN">
+            <objects>
+                <viewController id="oSX-zO-wpc" customClass="LaunchViewController" customModule="nanou_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="efU-c6-Mli"/>
+                        <viewControllerLayoutGuide type="bottom" id="C8n-12-MsK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Iat-iZ-iST">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="a45-bZ-xx0">
+                                <rect key="frame" x="121" y="313.5" width="134" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="134" id="iGM-pT-wr0"/>
+                                    <constraint firstAttribute="width" secondItem="a45-bZ-xx0" secondAttribute="height" multiplier="200:59" id="xr8-r6-a3o"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="41m-3W-abb" userLabel="ButtonView">
+                                <rect key="frame" x="16" y="617" width="343" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pfe-Ad-693">
+                                        <rect key="frame" x="0.0" y="0.0" width="161.5" height="30"/>
+                                        <state key="normal" title="Login">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="login:" destination="oSX-zO-wpc" eventType="touchUpInside" id="YVT-eh-QOa"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="afZ-BF-kFc">
+                                        <rect key="frame" x="181.5" y="0.0" width="161.5" height="30"/>
+                                        <state key="normal" title="Test">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="testLogin:" destination="oSX-zO-wpc" eventType="touchUpInside" id="0S4-K5-bGf"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="0.94509803920000002" green="0.52156862749999999" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="C8n-12-MsK" firstAttribute="top" secondItem="41m-3W-abb" secondAttribute="bottom" constant="20" id="EQg-zB-Md8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="41m-3W-abb" secondAttribute="trailing" id="SqJ-81-diq"/>
+                            <constraint firstItem="41m-3W-abb" firstAttribute="leading" secondItem="Iat-iZ-iST" secondAttribute="leadingMargin" id="ZpI-Hy-xW8"/>
+                            <constraint firstItem="a45-bZ-xx0" firstAttribute="centerX" secondItem="Iat-iZ-iST" secondAttribute="centerX" id="lfg-0R-qvM"/>
+                            <constraint firstItem="a45-bZ-xx0" firstAttribute="centerY" secondItem="Iat-iZ-iST" secondAttribute="centerY" id="sZA-oS-YQt"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="buttonView" destination="41m-3W-abb" id="iSc-8c-mca"/>
+                        <segue destination="iyy-QL-N5u" kind="custom" identifier="open" customClass="SegueFade" customModule="nanou_ios" customModuleProvider="target" id="u8l-AM-NsG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="770-pT-SvC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-772" y="252"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="S01-vI-bHt">
             <objects>
@@ -248,202 +310,6 @@
             </objects>
             <point key="canvasLocation" x="3016.8000000000002" y="622.93853073463276"/>
         </scene>
-        <!--Launch View Controller-->
-        <scene sceneID="IKC-r7-uy7">
-            <objects>
-                <collectionViewController id="ZfJ-OJ-69J" customClass="LaunchViewController" customModule="nanou_ios" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="4mx-AA-brm">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Do1-9x-X4Q">
-                            <size key="itemSize" width="155" height="155"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="LogoCell" reuseIdentifier="LogoCell" id="0ZS-ca-VyH">
-                                <rect key="frame" x="0.0" y="0.0" width="158" height="155"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="158" height="155"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="Kxr-5l-MGH">
-                                            <rect key="frame" x="8" y="56" width="142" height="42"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" secondItem="Kxr-5l-MGH" secondAttribute="height" multiplier="200:59" id="1VC-vr-zPZ"/>
-                                            </constraints>
-                                        </imageView>
-                                    </subviews>
-                                </view>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="Kxr-5l-MGH" firstAttribute="centerY" secondItem="0ZS-ca-VyH" secondAttribute="centerY" id="LQR-Cf-cUc"/>
-                                    <constraint firstItem="Kxr-5l-MGH" firstAttribute="trailing" secondItem="0ZS-ca-VyH" secondAttribute="trailingMargin" id="gQR-I2-uso"/>
-                                    <constraint firstItem="Kxr-5l-MGH" firstAttribute="leading" secondItem="0ZS-ca-VyH" secondAttribute="leadingMargin" id="gWD-hp-9Ii"/>
-                                </constraints>
-                                <size key="customSize" width="158" height="155"/>
-                            </collectionViewCell>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="LoginCell" reuseIdentifier="LoginCell" id="4f6-uT-O4G" customClass="LoginCell" customModule="nanou_ios" customModuleProvider="target">
-                                <rect key="frame" x="217" y="0.0" width="158" height="155"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="158" height="155"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HEV-2t-o2c">
-                                            <rect key="frame" x="8" y="63" width="142" height="30"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="30" id="1w1-HY-cAJ"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </view>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="HEV-2t-o2c" firstAttribute="leading" secondItem="4f6-uT-O4G" secondAttribute="leadingMargin" id="g6g-IC-mZn"/>
-                                    <constraint firstItem="HEV-2t-o2c" firstAttribute="trailing" secondItem="4f6-uT-O4G" secondAttribute="trailingMargin" id="iAr-yH-7mw"/>
-                                    <constraint firstItem="HEV-2t-o2c" firstAttribute="centerY" secondItem="4f6-uT-O4G" secondAttribute="centerY" id="oXa-iF-uXc"/>
-                                </constraints>
-                                <size key="customSize" width="158" height="155"/>
-                                <connections>
-                                    <outlet property="title" destination="HEV-2t-o2c" id="ly4-ky-Olb"/>
-                                    <segue destination="Gyn-pV-Z4x" kind="custom" identifier="sociallogin" customClass="SegueFromLeft" customModule="nanou_ios" customModuleProvider="target" id="Pk2-jf-xFL"/>
-                                </connections>
-                            </collectionViewCell>
-                        </cells>
-                        <connections>
-                            <outlet property="dataSource" destination="ZfJ-OJ-69J" id="3Lk-NY-IhW"/>
-                            <outlet property="delegate" destination="ZfJ-OJ-69J" id="5Kf-8I-85v"/>
-                        </connections>
-                    </collectionView>
-                    <navigationItem key="navigationItem" id="u8Z-kx-eFu"/>
-                    <connections>
-                        <outlet property="view" destination="4mx-AA-brm" id="kTJ-di-HOQ"/>
-                        <segue destination="iyy-QL-N5u" kind="custom" identifier="open" customClass="SegueFromLeft" customModule="nanou_ios" customModuleProvider="target" id="Wb9-Li-FOF"/>
-                    </connections>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yXM-dc-dpv" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2137" y="252"/>
-        </scene>
-        <!--Title-->
-        <scene sceneID="YsC-gq-emb">
-            <objects>
-                <viewController id="Gyn-pV-Z4x" customClass="LoginConfirmationViewController" customModule="nanou_ios" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="j44-kb-eiP"/>
-                        <viewControllerLayoutGuide type="bottom" id="bOo-Dm-GZ2"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="tdW-nE-NN3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ta6-HA-Fs6">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <connections>
-                                    <outlet property="delegate" destination="Gyn-pV-Z4x" id="sp9-8W-mfT"/>
-                                </connections>
-                            </webView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6RX-ug-bEE">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <items>
-                                    <barButtonItem systemItem="cancel" id="Sws-9u-G72">
-                                        <connections>
-                                            <action selector="cancelConfirmation:" destination="Gyn-pV-Z4x" id="nTv-mL-hck"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="gmX-J3-N8v"/>
-                                </items>
-                                <connections>
-                                    <outlet property="delegate" destination="Gyn-pV-Z4x" id="nyI-rG-7Iw"/>
-                                </connections>
-                            </toolbar>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="bOo-Dm-GZ2" firstAttribute="top" secondItem="Ta6-HA-Fs6" secondAttribute="bottom" id="Fu3-Hc-kz6"/>
-                            <constraint firstItem="Ta6-HA-Fs6" firstAttribute="top" secondItem="6RX-ug-bEE" secondAttribute="bottom" id="HZN-3K-NA0"/>
-                            <constraint firstItem="Ta6-HA-Fs6" firstAttribute="leading" secondItem="tdW-nE-NN3" secondAttribute="leading" id="f0G-j7-cQh"/>
-                            <constraint firstAttribute="trailing" secondItem="6RX-ug-bEE" secondAttribute="trailing" id="gna-8t-Dkj"/>
-                            <constraint firstItem="6RX-ug-bEE" firstAttribute="top" secondItem="j44-kb-eiP" secondAttribute="bottom" id="jC8-Dt-fBo"/>
-                            <constraint firstAttribute="trailing" secondItem="Ta6-HA-Fs6" secondAttribute="trailing" id="kZP-vj-nm3"/>
-                            <constraint firstItem="6RX-ug-bEE" firstAttribute="leading" secondItem="tdW-nE-NN3" secondAttribute="leading" id="uoD-Zz-IYe"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Title" id="Cyl-oT-bd6">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="EMG-dB-7wT"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="fastForward" id="ftQ-NK-zAC"/>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="webview" destination="Ta6-HA-Fs6" id="Tyd-uS-Vqc"/>
-                        <segue destination="iyy-QL-N5u" kind="custom" identifier="open" customClass="SegueFade" customModule="nanou_ios" customModuleProvider="target" id="dh6-Kl-nNu"/>
-                        <segue destination="hwL-l5-Uc8" kind="custom" identifier="setupPreferences" customClass="SegueFromLeft" customModule="nanou_ios" customModuleProvider="target" id="wAw-Fw-PhL"/>
-                        <segue destination="dPE-nv-tZ8" kind="unwind" identifier="cancel" customClass="SegueUnwindFromRight" customModule="nanou_ios" customModuleProvider="target" unwindAction="logoutWithSegue:" id="jQg-Db-psd"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="JOf-j7-0U5" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="dPE-nv-tZ8" userLabel="Exit" sceneMemberID="exit"/>
-            </objects>
-            <point key="canvasLocation" x="-1340" y="-171"/>
-        </scene>
-        <!--Initial Preference View Controller-->
-        <scene sceneID="hx3-px-LxC">
-            <objects>
-                <viewController id="hwL-l5-Uc8" customClass="InitialPreferenceViewController" customModule="nanou_ios" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="PHB-CW-SDn"/>
-                        <viewControllerLayoutGuide type="bottom" id="Wak-WW-Iou"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="rKW-y0-xYh">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HC8-7t-kQH">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <items>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="dmP-lE-Mqm"/>
-                                    <barButtonItem systemItem="done" id="cZx-bS-BGg">
-                                        <connections>
-                                            <action selector="commitSelection:" destination="hwL-l5-Uc8" id="9mg-W7-xEE"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                                <connections>
-                                    <outlet property="delegate" destination="hwL-l5-Uc8" id="Hgg-9q-Xo3"/>
-                                </connections>
-                            </toolbar>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Yq-Pl-dav">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="4Yq-Pl-dav" firstAttribute="leading" secondItem="rKW-y0-xYh" secondAttribute="leading" id="216-Tj-X1c"/>
-                            <constraint firstItem="Wak-WW-Iou" firstAttribute="top" secondItem="4Yq-Pl-dav" secondAttribute="bottom" id="3nN-w7-17G"/>
-                            <constraint firstItem="4Yq-Pl-dav" firstAttribute="top" secondItem="HC8-7t-kQH" secondAttribute="bottom" id="5zg-VV-HLo"/>
-                            <constraint firstAttribute="trailing" secondItem="4Yq-Pl-dav" secondAttribute="trailing" id="GXf-Hu-NnD"/>
-                            <constraint firstItem="HC8-7t-kQH" firstAttribute="top" secondItem="PHB-CW-SDn" secondAttribute="bottom" id="cvL-g1-8ss"/>
-                            <constraint firstAttribute="trailing" secondItem="HC8-7t-kQH" secondAttribute="trailing" id="gHN-2g-gG2"/>
-                            <constraint firstItem="HC8-7t-kQH" firstAttribute="leading" secondItem="rKW-y0-xYh" secondAttribute="leading" id="jzA-9b-FHC"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="sceneWrapperView" destination="4Yq-Pl-dav" id="tdX-u3-m6g"/>
-                        <segue destination="iyy-QL-N5u" kind="custom" identifier="open" customClass="SegueFade" customModule="nanou_ios" customModuleProvider="target" id="Y2W-jt-Ygt"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9j0-Jh-7SB" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-508" y="-485"/>
-        </scene>
     </scenes>
     <resources>
         <image name="Logo" width="200" height="59"/>
@@ -452,8 +318,5 @@
         <image name="TabVideo" width="25" height="25"/>
         <image name="TabVideoSelected" width="25" height="25"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="Y2W-jt-Ygt"/>
-    </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.94509803921568625" green="0.52156862745098043" blue="0.24705882352941178" alpha="1" colorSpace="calibratedRGB"/>
 </document>

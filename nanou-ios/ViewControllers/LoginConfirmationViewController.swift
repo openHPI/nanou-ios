@@ -8,7 +8,9 @@
 
 import UIKit
 
-class LoginConfirmationViewController: UIViewController, UIToolbarDelegate, UIWebViewDelegate {
+class LoginConfirmationViewController: UIViewController, UIWebViewDelegate {
+    var delegate: LoginDelegate?
+
     @IBOutlet var webview: UIWebView!
 
     var urlString: String?
@@ -29,14 +31,6 @@ class LoginConfirmationViewController: UIViewController, UIToolbarDelegate, UIWe
         }
     }
 
-    @IBAction func cancelConfirmation(_ sender: Any) {
-        self.performSegue(withIdentifier: "cancel", sender: sender)
-    }
-
-    func position(for bar: UIBarPositioning) -> UIBarPosition {
-        return .topAttached
-    }
-
     func webViewDidFinishLoad(_ webView: UIWebView) {
         if let webViewContent = webview.stringByEvaluatingJavaScript(from: "document.body.innerText") {
             if let status = convertToDictionary(text: webViewContent) {
@@ -53,15 +47,23 @@ class LoginConfirmationViewController: UIViewController, UIToolbarDelegate, UIWe
                 if authenticated {
                     UserProfileHelper.storeToken(token)
                     if let prefInitialized = status["preferencesInitialized"] as? Bool, prefInitialized == true {
-                        self.performSegue(withIdentifier: "open", sender: nil)
+                        self.dismiss(animated: true) {
+                            self.delegate?.didFinishLogin(true)
+                        }
                     } else {
                         self.performSegue(withIdentifier: "setupPreferences", sender: nil)
-
                     }
                 } else {
                     log.error("Login | user could not authenticate")
                 }
             }
+        }
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "setupPreferences" {
+            let prefVc = segue.destination as! InitialPreferenceViewController
+            prefVc.delegate = self.delegate
         }
     }
 

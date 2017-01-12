@@ -23,10 +23,13 @@ extension UIColor {
 
 extension CAGradientLayer {
 
-    class func nanouGradientLayer(frame: CGRect) -> CAGradientLayer {
+    class func nanouGradientLayer(frame: CGRect, reverse: Bool = false) -> CAGradientLayer {
         let gradient: CAGradientLayer = CAGradientLayer()
         gradient.frame = frame
         gradient.colors = [UIColor.nanouOrange.cgColor, UIColor.nanouPink.cgColor]
+        if reverse {
+            gradient.colors?.reverse()
+        }
         return gradient
     }
 

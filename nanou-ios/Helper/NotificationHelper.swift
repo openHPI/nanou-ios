@@ -13,12 +13,13 @@ public typealias NotificationHelperCompletionBlock = (Void) -> Void
 
 class NotificationHelper {
 
-    class func showNotificationFor(_ error: NanouError, completion: NotificationHelperCompletionBlock?) {
+    class func showNotificationFor(_ error: NanouError, completion: NotificationHelperCompletionBlock? = nil) {
+        let bodyText = (completion != nil) ? "Tap to retry" : ""
         switch error {
         case .network:
-            self.showDarkNotificaiton(title: "No internet connection", body: "Tap to retry", completion: completion)
+            self.showDarkNotificaiton(title: "No internet connection", body: bodyText, completion: completion)
         default:
-            self.showDarkNotificaiton(title: "Something went wrong", body: "Tap to retry", completion: completion)
+            self.showDarkNotificaiton(title: "Something went wrong", body: bodyText, completion: completion)
         }
     }
 

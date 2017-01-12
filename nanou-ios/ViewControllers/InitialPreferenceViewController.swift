@@ -10,7 +10,8 @@ import UIKit
 import SpriteKit
 import SIFloatingCollection
 
-class InitialPreferenceViewController: UIViewController, UIToolbarDelegate {
+class InitialPreferenceViewController: UIViewController {
+    var delegate: LoginDelegate?
 
     @IBOutlet var sceneWrapperView: UIView!
 
@@ -18,6 +19,8 @@ class InitialPreferenceViewController: UIViewController, UIToolbarDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        self.navigationItem.hidesBackButton = true
 
         let skView = SKView(frame: UIScreen.main.bounds)
         skView.backgroundColor = SKColor.white
@@ -39,11 +42,9 @@ class InitialPreferenceViewController: UIViewController, UIToolbarDelegate {
 
     @IBAction func commitSelection(_ sender: Any) {
         self.floatingCollectionScene.performCommitSelectionAnimation()
-        self.performSegue(withIdentifier: "open", sender: self)
-    }
-
-    func position(for bar: UIBarPositioning) -> UIBarPosition {
-        return .topAttached
+        self.dismiss(animated: true) {
+            self.delegate?.didFinishLogin(true)
+        }
     }
 
 }
