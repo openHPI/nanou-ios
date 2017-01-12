@@ -3,3 +3,5 @@ include:
 exclude:
     - '**Tests.swift'
     - Pods
+except:
+    - forced-type-cast
