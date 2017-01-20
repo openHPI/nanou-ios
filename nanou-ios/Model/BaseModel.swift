@@ -52,4 +52,8 @@ class BaseModel: NSManagedObject {
         }
     }
 
+    func resource<T: BaseModel>() -> BaseModelSpine<T> {
+        fatalError()
+    }
+
 }

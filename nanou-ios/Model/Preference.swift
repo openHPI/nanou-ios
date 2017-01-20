@@ -11,6 +11,15 @@ import Foundation
 import Spine
 
 class Preference: BaseModel {
+
+    func resource() -> PreferenceSpine {
+        let pref = PreferenceSpine()
+        pref.id = self.id
+        pref.name = self.name
+        pref.weight = self.weight
+        return pref
+    }
+
 }
 
 class PreferenceSpine: BaseModelSpine<Preference> {
@@ -35,5 +44,4 @@ class PreferenceSpine: BaseModelSpine<Preference> {
             "weight": Attribute(),
         ])
     }
-
 }

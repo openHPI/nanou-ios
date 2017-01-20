@@ -31,6 +31,8 @@
 		509D51BD1DE5999A0019BB63 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509D51BC1DE5999A0019BB63 /* LaunchViewController.swift */; };
 		509D51C11DE5C7870019BB63 /* LoginCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509D51C01DE5C7870019BB63 /* LoginCell.swift */; };
 		509D51C41DE5CDA70019BB63 /* Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509D51C31DE5CDA70019BB63 /* Routes.swift */; };
+		50B270381E2FBF1F00F72502 /* SyncHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B270371E2FBF1F00F72502 /* SyncHelper.swift */; };
+		50B270451E3218C500F72502 /* SaveProcedure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B270441E3218C500F72502 /* SaveProcedure.swift */; };
 		50CFFAA51E27AD8A00EA0CFE /* LoginDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CFFAA41E27AD8A00EA0CFE /* LoginDelegate.swift */; };
 		50CFFAA71E27B3A100EA0CFE /* InitialPreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CFFAA61E27B3A100EA0CFE /* InitialPreferenceViewController.swift */; };
 		50D503271E254C4600C16D14 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50D503251E254C4600C16D14 /* Login.storyboard */; };
@@ -71,6 +73,8 @@
 		509D51BC1DE5999A0019BB63 /* LaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LaunchViewController.swift; path = ViewControllers/LaunchViewController.swift; sourceTree = "<group>"; };
 		509D51C01DE5C7870019BB63 /* LoginCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginCell.swift; path = Views/LoginCell.swift; sourceTree = "<group>"; };
 		509D51C31DE5CDA70019BB63 /* Routes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Routes.swift; path = Helper/Routes.swift; sourceTree = "<group>"; };
+		50B270371E2FBF1F00F72502 /* SyncHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SyncHelper.swift; path = Helper/SyncHelper.swift; sourceTree = "<group>"; };
+		50B270441E3218C500F72502 /* SaveProcedure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SaveProcedure.swift; path = Procedures/SaveProcedure.swift; sourceTree = "<group>"; };
 		50CFFAA41E27AD8A00EA0CFE /* LoginDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginDelegate.swift; path = Helper/LoginDelegate.swift; sourceTree = "<group>"; };
 		50CFFAA61E27B3A100EA0CFE /* InitialPreferenceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InitialPreferenceViewController.swift; path = ViewControllers/InitialPreferenceViewController.swift; sourceTree = "<group>"; };
 		50D503261E254C4600C16D14 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
@@ -116,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				50240B2E1DE43F0E00CB6681 /* AppDelegate.swift */,
+				50B270431E32189900F72502 /* Procedures */,
 				509D51C21DE5CD840019BB63 /* Helper */,
 				504CCEA91DF805DB00CF0DFD /* Model */,
 				509D51BF1DE5C76B0019BB63 /* Views */,
@@ -180,8 +185,17 @@
 				502936BB1DF838B60087A2D4 /* CoreDataHelper.swift */,
 				502936CF1DF854340087A2D4 /* PreferenceHelper.swift */,
 				50CFFAA41E27AD8A00EA0CFE /* LoginDelegate.swift */,
+				50B270371E2FBF1F00F72502 /* SyncHelper.swift */,
 			);
 			name = Helper;
+			sourceTree = "<group>";
+		};
+		50B270431E32189900F72502 /* Procedures */ = {
+			isa = PBXGroup;
+			children = (
+				50B270441E3218C500F72502 /* SaveProcedure.swift */,
+			);
+			name = Procedures;
 			sourceTree = "<group>";
 		};
 		5D2BBE55C3E40B653813DF31 /* Pods */ = {
@@ -381,6 +395,8 @@
 				509D51C41DE5CDA70019BB63 /* Routes.swift in Sources */,
 				509D51C11DE5C7870019BB63 /* LoginCell.swift in Sources */,
 				50240B2F1DE43F0E00CB6681 /* AppDelegate.swift in Sources */,
+				50B270381E2FBF1F00F72502 /* SyncHelper.swift in Sources */,
+				50B270451E3218C500F72502 /* SaveProcedure.swift in Sources */,
 				504BC3361DF4532E00671614 /* UserProfileViewController.swift in Sources */,
 				502936D61DF8C2F50087A2D4 /* PreferenceCell.swift in Sources */,
 				504BC3341DF448F200671614 /* Json.swift in Sources */,

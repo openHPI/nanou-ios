@@ -32,6 +32,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         log.addDestination(console)
         log.verbose("App launched")
 
+        SyncHelper.standard.startObserving()
+
         return true
     }
 

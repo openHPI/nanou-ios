@@ -35,6 +35,7 @@ class CoreDataHelper {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
         })
+
         return container
     }()
 

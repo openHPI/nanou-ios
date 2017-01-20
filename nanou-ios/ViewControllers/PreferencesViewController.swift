@@ -145,10 +145,6 @@ extension PreferencesViewController: PreferenceCellDelegate {
         preference?.weight = NSDecimalNumber(value: value)
 
         CoreDataHelper.saveContext()
-        if let pref = preference {
-            let spine = PreferenceSpine(preference: pref)
-            SpineHelper.save(resource: spine)
-        }
     }
 
 }
