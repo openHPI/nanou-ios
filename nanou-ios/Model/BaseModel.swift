@@ -40,6 +40,10 @@ class BaseModel: NSManagedObject {
                     let cdObjects = try SpineModelHelper.syncObjects(objectsToUpdate: relatedObjects, spineObjects: spineObjects, inject: nil, save: false)
                     self.setValue(NSSet(array: cdObjects), forKey: field.name)
                 }
+            } else if field is URLAttribute {
+                if let url = value as? URL {
+                    self.setValue(url.absoluteString, forKey: field.name)
+                }
             } else {
                 self.setValue(value, forKey: field.name)
             }

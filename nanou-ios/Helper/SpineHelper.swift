@@ -76,6 +76,7 @@ class SpineHelper {
         let spine = Spine(baseURL: NSURL(string: Route.api) as! URL, networkClient: nanouClient)  // tailor:disable
 
         spine.registerResource(PreferenceSpine.self)
+        spine.registerResource(VideoSpine.self)
 
         return spine
     }()

@@ -33,14 +33,20 @@
 		509D51C41DE5CDA70019BB63 /* Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509D51C31DE5CDA70019BB63 /* Routes.swift */; };
 		50B270381E2FBF1F00F72502 /* SyncHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B270371E2FBF1F00F72502 /* SyncHelper.swift */; };
 		50B270451E3218C500F72502 /* SaveProcedure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B270441E3218C500F72502 /* SaveProcedure.swift */; };
+		50BEDB4E1E37798900591F5D /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BEDB4D1E37798900591F5D /* Video.swift */; };
 		50CFFAA51E27AD8A00EA0CFE /* LoginDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CFFAA41E27AD8A00EA0CFE /* LoginDelegate.swift */; };
 		50CFFAA71E27B3A100EA0CFE /* InitialPreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CFFAA61E27B3A100EA0CFE /* InitialPreferenceViewController.swift */; };
 		50D503271E254C4600C16D14 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50D503251E254C4600C16D14 /* Login.storyboard */; };
 		50D503291E26A0C600C16D14 /* LoginProviderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D503281E26A0C600C16D14 /* LoginProviderViewController.swift */; };
+		50E9085C1E38E863005931C1 /* VideosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E9085B1E38E862005931C1 /* VideosViewController.swift */; };
+		50E9085E1E38F552005931C1 /* VideoHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E9085D1E38F552005931C1 /* VideoHelper.swift */; };
+		50E90A1C1E3A37ED005931C1 /* RateVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E90A1B1E3A37EC005931C1 /* RateVideoViewController.swift */; };
 		50EA85981DF56FAC00DFFE09 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EA85971DF56FAC00DFFE09 /* Color.swift */; };
 		50EA859E1DF5794C00DFFE09 /* UserProfileHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EA859D1DF5794C00DFFE09 /* UserProfileHelper.swift */; };
 		50EA85A01DF5811500DFFE09 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EA859F1DF5811500DFFE09 /* NetworkHelper.swift */; };
 		50EA85A21DF597B900DFFE09 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EA85A11DF597B900DFFE09 /* Error.swift */; };
+		50F64E361E3B83CB00419003 /* PagedUICollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F64E351E3B83CB00419003 /* PagedUICollectionViewLayout.swift */; };
+		50F64E381E3B85E700419003 /* VideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F64E371E3B85E700419003 /* VideoCell.swift */; };
 		8361F0707357994E12F56B4C /* Pods_nanou_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBEE94DB21BBCFA5A5869180 /* Pods_nanou_ios.framework */; };
 /* End PBXBuildFile section */
 
@@ -75,14 +81,20 @@
 		509D51C31DE5CDA70019BB63 /* Routes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Routes.swift; path = Helper/Routes.swift; sourceTree = "<group>"; };
 		50B270371E2FBF1F00F72502 /* SyncHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SyncHelper.swift; path = Helper/SyncHelper.swift; sourceTree = "<group>"; };
 		50B270441E3218C500F72502 /* SaveProcedure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SaveProcedure.swift; path = Procedures/SaveProcedure.swift; sourceTree = "<group>"; };
+		50BEDB4D1E37798900591F5D /* Video.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Video.swift; path = Model/Video.swift; sourceTree = "<group>"; };
 		50CFFAA41E27AD8A00EA0CFE /* LoginDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginDelegate.swift; path = Helper/LoginDelegate.swift; sourceTree = "<group>"; };
 		50CFFAA61E27B3A100EA0CFE /* InitialPreferenceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InitialPreferenceViewController.swift; path = ViewControllers/InitialPreferenceViewController.swift; sourceTree = "<group>"; };
 		50D503261E254C4600C16D14 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
 		50D503281E26A0C600C16D14 /* LoginProviderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginProviderViewController.swift; path = ViewControllers/LoginProviderViewController.swift; sourceTree = "<group>"; };
+		50E9085B1E38E862005931C1 /* VideosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideosViewController.swift; path = ViewControllers/VideosViewController.swift; sourceTree = "<group>"; };
+		50E9085D1E38F552005931C1 /* VideoHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoHelper.swift; path = Helper/VideoHelper.swift; sourceTree = "<group>"; };
+		50E90A1B1E3A37EC005931C1 /* RateVideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RateVideoViewController.swift; path = ViewControllers/RateVideoViewController.swift; sourceTree = "<group>"; };
 		50EA85971DF56FAC00DFFE09 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Color.swift; path = Helper/Color.swift; sourceTree = "<group>"; };
 		50EA859D1DF5794C00DFFE09 /* UserProfileHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserProfileHelper.swift; path = Helper/UserProfileHelper.swift; sourceTree = "<group>"; };
 		50EA859F1DF5811500DFFE09 /* NetworkHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkHelper.swift; path = Helper/NetworkHelper.swift; sourceTree = "<group>"; };
 		50EA85A11DF597B900DFFE09 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Error.swift; path = Helper/Error.swift; sourceTree = "<group>"; };
+		50F64E351E3B83CB00419003 /* PagedUICollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PagedUICollectionViewLayout.swift; path = Helper/PagedUICollectionViewLayout.swift; sourceTree = "<group>"; };
+		50F64E371E3B85E700419003 /* VideoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoCell.swift; path = Views/VideoCell.swift; sourceTree = "<group>"; };
 		FBEE94DB21BBCFA5A5869180 /* Pods_nanou_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_nanou_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -139,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				502936C91DF845200087A2D4 /* Preference.swift */,
+				50BEDB4D1E37798900591F5D /* Video.swift */,
 				504CCEAA1DF8064E00CF0DFD /* BaseModel.swift */,
 				504CCEAC1DF8069D00CF0DFD /* BaseModelSpine.swift */,
 			);
@@ -154,6 +167,8 @@
 				502936D11DF867280087A2D4 /* PreferencesViewController.swift */,
 				50D503281E26A0C600C16D14 /* LoginProviderViewController.swift */,
 				50CFFAA61E27B3A100EA0CFE /* InitialPreferenceViewController.swift */,
+				50E9085B1E38E862005931C1 /* VideosViewController.swift */,
+				50E90A1B1E3A37EC005931C1 /* RateVideoViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -162,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				509D51C01DE5C7870019BB63 /* LoginCell.swift */,
+				50F64E371E3B85E700419003 /* VideoCell.swift */,
 				502936D51DF8C2F50087A2D4 /* PreferenceCell.swift */,
 				504CAFF11E1BCE7800EF5482 /* BubbleNode.swift */,
 				504CAFF31E1BCEAE00EF5482 /* BubbleScene.swift */,
@@ -184,8 +200,10 @@
 				504CCEB01DF80AA700CF0DFD /* SpineModelHelper.swift */,
 				502936BB1DF838B60087A2D4 /* CoreDataHelper.swift */,
 				502936CF1DF854340087A2D4 /* PreferenceHelper.swift */,
+				50E9085D1E38F552005931C1 /* VideoHelper.swift */,
 				50CFFAA41E27AD8A00EA0CFE /* LoginDelegate.swift */,
 				50B270371E2FBF1F00F72502 /* SyncHelper.swift */,
+				50F64E351E3B83CB00419003 /* PagedUICollectionViewLayout.swift */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -372,10 +390,12 @@
 			files = (
 				502936CA1DF845200087A2D4 /* Preference.swift in Sources */,
 				509D51BD1DE5999A0019BB63 /* LaunchViewController.swift in Sources */,
+				50F64E361E3B83CB00419003 /* PagedUICollectionViewLayout.swift in Sources */,
 				50EA859E1DF5794C00DFFE09 /* UserProfileHelper.swift in Sources */,
 				5057F7981DE78527003A8850 /* LoginConfirmationViewController.swift in Sources */,
 				504CAFF41E1BCEAF00EF5482 /* BubbleScene.swift in Sources */,
 				50EA85A21DF597B900DFFE09 /* Error.swift in Sources */,
+				50E90A1C1E3A37ED005931C1 /* RateVideoViewController.swift in Sources */,
 				50240B371DE43F0E00CB6681 /* nanou_ios.xcdatamodeld in Sources */,
 				504CCEB11DF80AA700CF0DFD /* SpineModelHelper.swift in Sources */,
 				50EA85A01DF5811500DFFE09 /* NetworkHelper.swift in Sources */,
@@ -386,7 +406,9 @@
 				50EA85981DF56FAC00DFFE09 /* Color.swift in Sources */,
 				502936D01DF854340087A2D4 /* PreferenceHelper.swift in Sources */,
 				5057F79A1DE78E82003A8850 /* Segues.swift in Sources */,
+				50BEDB4E1E37798900591F5D /* Video.swift in Sources */,
 				50CFFAA71E27B3A100EA0CFE /* InitialPreferenceViewController.swift in Sources */,
+				50E9085E1E38F552005931C1 /* VideoHelper.swift in Sources */,
 				504CCEAB1DF8064E00CF0DFD /* BaseModel.swift in Sources */,
 				50CFFAA51E27AD8A00EA0CFE /* LoginDelegate.swift in Sources */,
 				50D503291E26A0C600C16D14 /* LoginProviderViewController.swift in Sources */,
@@ -395,10 +417,12 @@
 				509D51C41DE5CDA70019BB63 /* Routes.swift in Sources */,
 				509D51C11DE5C7870019BB63 /* LoginCell.swift in Sources */,
 				50240B2F1DE43F0E00CB6681 /* AppDelegate.swift in Sources */,
+				50F64E381E3B85E700419003 /* VideoCell.swift in Sources */,
 				50B270381E2FBF1F00F72502 /* SyncHelper.swift in Sources */,
 				50B270451E3218C500F72502 /* SaveProcedure.swift in Sources */,
 				504BC3361DF4532E00671614 /* UserProfileViewController.swift in Sources */,
 				502936D61DF8C2F50087A2D4 /* PreferenceCell.swift in Sources */,
+				50E9085C1E38E863005931C1 /* VideosViewController.swift in Sources */,
 				504BC3341DF448F200671614 /* Json.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

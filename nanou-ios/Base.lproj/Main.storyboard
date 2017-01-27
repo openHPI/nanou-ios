@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="oSX-zO-wpc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="oSX-zO-wpc">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -92,31 +92,69 @@
             </objects>
             <point key="canvasLocation" x="110" y="253"/>
         </scene>
-        <!--Collection View Controller-->
+        <!--Videos View Controller-->
         <scene sceneID="Dcp-QY-k0A">
             <objects>
-                <collectionViewController id="mEa-Mq-2sQ" sceneMemberID="viewController">
+                <collectionViewController id="mEa-Mq-2sQ" customClass="VideosViewController" customModule="nanou_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="A8r-YU-Aui">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="83P-o5-zG9">
-                            <size key="itemSize" width="50" height="50"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="tCm-S3-YES" customClass="PagedUICollectionViewLayout" customModule="nanou_ios" customModuleProvider="target">
+                            <size key="itemSize" width="361" height="467"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="VideoCell" id="N52-wf-Udr">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="videoCell" id="N52-wf-Udr" customClass="VideoCell" customModule="nanou_ios" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="100" width="361" height="467"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="361" height="467"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="7hD-f6-cQC">
+                                            <rect key="frame" x="8" y="8" width="385" height="276"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jxl-WM-xJu">
+                                                    <rect key="frame" x="0.0" y="0.0" width="345" height="225.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="5ge-5Z-90p">
+                                                    <rect key="frame" x="0.0" y="225.5" width="345" height="225.5"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CEn-m7-fEH">
+                                                            <rect key="frame" x="0.0" y="195.5" width="172.5" height="30"/>
+                                                            <state key="normal" title="No"/>
+                                                            <connections>
+                                                                <action selector="tapDismiss:" destination="N52-wf-Udr" eventType="touchUpInside" id="Dsg-wC-YXG"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kyr-li-xws">
+                                                            <rect key="frame" x="172.5" y="195.5" width="172.5" height="30"/>
+                                                            <state key="normal" title="Yes"/>
+                                                            <connections>
+                                                                <action selector="tapAccept:" destination="N52-wf-Udr" eventType="touchUpInside" id="2Rw-8Q-xlL"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
                                 </view>
-                                <color key="backgroundColor" red="0.1176470588" green="0.40000000000000002" blue="0.63137254899999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.75559085609999999" green="0.75556832549999997" blue="0.75558108089999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="7hD-f6-cQC" firstAttribute="leading" secondItem="N52-wf-Udr" secondAttribute="leading" constant="8" id="92d-fF-1Gg"/>
+                                    <constraint firstAttribute="bottom" secondItem="7hD-f6-cQC" secondAttribute="bottom" constant="8" id="D3V-DY-pLO"/>
+                                    <constraint firstAttribute="trailing" secondItem="7hD-f6-cQC" secondAttribute="trailing" constant="8" id="Ic4-sV-y5p"/>
+                                    <constraint firstItem="7hD-f6-cQC" firstAttribute="top" secondItem="N52-wf-Udr" secondAttribute="top" constant="8" id="ksq-ur-rBM"/>
+                                </constraints>
                                 <connections>
-                                    <segue destination="Jef-vz-Vji" kind="show" id="xVN-tj-23Y"/>
+                                    <outlet property="titleLabel" destination="jxl-WM-xJu" id="xDZ-lm-LGS"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -129,15 +167,18 @@
                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
                     </tabBarItem>
                     <navigationItem key="navigationItem" id="nfk-ct-KNy"/>
+                    <connections>
+                        <segue destination="Jef-vz-Vji" kind="show" identifier="watchVideo" id="BfE-5s-cdG"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IVc-iN-SrZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1049" y="-75"/>
+            <point key="canvasLocation" x="1048.8" y="-75.112443778110944"/>
         </scene>
-        <!--View Controller-->
+        <!--Rate Video View Controller-->
         <scene sceneID="DXw-lZ-zgJ">
             <objects>
-                <viewController id="Jef-vz-Vji" sceneMemberID="viewController">
+                <viewController id="Jef-vz-Vji" customClass="RateVideoViewController" customModule="nanou_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sbG-q6-c7m"/>
                         <viewControllerLayoutGuide type="bottom" id="Cib-Z2-aAX"/>
@@ -158,6 +199,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vPb-qf-WSa">
                                         <rect key="frame" x="0.0" y="20.5" width="81" height="30"/>
                                         <state key="normal" title="watched"/>
+                                        <connections>
+                                            <action selector="tapWatched:" destination="Jef-vz-Vji" eventType="touchUpInside" id="oGf-Sx-kVe"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -277,7 +321,7 @@
                                 <rect key="frame" x="0.0" y="56" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zgr-Lb-KuT" id="Yob-AD-HPW">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" continuous="NO" minimumValueImage="TabUser" maximumValueImage="TabUserSelected" translatesAutoresizingMaskIntoConstraints="NO" id="SSt-oR-klI">
