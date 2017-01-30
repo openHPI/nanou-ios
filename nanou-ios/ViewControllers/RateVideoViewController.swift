@@ -25,7 +25,7 @@ class RateVideoViewController: UIViewController {
 
     @IBAction func tapWatched(_ sender: Any) {
         log.debug("tapWatched")
-        self.dismiss(animated: true, completion: nil)
+        let _ = self.navigationController?.popViewController(animated: true)
     }
 
     @IBAction func tapResume(_ sender: Any) {

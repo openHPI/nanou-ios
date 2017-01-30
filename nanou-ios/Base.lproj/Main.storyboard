@@ -84,7 +84,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="mEa-Mq-2sQ" kind="relationship" identifier="videos" relationship="viewControllers" id="efP-oS-dlV"/>
+                        <segue destination="hqd-OL-PSP" kind="relationship" identifier="videos" relationship="viewControllers" id="efP-oS-dlV"/>
                         <segue destination="L1Z-oi-xzN" kind="relationship" identifier="profile" relationship="viewControllers" id="8zH-Gb-gJB"/>
                     </connections>
                 </tabBarController>
@@ -95,8 +95,8 @@
         <!--Videos View Controller-->
         <scene sceneID="Dcp-QY-k0A">
             <objects>
-                <collectionViewController id="mEa-Mq-2sQ" customClass="VideosViewController" customModule="nanou_ios" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="A8r-YU-Aui">
+                <collectionViewController automaticallyAdjustsScrollViewInsets="NO" id="mEa-Mq-2sQ" customClass="VideosViewController" customModule="nanou_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="A8r-YU-Aui">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -108,7 +108,7 @@
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="videoCell" id="N52-wf-Udr" customClass="VideoCell" customModule="nanou_ios" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="75.5" width="361" height="467"/>
+                                <rect key="frame" x="0.0" y="100" width="361" height="467"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="361" height="467"/>
@@ -163,9 +163,6 @@
                             <outlet property="delegate" destination="mEa-Mq-2sQ" id="iRk-kd-2hc"/>
                         </connections>
                     </collectionView>
-                    <tabBarItem key="tabBarItem" title="" image="TabVideo" selectedImage="TabVideoSelected" id="ece-b1-nCC">
-                        <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
-                    </tabBarItem>
                     <navigationItem key="navigationItem" id="nfk-ct-KNy"/>
                     <connections>
                         <segue destination="Jef-vz-Vji" kind="show" identifier="watchVideo" id="BfE-5s-cdG"/>
@@ -173,7 +170,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IVc-iN-SrZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1048.8" y="-75.112443778110944"/>
+            <point key="canvasLocation" x="2025" y="-75"/>
         </scene>
         <!--Rate Video View Controller-->
         <scene sceneID="DXw-lZ-zgJ">
@@ -249,7 +246,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gDH-bq-SGU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2024.8" y="-75.112443778110944"/>
+            <point key="canvasLocation" x="2964" y="-75.112443778110944"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="kSk-9l-WW2">
@@ -387,6 +384,27 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IqA-1F-tLH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3016.8000000000002" y="622.93853073463276"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="rXr-lV-Gfa">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="hqd-OL-PSP" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="TabVideo" selectedImage="TabVideoSelected" id="ece-b1-nCC">
+                        <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bmP-Ld-mEr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="mEa-Mq-2sQ" kind="relationship" relationship="rootViewController" id="Z28-DL-S0h"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zUo-d5-oFN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1048.8" y="-75.112443778110944"/>
         </scene>
     </scenes>
     <resources>
