@@ -9,6 +9,8 @@
 import UIKit
 import AVKit
 import AVFoundation
+import Cosmos
+
 
 class RateVideoViewController: UIViewController {
     var video: Video? {
@@ -21,10 +23,26 @@ class RateVideoViewController: UIViewController {
     var playerViewContoller: AVPlayerViewController?
 
     @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var ratingView: CosmosView!
 
 
     @IBAction func tapWatched(_ sender: Any) {
+        defer {
+            let _ = self.navigationController?.popViewController(animated: true)
+        }
+
+        guard
+            let videoTime = self.playerViewContoller?.player?.currentTime(),
+            let videoDuration = self.playerViewContoller?.player?.currentItem?.duration,
+            videoTime.isValid, videoDuration.isValid else {
+            return
+        }
+
+        let progress = videoTime.seconds / videoDuration.seconds
+        let rating = self.ratingView.rating
+
         log.debug("tapWatched")
+        log.verbose("rated video \(self.video?.id) with \(rating) (progress: \(progress))")
         let _ = self.navigationController?.popViewController(animated: true)
     }
 

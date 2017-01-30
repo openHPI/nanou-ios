@@ -4,6 +4,7 @@ platform :ios, '10.0'
 target 'nanou-ios' do
   pod 'Alamofire', '4.2.0'
   pod 'BrightFutures', '5.1.0'
+  pod 'Cosmos', '~> 8.0'
   pod 'LNRSimpleNotifications', '0.5.3'
   pod 'ProcedureKit', '4.0.0'
   pod 'ProcedureKit/Mobile', '4.0.0'
