@@ -27,7 +27,7 @@ class VideoSpine: BaseModelSpine<Video> {
     override class var fields: [Field] {
         return fieldsFromDictionary([
             "name": Attribute(),
-            "url": URLAttribute().serializeAs("url"),
+            "downloadUrl": URLAttribute().serializeAs("url"),
             "streamUrl": URLAttribute().serializeAs("stream_url"),
         ])
     }

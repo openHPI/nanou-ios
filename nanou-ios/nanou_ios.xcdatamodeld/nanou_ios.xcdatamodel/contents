@@ -6,10 +6,10 @@
         <attribute name="weight" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
     </entity>
     <entity name="Video" representedClassName=".Video" syncable="YES" codeGenerationType="category">
+        <attribute name="downloadUrl" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="stream_url" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="streamUrl" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
         <element name="Preference" positionX="-63" positionY="-18" width="128" height="90"/>

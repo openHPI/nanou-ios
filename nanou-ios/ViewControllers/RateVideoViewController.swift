@@ -7,12 +7,67 @@
 //
 
 import UIKit
+import AVKit
+import AVFoundation
 
 class RateVideoViewController: UIViewController {
+    var video: Video? {
+        didSet {
+            self.playerViewContoller = self.configuredPlayerViewController(for: self.video)
+        }
+    }
+    var videoWasStartedBefore = false
+
+    var playerViewContoller: AVPlayerViewController?
+
+    @IBOutlet var titleLabel: UILabel!
+
 
     @IBAction func tapWatched(_ sender: Any) {
         log.debug("tapWatched")
         self.dismiss(animated: true, completion: nil)
+    }
+
+    @IBAction func tapResume(_ sender: Any) {
+        self.playVideo()
+    }
+
+    override func viewDidLoad() {
+        self.titleLabel.text = self.video?.name
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        if !self.videoWasStartedBefore {
+            self.videoWasStartedBefore = true
+            self.playVideo()
+        }
+    }
+
+    func playVideo() {
+        if let playerVc = self.playerViewContoller {
+            self.present(playerVc, animated: true) {
+                playerVc.player?.play()
+            }
+        }
+    }
+
+    func configuredPlayerViewController(for video: Video?) -> AVPlayerViewController? {
+        guard let url = self.video?.streamUrl else {
+            log.error("RateVideoViewController | invalid url string")
+            return nil
+        }
+
+        guard let videoUrl = URL(string: url) else {
+            log.error("RateVideoViewController | invalid url")
+            return nil
+        }
+
+        let player = AVPlayer(url: videoUrl)
+        let playerViewController = AVPlayerViewController()
+        playerViewController.player = player
+        return playerViewController
     }
 
 }

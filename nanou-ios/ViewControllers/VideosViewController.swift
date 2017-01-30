@@ -55,6 +55,28 @@ class VideosViewController: UICollectionViewController {
         self.contentChangeOperations.removeAll(keepingCapacity: false)
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "watchVideo" {
+            guard let rateVc = segue.destination as? RateVideoViewController else {
+                log.error("VideosViewController | wrong destination view controller")
+                return
+            }
+
+            guard let cell = sender as? VideoCell else {
+                log.error("VideosViewController | wrong sender")
+                return
+            }
+
+            guard let indexPath = self.collectionView?.indexPath(for: cell) else {
+                log.error("VideosViewController | wrong indexPath")
+                return
+            }
+
+            let video = self.resultsController?.object(at: indexPath)
+            rateVc.video = video
+        }
+    }
+
     func configureCollectionCell(_ cell: UICollectionViewCell, indexPath: IndexPath) {
         guard let videoCell = cell as? VideoCell else {
             log.error("VideoViewController | retrieved wrong cell")
@@ -84,7 +106,7 @@ class VideosViewController: UICollectionViewController {
 extension VideosViewController: VideoCellDelegate {
 
     func didSelect(cell: VideoCell) {
-        self.performSegue(withIdentifier: "watchVideo", sender: self)
+        self.performSegue(withIdentifier: "watchVideo", sender: cell)
     }
 
     func didDismiss(cell: VideoCell) {
