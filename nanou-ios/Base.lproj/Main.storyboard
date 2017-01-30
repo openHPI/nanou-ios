@@ -128,14 +128,18 @@
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CEn-m7-fEH">
                                                             <rect key="frame" x="0.0" y="195.5" width="172.5" height="30"/>
-                                                            <state key="normal" title="No"/>
+                                                            <state key="normal" title="No">
+                                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </state>
                                                             <connections>
                                                                 <action selector="tapDismiss:" destination="N52-wf-Udr" eventType="touchUpInside" id="Dsg-wC-YXG"/>
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kyr-li-xws">
                                                             <rect key="frame" x="172.5" y="195.5" width="172.5" height="30"/>
-                                                            <state key="normal" title="Yes"/>
+                                                            <state key="normal" title="Yes">
+                                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </state>
                                                             <connections>
                                                                 <action selector="tapAccept:" destination="N52-wf-Udr" eventType="touchUpInside" id="2Rw-8Q-xlL"/>
                                                             </connections>
@@ -146,7 +150,7 @@
                                         </stackView>
                                     </subviews>
                                 </view>
-                                <color key="backgroundColor" red="0.75559085609999999" green="0.75556832549999997" blue="0.75558108089999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.94509803920000002" green="0.52156862749999999" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="7hD-f6-cQC" firstAttribute="leading" secondItem="N52-wf-Udr" secondAttribute="leading" constant="8" id="92d-fF-1Gg"/>
                                     <constraint firstAttribute="bottom" secondItem="7hD-f6-cQC" secondAttribute="bottom" constant="8" id="D3V-DY-pLO"/>

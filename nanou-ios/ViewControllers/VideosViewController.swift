@@ -84,7 +84,6 @@ class VideosViewController: UICollectionViewController {
         }
 
         videoCell.delegate = self
-        videoCell.backgroundColor = UIColor(white: 0.0, alpha: 0.15)
         videoCell.layer.cornerRadius = 2.0
         videoCell.layer.masksToBounds = true
         videoCell.titleLabel.text = self.resultsController?.object(at: indexPath).name
