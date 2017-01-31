@@ -12,7 +12,9 @@ class VideoCell: UICollectionViewCell {
 
     weak var delegate: VideoCellDelegate?
 
+    @IBOutlet var imageView: UIImageView!
     @IBOutlet var titleLabel: UILabel!
+
 
     @IBAction func tapDismiss(_ sender: Any) {
         self.delegate?.didDismiss(cell: self)

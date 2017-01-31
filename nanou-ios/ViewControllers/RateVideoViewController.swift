@@ -10,6 +10,7 @@ import UIKit
 import AVKit
 import AVFoundation
 import Cosmos
+import SDWebImage
 
 
 class RateVideoViewController: UIViewController {
@@ -22,6 +23,7 @@ class RateVideoViewController: UIViewController {
 
     var playerViewContoller: AVPlayerViewController?
 
+    @IBOutlet var imageView: UIImageView!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var ratingView: CosmosView!
 
@@ -46,12 +48,18 @@ class RateVideoViewController: UIViewController {
         let _ = self.navigationController?.popViewController(animated: true)
     }
 
-    @IBAction func tapResume(_ sender: Any) {
-        self.playVideo()
-    }
-
     override func viewDidLoad() {
         self.titleLabel.text = self.video?.name
+
+        self.imageView.layer.cornerRadius = 2.0
+        self.imageView.layer.masksToBounds = true
+        self.imageView.loadFrom(self.video?.imageUrl, orShow: "No thumbnail available")
+
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(RateVideoViewController.playVideo))
+        tapGesture.numberOfTapsRequired = 1
+        tapGesture.numberOfTouchesRequired = 1
+        self.imageView.addGestureRecognizer(tapGesture)
+        self.imageView.isUserInteractionEnabled = true
     }
 
     override func viewDidAppear(_ animated: Bool) {

@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import SDWebImage
 
 class VideosViewController: UICollectionViewController {
     var resultsController: NSFetchedResultsController<Video>?
@@ -83,10 +84,13 @@ class VideosViewController: UICollectionViewController {
             return
         }
 
+        let video = self.resultsController?.object(at: indexPath)
         videoCell.delegate = self
         videoCell.layer.cornerRadius = 2.0
         videoCell.layer.masksToBounds = true
-        videoCell.titleLabel.text = self.resultsController?.object(at: indexPath).name
+        videoCell.titleLabel.text = video?.name
+        videoCell.imageView.loadFrom(video?.imageUrl, orShow: "No thumbnail available")
+        videoCell.imageView.layer.masksToBounds = true
     }
 
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -197,7 +201,9 @@ extension VideosViewController: UICollectionViewDelegateFlowLayout {
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         let statusBarHeight = UIApplication.shared.statusBarFrame.height
         let tabBarHeight = self.tabBarController?.tabBar.frame.size.height ?? 0
-        return CGSize(width: collectionView.bounds.width - 2*padding, height: collectionView.bounds.height - 2*padding - tabBarHeight - statusBarHeight)
+        let width = collectionView.bounds.width - 2*padding
+        let height = collectionView.bounds.height - 2*padding - tabBarHeight - statusBarHeight
+        return CGSize(width: min(width, height), height: height)
     }
 
     func collectionView(_ collectionView: UICollectionView,
@@ -205,10 +211,16 @@ extension VideosViewController: UICollectionViewDelegateFlowLayout {
                         insetForSectionAt section: Int) -> UIEdgeInsets {
         let statusBarHeight = UIApplication.shared.statusBarFrame.height
         let tabBarHeight = self.tabBarController?.tabBar.frame.size.height ?? 0
+
+        let cellSize = self.collectionView(collectionView, layout: collectionViewLayout, sizeForItemAt: IndexPath(item: 0, section: section))
+        let numberOfCellsInSection = CGFloat(self.resultsController?.sections?[section].numberOfObjects ?? 0)
+        let viewWidth = self.collectionView?.frame.size.width ?? 0
+        let horizontalPadding = max(0, (viewWidth - 2*padding - numberOfCellsInSection * cellSize.width) / 2)
+
         return UIEdgeInsets(top: statusBarHeight + padding,
-                            left: padding,
+                            left: padding + horizontalPadding,
                             bottom: tabBarHeight + padding,
-                            right: padding)
+                            right: padding + horizontalPadding)
     }
 
 

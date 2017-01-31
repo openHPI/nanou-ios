@@ -8,6 +8,7 @@ target 'nanou-ios' do
   pod 'LNRSimpleNotifications', '0.5.3'
   pod 'ProcedureKit', '4.0.0'
   pod 'ProcedureKit/Mobile', '4.0.0'
+  pod 'SDWebImage/WebP', '~> 4.0'
   pod 'SIFloatingCollection', :git => 'https://github.com/pavan309/SIFloatingCollection_Swift', :commit => 'e22f687'
   pod 'Spine', :git => 'https://github.com/wvteijlingen/Spine.git', :commit => 'a87ea59'
   pod 'SwiftyBeaver', '1.1.0'
