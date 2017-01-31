@@ -10,10 +10,11 @@
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="imageUrl" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="providerName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="streamUrl" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
         <element name="Preference" positionX="-63" positionY="-18" width="128" height="90"/>
-        <element name="Video" positionX="-63" positionY="9" width="128" height="120"/>
+        <element name="Video" positionX="-63" positionY="9" width="128" height="135"/>
     </elements>
 </model>

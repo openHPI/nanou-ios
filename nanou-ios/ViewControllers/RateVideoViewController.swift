@@ -25,7 +25,9 @@ class RateVideoViewController: UIViewController {
 
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var providerLabel: UILabel!
     @IBOutlet var ratingView: CosmosView!
+
 
 
     @IBAction func tapWatched(_ sender: Any) {
@@ -50,6 +52,7 @@ class RateVideoViewController: UIViewController {
 
     override func viewDidLoad() {
         self.titleLabel.text = self.video?.name
+        self.providerLabel.text = self.video?.providerText
 
         self.imageView.layer.cornerRadius = 2.0
         self.imageView.layer.masksToBounds = true

@@ -91,6 +91,7 @@ class VideosViewController: UICollectionViewController {
         videoCell.titleLabel.text = video?.name
         videoCell.imageView.loadFrom(video?.imageUrl, orShow: "No thumbnail available")
         videoCell.imageView.layer.masksToBounds = true
+        videoCell.providerLabel.text = video?.providerText
     }
 
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {

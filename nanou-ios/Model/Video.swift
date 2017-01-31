@@ -11,6 +11,14 @@ import Foundation
 import Spine
 
 class Video: BaseModel {
+
+    var providerText: String? {
+        if let providerName = self.providerName {
+            return "Content of \(providerName)"
+        }
+        return nil
+    }
+
 }
 
 
@@ -20,6 +28,7 @@ class VideoSpine: BaseModelSpine<Video> {
     var downloadUrl: URL?
     var streamUrl: URL?
     var imageUrl: URL?
+    var providerName: String?
 
     override class var resourceType: ResourceType {
         return "videos"
@@ -31,6 +40,7 @@ class VideoSpine: BaseModelSpine<Video> {
             "downloadUrl": URLAttribute().serializeAs("url"),
             "streamUrl": URLAttribute().serializeAs("stream_url"),
             "imageUrl": URLAttribute().serializeAs("image_url"),
+            "providerName": Attribute().serializeAs("provider_name"),
         ])
     }
 }

@@ -14,6 +14,7 @@ class VideoCell: UICollectionViewCell {
 
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var providerLabel: UILabel!
 
 
     @IBAction func tapDismiss(_ sender: Any) {
