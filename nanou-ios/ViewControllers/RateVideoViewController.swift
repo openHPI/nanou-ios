@@ -27,8 +27,8 @@ class RateVideoViewController: UIViewController {
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var providerLabel: UILabel!
     @IBOutlet var ratingView: CosmosView!
-
-
+    @IBOutlet var buttonStack: UIStackView!
+    @IBOutlet var nextButton: UIButton!
 
     @IBAction func tapWatched(_ sender: Any) {
         defer {
@@ -49,8 +49,12 @@ class RateVideoViewController: UIViewController {
         log.verbose("rated video \(self.video?.id) with \(rating) (progress: \(progress))")
 
         let now = Date() as NSDate
-        let watchedVideo = WatchedVideo.newEntity(forVideoId: self.video?.id, withDate: now, progress: progress, rating: rating)
+        let _ = WatchedVideo.newEntity(forVideoId: self.video?.id, withDate: now, progress: progress, rating: rating)
         CoreDataHelper.saveContext()
+    }
+
+    @IBAction func tapGoBack() {
+        let _ = self.navigationController?.popViewController(animated: true)
     }
 
     override func viewDidLoad() {
@@ -66,6 +70,17 @@ class RateVideoViewController: UIViewController {
         tapGesture.numberOfTouchesRequired = 1
         self.imageView.addGestureRecognizer(tapGesture)
         self.imageView.isUserInteractionEnabled = true
+
+        self.nextButton.backgroundColor = UIColor.nanouOrange
+        self.nextButton.tintColor = UIColor.white
+        self.nextButton.layer.masksToBounds = true
+        self.nextButton.layer.cornerRadius = 2.0
+
+        // set all view but imageview to hidden
+        self.titleLabel.isHidden = true
+        self.providerLabel.isHidden = true
+        self.ratingView.isHidden = true
+        self.buttonStack.isHidden = true
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -73,14 +88,22 @@ class RateVideoViewController: UIViewController {
 
         if !self.videoWasStartedBefore {
             self.videoWasStartedBefore = true
-            self.playVideo()
+            self.playVideo {
+                self.titleLabel.isHidden = false
+                self.providerLabel.isHidden = false
+                self.ratingView.isHidden = false
+                self.buttonStack.isHidden = false
+            }
         }
     }
 
-    func playVideo() {
+    func playVideo(_ completion: (() -> (Void))? = nil) {
         if let playerVc = self.playerViewContoller {
             self.present(playerVc, animated: true) {
                 playerVc.player?.play()
+                if let completion = completion {
+                    completion()
+                }
             }
         }
     }
