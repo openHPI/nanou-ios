@@ -40,6 +40,12 @@ class SyncHelper {
 
         if let inserted = note.userInfo?[NSInsertedObjectsKey] as? Set<NSManagedObject>, inserted.count > 0 {
             print("inserted: \(inserted)")
+            for case let insert as WatchedVideo in inserted {
+//                print("yeah new watchvideo: \(insert)")
+                let saveProcedure = SaveProcedure(resource: insert.resource())
+//                //                let networksave = NetworkProcedure()
+                self.queue.add(operation: saveProcedure)
+            }
         }
     }
 

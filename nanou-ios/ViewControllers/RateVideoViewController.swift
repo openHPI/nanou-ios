@@ -47,7 +47,10 @@ class RateVideoViewController: UIViewController {
 
         log.debug("tapWatched")
         log.verbose("rated video \(self.video?.id) with \(rating) (progress: \(progress))")
-        let _ = self.navigationController?.popViewController(animated: true)
+
+        let now = Date() as NSDate
+        let watchedVideo = WatchedVideo.newEntity(forVideoId: self.video?.id, withDate: now, progress: progress, rating: rating)
+        CoreDataHelper.saveContext()
     }
 
     override func viewDidLoad() {

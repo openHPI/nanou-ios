@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5000A1701DF6B2980070636E /* NotificationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5000A16F1DF6B2980070636E /* NotificationHelper.swift */; };
 		501040781E40A5EF0043F62E /* RemoteImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501040771E40A5EF0043F62E /* RemoteImageView.swift */; };
+		5010407A1E40E5700043F62E /* WatchedVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501040791E40E5700043F62E /* WatchedVideo.swift */; };
 		50240B2F1DE43F0E00CB6681 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50240B2E1DE43F0E00CB6681 /* AppDelegate.swift */; };
 		50240B341DE43F0E00CB6681 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50240B321DE43F0E00CB6681 /* Main.storyboard */; };
 		50240B371DE43F0E00CB6681 /* nanou_ios.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 50240B351DE43F0E00CB6681 /* nanou_ios.xcdatamodeld */; };
@@ -56,6 +57,7 @@
 		1D78B86D79986E5EE78F052A /* Pods-nanou-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nanou-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-nanou-ios/Pods-nanou-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		5000A16F1DF6B2980070636E /* NotificationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationHelper.swift; path = Helper/NotificationHelper.swift; sourceTree = "<group>"; };
 		501040771E40A5EF0043F62E /* RemoteImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RemoteImageView.swift; path = Helper/RemoteImageView.swift; sourceTree = "<group>"; };
+		501040791E40E5700043F62E /* WatchedVideo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WatchedVideo.swift; path = Model/WatchedVideo.swift; sourceTree = "<group>"; };
 		50240B2B1DE43F0E00CB6681 /* nanou-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "nanou-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50240B2E1DE43F0E00CB6681 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50240B331DE43F0E00CB6681 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 			children = (
 				502936C91DF845200087A2D4 /* Preference.swift */,
 				50BEDB4D1E37798900591F5D /* Video.swift */,
+				501040791E40E5700043F62E /* WatchedVideo.swift */,
 				504CCEAA1DF8064E00CF0DFD /* BaseModel.swift */,
 				504CCEAC1DF8069D00CF0DFD /* BaseModelSpine.swift */,
 			);
@@ -415,6 +418,7 @@
 				50E9085E1E38F552005931C1 /* VideoHelper.swift in Sources */,
 				504CCEAB1DF8064E00CF0DFD /* BaseModel.swift in Sources */,
 				50CFFAA51E27AD8A00EA0CFE /* LoginDelegate.swift in Sources */,
+				5010407A1E40E5700043F62E /* WatchedVideo.swift in Sources */,
 				50D503291E26A0C600C16D14 /* LoginProviderViewController.swift in Sources */,
 				504CAFF21E1BCE7800EF5482 /* BubbleNode.swift in Sources */,
 				504CCEAD1DF8069D00CF0DFD /* BaseModelSpine.swift in Sources */,
