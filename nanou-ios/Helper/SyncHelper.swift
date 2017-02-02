@@ -16,7 +16,7 @@ class SyncHelper {
     let queue = ProcedureQueue()
 
     func startObserving() {
-        NotificationCenter.default.addObserver(self, selector: #selector(foo(note:)), name: NSNotification.Name.NSManagedObjectContextObjectsDidChange, object: CoreDataHelper.context)
+        NotificationCenter.default.addObserver(self, selector: #selector(coreDataChange(note:)), name: NSNotification.Name.NSManagedObjectContextObjectsDidChange, object: CoreDataHelper.context)
         log.verbose("Start oberserving CoreData")
     }
 
@@ -25,12 +25,13 @@ class SyncHelper {
         log.verbose("Stop observing CoreData")
     }
 
-    @objc func foo(note: Notification) {
+    @objc func coreDataChange(note: Notification) {
         if let updated = note.userInfo?[NSUpdatedObjectsKey] as? Set<NSManagedObject>, updated.count > 0 {
             for case let update as Preference in updated {
-                let saveProcedure = SaveProcedure(resource: update.resource())
-//                let networksave = NetworkProcedure()
-                self.queue.add(operation: saveProcedure)
+                let networksave = NetworkProcedure<SaveProcedure<Preference>> {
+                    return SaveProcedure(resource: update.resource())
+                }
+                self.queue.add(operation: networksave)
             }
         }
 
@@ -41,10 +42,10 @@ class SyncHelper {
         if let inserted = note.userInfo?[NSInsertedObjectsKey] as? Set<NSManagedObject>, inserted.count > 0 {
             print("inserted: \(inserted)")
             for case let insert as WatchedVideo in inserted {
-//                print("yeah new watchvideo: \(insert)")
-                let saveProcedure = SaveProcedure(resource: insert.resource())
-//                //                let networksave = NetworkProcedure()
-                self.queue.add(operation: saveProcedure)
+                let networksave = NetworkProcedure<SaveProcedure<WatchedVideo>> {
+                    return SaveProcedure(resource: insert.resource())
+                }
+                self.queue.add(operation: networksave)
             }
         }
     }

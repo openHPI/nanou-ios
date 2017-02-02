@@ -32,6 +32,8 @@ PODS:
     - ProcedureKit/Standard (= 4.0.0)
   - ProcedureKit/Mobile (4.0.0):
     - ProcedureKit/Standard
+  - ProcedureKit/Network (4.0.0):
+    - ProcedureKit/Standard
   - ProcedureKit/Standard (4.0.0)
   - Result (3.0.0)
   - SDWebImage/Core (4.0.0)
@@ -52,6 +54,7 @@ DEPENDENCIES:
   - LNRSimpleNotifications (= 0.5.3)
   - ProcedureKit (= 4.0.0)
   - ProcedureKit/Mobile (= 4.0.0)
+  - ProcedureKit/Network (= 4.0.0)
   - SDWebImage/WebP (~> 4.0)
   - SIFloatingCollection (from `https://github.com/pavan309/SIFloatingCollection_Swift`, commit `e22f687`)
   - Spine (from `https://github.com/wvteijlingen/Spine.git`, commit `a87ea59`)
@@ -87,6 +90,6 @@ SPEC CHECKSUMS:
   SwiftyBeaver: af90fecea02b46fe073dc8e622362da06886c039
   SwiftyJSON: 38a8ea2006779c0fc4c310cb2ee8195327740faf
 
-PODFILE CHECKSUM: 953b9acf523c43f5e192ba80abb7a9abdcbfe72c
+PODFILE CHECKSUM: 11a8bd7b717d52283629b2cc291a0f2b46063461
 
 COCOAPODS: 1.2.0
