@@ -40,12 +40,7 @@ class PreferencesViewController: UITableViewController {
     }
 
     func syncPreferences() {
-        PreferenceHelper.syncPreferences().onSuccess { preferences in
-            log.info("PreferencesViewController | sync succeeded")
-        }.onFailure { error in
-            log.warning("PreferencesViewController | sync failed")
-            // TODO: show error to the user
-        }
+        SyncHelper.standard.fetch(helper: PreferenceHelper.self)
     }
 
     func configureTableCell(cell: UITableViewCell, indexPath: IndexPath) {

@@ -9,12 +9,12 @@
 import BrightFutures
 import CoreData
 
-class VideoHelper {
+struct VideoHelper: BaseModelHelper {
 
-    static func syncPreferences() -> Future<[Video], NanouError> {
+    static func sync() -> Future<[Video], NanouError> {
         // contains also Xikolo provider method (get)
         return SpineHelper.findAll(type: VideoSpine.self).flatMap { spineVideos -> Future<[Video], NanouError> in
-            return SpineModelHelper.syncObjectsFuture(objectsToUpdateRequest: Video.fetchRequest(), spineObjects: spineVideos, inject: nil, save: true)
+            return SpineModelHelper.syncObjectsFuture(objectsToUpdateRequest: Video.fetchRequest(), spineObjects: spineVideos, inject: nil, save: false)
         }
     }
 

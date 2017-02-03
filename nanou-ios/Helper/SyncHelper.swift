@@ -45,9 +45,21 @@ class SyncHelper {
                 let networksave = NetworkProcedure<SaveProcedure<WatchedVideo>> {
                     return SaveProcedure(resource: insert.resource())
                 }
+                let networkfetch = NetworkProcedure<FetchProcedure<VideoHelper>> {
+                    return FetchProcedure(helper: VideoHelper.self)
+                }
+                networkfetch.add(dependency: networksave)
                 self.queue.add(operation: networksave)
+                self.queue.add(operation: networkfetch)
             }
         }
+    }
+
+    func fetch<T: BaseModelHelper>(helper: T.Type) {
+        let networkfetch = NetworkProcedure<FetchProcedure<T>> {
+            return FetchProcedure(helper: helper)
+        }
+        self.queue.add(operation: networkfetch)
     }
 
 }

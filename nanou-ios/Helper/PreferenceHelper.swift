@@ -9,12 +9,12 @@
 import BrightFutures
 import CoreData
 
-class PreferenceHelper {
+struct PreferenceHelper: BaseModelHelper {
 
-    static func syncPreferences() -> Future<[Preference], NanouError> {
+    static func sync() -> Future<[Preference], NanouError> {
         // contains also Xikolo provider method (get)
         return SpineHelper.findAll(type: PreferenceSpine.self).flatMap { spinePreferences -> Future<[Preference], NanouError> in
-            return SpineModelHelper.syncObjectsFuture(objectsToUpdateRequest: Preference.fetchRequest(), spineObjects: spinePreferences, inject: nil, save: true)
+            return SpineModelHelper.syncObjectsFuture(objectsToUpdateRequest: Preference.fetchRequest(), spineObjects: spinePreferences, inject: nil, save: false)
         }
     }
 

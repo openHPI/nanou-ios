@@ -44,12 +44,7 @@ class VideosViewController: UICollectionViewController {
     }
 
     func syncVideos() {
-        VideoHelper.syncPreferences().onSuccess { preferences in
-            log.info("VideosViewController | sync succeeded")
-        }.onFailure { error in
-            log.warning("VideosViewController | sync failed")
-            // TODO: show error to the user
-        }
+        SyncHelper.standard.fetch(helper: VideoHelper.self)
     }
 
     deinit {

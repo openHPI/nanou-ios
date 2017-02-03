@@ -31,6 +31,9 @@
 		5057F7981DE78527003A8850 /* LoginConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5057F7971DE78527003A8850 /* LoginConfirmationViewController.swift */; };
 		5057F79A1DE78E82003A8850 /* Segues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5057F7991DE78E82003A8850 /* Segues.swift */; };
 		5084F7C51E421808006AA1EA /* SpineNetworkProcedure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5084F7C41E421808006AA1EA /* SpineNetworkProcedure.swift */; };
+		5084F7C71E43E7AB006AA1EA /* BaseModelHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5084F7C61E43E7AB006AA1EA /* BaseModelHelper.swift */; };
+		5084F7C91E43E81C006AA1EA /* FetchProdecure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5084F7C81E43E81C006AA1EA /* FetchProdecure.swift */; };
+		5084F7CB1E447BA5006AA1EA /* CoreDataNetworkProcedure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5084F7CA1E447BA5006AA1EA /* CoreDataNetworkProcedure.swift */; };
 		509D51BD1DE5999A0019BB63 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509D51BC1DE5999A0019BB63 /* LaunchViewController.swift */; };
 		509D51C11DE5C7870019BB63 /* LoginCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509D51C01DE5C7870019BB63 /* LoginCell.swift */; };
 		509D51C41DE5CDA70019BB63 /* Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509D51C31DE5CDA70019BB63 /* Routes.swift */; };
@@ -82,6 +85,9 @@
 		5057F7971DE78527003A8850 /* LoginConfirmationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginConfirmationViewController.swift; path = ViewControllers/LoginConfirmationViewController.swift; sourceTree = "<group>"; };
 		5057F7991DE78E82003A8850 /* Segues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Segues.swift; path = Helper/Segues.swift; sourceTree = "<group>"; };
 		5084F7C41E421808006AA1EA /* SpineNetworkProcedure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpineNetworkProcedure.swift; path = Procedures/SpineNetworkProcedure.swift; sourceTree = "<group>"; };
+		5084F7C61E43E7AB006AA1EA /* BaseModelHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseModelHelper.swift; path = Helper/BaseModelHelper.swift; sourceTree = "<group>"; };
+		5084F7C81E43E81C006AA1EA /* FetchProdecure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FetchProdecure.swift; path = Procedures/FetchProdecure.swift; sourceTree = "<group>"; };
+		5084F7CA1E447BA5006AA1EA /* CoreDataNetworkProcedure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataNetworkProcedure.swift; path = Procedures/CoreDataNetworkProcedure.swift; sourceTree = "<group>"; };
 		509D51BC1DE5999A0019BB63 /* LaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LaunchViewController.swift; path = ViewControllers/LaunchViewController.swift; sourceTree = "<group>"; };
 		509D51C01DE5C7870019BB63 /* LoginCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginCell.swift; path = Views/LoginCell.swift; sourceTree = "<group>"; };
 		509D51C31DE5CDA70019BB63 /* Routes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Routes.swift; path = Helper/Routes.swift; sourceTree = "<group>"; };
@@ -207,6 +213,7 @@
 				504CCEB01DF80AA700CF0DFD /* SpineModelHelper.swift */,
 				502936BB1DF838B60087A2D4 /* CoreDataHelper.swift */,
 				502936CF1DF854340087A2D4 /* PreferenceHelper.swift */,
+				5084F7C61E43E7AB006AA1EA /* BaseModelHelper.swift */,
 				50E9085D1E38F552005931C1 /* VideoHelper.swift */,
 				50CFFAA41E27AD8A00EA0CFE /* LoginDelegate.swift */,
 				50B270371E2FBF1F00F72502 /* SyncHelper.swift */,
@@ -220,7 +227,9 @@
 			isa = PBXGroup;
 			children = (
 				50B270441E3218C500F72502 /* SaveProcedure.swift */,
+				5084F7C81E43E81C006AA1EA /* FetchProdecure.swift */,
 				5084F7C41E421808006AA1EA /* SpineNetworkProcedure.swift */,
+				5084F7CA1E447BA5006AA1EA /* CoreDataNetworkProcedure.swift */,
 			);
 			name = Procedures;
 			sourceTree = "<group>";
@@ -401,6 +410,7 @@
 				509D51BD1DE5999A0019BB63 /* LaunchViewController.swift in Sources */,
 				50F64E361E3B83CB00419003 /* PagedUICollectionViewLayout.swift in Sources */,
 				50EA859E1DF5794C00DFFE09 /* UserProfileHelper.swift in Sources */,
+				5084F7C91E43E81C006AA1EA /* FetchProdecure.swift in Sources */,
 				5057F7981DE78527003A8850 /* LoginConfirmationViewController.swift in Sources */,
 				504CAFF41E1BCEAF00EF5482 /* BubbleScene.swift in Sources */,
 				50EA85A21DF597B900DFFE09 /* Error.swift in Sources */,
@@ -409,9 +419,11 @@
 				504CCEB11DF80AA700CF0DFD /* SpineModelHelper.swift in Sources */,
 				50EA85A01DF5811500DFFE09 /* NetworkHelper.swift in Sources */,
 				5000A1701DF6B2980070636E /* NotificationHelper.swift in Sources */,
+				5084F7C71E43E7AB006AA1EA /* BaseModelHelper.swift in Sources */,
 				504CCEAF1DF808CC00CF0DFD /* SpineHelper.swift in Sources */,
 				502936D21DF867280087A2D4 /* PreferencesViewController.swift in Sources */,
 				502936BC1DF838B60087A2D4 /* CoreDataHelper.swift in Sources */,
+				5084F7CB1E447BA5006AA1EA /* CoreDataNetworkProcedure.swift in Sources */,
 				50EA85981DF56FAC00DFFE09 /* Color.swift in Sources */,
 				502936D01DF854340087A2D4 /* PreferenceHelper.swift in Sources */,
 				5057F79A1DE78E82003A8850 /* Segues.swift in Sources */,

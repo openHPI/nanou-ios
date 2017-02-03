@@ -29,7 +29,7 @@ class InitialPreferenceViewController: UIViewController {
         self.floatingCollectionScene = BubblesScene(size: skView.bounds.size)
         skView.presentScene(floatingCollectionScene)
 
-        PreferenceHelper.syncPreferences().onSuccess { preferences in
+        PreferenceHelper.sync().onSuccess { preferences in
             log.info("InitialPreferenceViewController | sync succeeded")
             for preference in preferences {
                 let node = BubbleNode.instantiate(preference: preference)
