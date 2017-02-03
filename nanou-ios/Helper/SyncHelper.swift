@@ -49,8 +49,14 @@ class SyncHelper {
                     return FetchProcedure(helper: VideoHelper.self)
                 }
                 networkfetch.add(dependency: networksave)
-                self.queue.add(operation: networksave)
-                self.queue.add(operation: networkfetch)
+
+                let coreDataDelete = BlockProcedure(block: {
+                    CoreDataHelper.context.delete(insert)
+                })
+                coreDataDelete.add(dependency: networksave)
+                coreDataDelete.add(condition: NoFailedDependenciesCondition())
+
+                self.queue.add(operations: networksave, networkfetch, coreDataDelete)
             }
         }
     }
