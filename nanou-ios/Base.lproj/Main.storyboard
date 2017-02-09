@@ -147,7 +147,7 @@
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CEn-m7-fEH">
                                                                     <rect key="frame" x="0.0" y="0.0" width="128" height="30"/>
-                                                                    <state key="normal" title="No">
+                                                                    <state key="normal" title="No thanks">
                                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     </state>
                                                                     <connections>
@@ -156,7 +156,7 @@
                                                                 </button>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kyr-li-xws">
                                                                     <rect key="frame" x="128" y="0.0" width="128" height="30"/>
-                                                                    <state key="normal" title="Yes">
+                                                                    <state key="normal" title="Watch now">
                                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     </state>
                                                                     <connections>
