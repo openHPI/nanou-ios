@@ -65,7 +65,7 @@ class RateVideoViewController: UIViewController {
         self.imageView.layer.masksToBounds = true
         self.imageView.loadFrom(self.video?.imageUrl, orShow: "No thumbnail available")
 
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(RateVideoViewController.playVideo))
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(RateVideoViewController.resumeVideo))
         tapGesture.numberOfTapsRequired = 1
         tapGesture.numberOfTouchesRequired = 1
         self.imageView.addGestureRecognizer(tapGesture)
@@ -95,6 +95,10 @@ class RateVideoViewController: UIViewController {
                 self.buttonStack.isHidden = false
             }
         }
+    }
+
+    func resumeVideo() {
+        self.playVideo()
     }
 
     func playVideo(_ completion: (() -> (Void))? = nil) {
