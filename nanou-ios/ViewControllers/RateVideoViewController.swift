@@ -43,7 +43,7 @@ class RateVideoViewController: UIViewController {
         }
 
         let progress = videoTime.seconds / videoDuration.seconds
-        let rating = self.ratingView.rating
+        let rating = (self.ratingView.rating - 1) / Double(self.ratingView.settings.totalStars - 1)
 
         log.debug("tapWatched")
         log.verbose("rated video \(self.video?.id) with \(rating) (progress: \(progress))")
