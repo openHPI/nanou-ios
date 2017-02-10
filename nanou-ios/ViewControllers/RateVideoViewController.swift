@@ -20,6 +20,14 @@ class RateVideoViewController: UIViewController {
         }
     }
     var videoWasStartedBefore = false
+    var ratingActive = false {
+        didSet {
+            let color = self.ratingActive ? UIColor.nanouOrange : UIColor.lightGray
+            self.ratingView.settings.filledColor = color
+            self.ratingView.settings.filledBorderColor = color
+            self.ratingView.settings.emptyBorderColor = color
+        }
+    }
 
     var playerViewContoller: AVPlayerViewController?
 
@@ -43,7 +51,7 @@ class RateVideoViewController: UIViewController {
         }
 
         let progress = videoTime.seconds / videoDuration.seconds
-        let rating = (self.ratingView.rating - 1) / Double(self.ratingView.settings.totalStars - 1)
+        let rating = self.ratingActive ? (self.ratingView.rating - 1) / Double(self.ratingView.settings.totalStars - 1) : -1.0
 
         log.debug("tapWatched")
         log.verbose("rated video \(self.video?.id) with \(rating) (progress: \(progress))")
@@ -81,6 +89,12 @@ class RateVideoViewController: UIViewController {
         self.providerLabel.isHidden = true
         self.ratingView.isHidden = true
         self.buttonStack.isHidden = true
+
+        self.ratingView.didTouchCosmos = { value in
+            if !self.ratingActive {
+                self.ratingActive = true
+            }
+        }
     }
 
     override func viewDidAppear(_ animated: Bool) {
