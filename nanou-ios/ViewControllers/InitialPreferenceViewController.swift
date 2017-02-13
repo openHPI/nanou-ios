@@ -42,6 +42,13 @@ class InitialPreferenceViewController: UIViewController {
 
     @IBAction func commitSelection(_ sender: Any) {
         self.floatingCollectionScene.performCommitSelectionAnimation()
+        let nodes = self.floatingCollectionScene.indexesOfSelectedNodes().map { index in
+            return self.floatingCollectionScene.floatingNodeAtIndex(index)
+        }
+        for case let node as BubbleNode in nodes {
+            node.preference?.weight = 1.0
+        }
+        CoreDataHelper.saveContext()
         self.performSegue(withIdentifier: "open", sender: self)
     }
 

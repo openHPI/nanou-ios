@@ -12,6 +12,7 @@ import SIFloatingCollection
 
 class BubbleNode: SIFloatingNode {
     var labelNode = SKLabelNode(fontNamed: "")
+    var preference: Preference?
 
     class func instantiate(preference: Preference) -> BubbleNode! {
         let node = BubbleNode(circleOfRadius: 50)
@@ -26,6 +27,7 @@ class BubbleNode: SIFloatingNode {
         node.fillColor = UIColor.nanouOrange
         node.strokeColor = node.fillColor
 
+        node.preference = preference
         node.labelNode.text = preference.name
         node.labelNode.position = CGPoint.zero
         node.labelNode.fontColor = SKColor.white
