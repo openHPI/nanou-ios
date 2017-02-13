@@ -35,16 +35,14 @@ class InitialPreferenceViewController: UIViewController {
                 let node = BubbleNode.instantiate(preference: preference)
                 self.floatingCollectionScene.addChild(node!)
             }
-            }.onFailure { error in
-                log.warning("InitialPreferenceViewController | sync failed")
+        }.onFailure { error in
+            log.warning("InitialPreferenceViewController | sync failed")
         }
     }
 
     @IBAction func commitSelection(_ sender: Any) {
         self.floatingCollectionScene.performCommitSelectionAnimation()
-        self.dismiss(animated: true) {
-            self.delegate?.didFinishLogin(true)
-        }
+        self.performSegue(withIdentifier: "open", sender: self)
     }
 
 }

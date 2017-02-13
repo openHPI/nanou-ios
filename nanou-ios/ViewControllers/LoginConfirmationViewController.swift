@@ -48,10 +48,12 @@ class LoginConfirmationViewController: UIViewController, UIWebViewDelegate {
                     UserProfileHelper.storeToken(token)
                     if let prefInitialized = status["preferencesInitialized"] as? Bool, prefInitialized == true {
                         self.dismiss(animated: true) {
-                            self.delegate?.didFinishLogin(true)
+                            self.delegate?.didFinishLogin(true, preferencesInitialized: true)
                         }
                     } else {
-                        self.performSegue(withIdentifier: "setupPreferences", sender: nil)
+                        self.dismiss(animated: true) {
+                            self.delegate?.didFinishLogin(true, preferencesInitialized: false)
+                        }
                     }
                 } else {
                     log.error("Login | user could not authenticate")

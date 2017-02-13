@@ -34,8 +34,8 @@ class NetworkHelper {
 // MARK: - test login
 extension NetworkHelper {
 
-    class func testLogin() -> Future<String, NanouError> {
-        let promise = Promise<String, NanouError>()
+    class func testLogin() -> Future<Bool, NanouError> {
+        let promise = Promise<Bool, NanouError>()
 
         let uuid = UIDevice.current.identifierForVendor ?? UUID.init()
         let parameters: Parameters = ["vendorId": uuid]
@@ -56,7 +56,23 @@ extension NetworkHelper {
                 }
                 log.verbose("Request 'test-login' | retrieved authentication status: \(token)")
 
-                promise.success(token)
+                guard let authenticated = json["authenticated"] as? Bool else {
+                    log.error("Login | missing authentication value")
+                    return
+                }
+
+
+                if authenticated {
+                    UserProfileHelper.storeToken(token)
+                    if let prefInitialized = json["preferencesInitialized"] as? Bool {
+                        promise.success(prefInitialized)
+                    } else {
+                        promise.failure(NanouError.totallyUnknownError)
+                    }
+                } else {
+                    promise.failure(NanouError.totallyUnknownError)
+                }
+
             case .failure(let error):
                 log.error("Request 'status' | Failed with error: \(error)")
                 promise.failure(NanouError.network(error))

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ZhS-lk-yTp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ZhS-lk-yTp">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -109,53 +109,12 @@
                     <connections>
                         <outlet property="webview" destination="uDl-ue-1Im" id="hA8-rZ-VTW"/>
                         <segue destination="mEG-2v-DEa" kind="unwind" identifier="cancel" customClass="SegueUnwindFromRight" customModule="nanou_ios" unwindAction="logoutWithSegue:" id="hWd-c5-kR8"/>
-                        <segue destination="TPF-Bu-wA5" kind="show" identifier="setupPreferences" id="dq2-Jp-nfu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tFR-J0-JdY" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="mEG-2v-DEa" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-400.80000000000001" y="-171.36431784107947"/>
-        </scene>
-        <!--Setup Preferences-->
-        <scene sceneID="lIf-0d-sER">
-            <objects>
-                <viewController id="TPF-Bu-wA5" customClass="InitialPreferenceViewController" customModule="nanou_ios" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="QLr-ph-qIa"/>
-                        <viewControllerLayoutGuide type="bottom" id="OS8-ar-YBg"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="2CJ-uU-rwp">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Slo-Ft-hG1">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="Slo-Ft-hG1" firstAttribute="leading" secondItem="2CJ-uU-rwp" secondAttribute="leadingMargin" constant="-16" id="7cf-A1-AFn"/>
-                            <constraint firstItem="OS8-ar-YBg" firstAttribute="top" secondItem="Slo-Ft-hG1" secondAttribute="bottom" id="JGK-io-mFg"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Slo-Ft-hG1" secondAttribute="trailing" constant="-16" id="YV1-wa-KXT"/>
-                            <constraint firstItem="Slo-Ft-hG1" firstAttribute="top" secondItem="QLr-ph-qIa" secondAttribute="bottom" id="h0w-zA-yls"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Setup Preferences" id="YSd-Bf-5dy">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="0r7-Lw-385">
-                            <connections>
-                                <action selector="commitSelection:" destination="TPF-Bu-wA5" id="ZKF-Sb-PaV"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="sceneWrapperView" destination="Slo-Ft-hG1" id="LEu-J5-Jmh"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="54Z-KG-oFs" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="549.60000000000002" y="-171.36431784107947"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="XEh-xM-QLZ">

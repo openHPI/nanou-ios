@@ -10,5 +10,5 @@ import Foundation
 
 
 protocol LoginDelegate {
-    func didFinishLogin(_ success: Bool)
+    func didFinishLogin(_ success: Bool, preferencesInitialized: Bool)
 }

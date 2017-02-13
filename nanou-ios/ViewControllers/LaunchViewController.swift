@@ -66,9 +66,9 @@ class LaunchViewController: UIViewController {
     }
 
     @IBAction func testLogin(_ sender: Any) {
-        NetworkHelper.testLogin().onSuccess { token in
-            UserProfileHelper.storeToken(token)
-                self.performSegue(withIdentifier: "open", sender: self)
+        NetworkHelper.testLogin().onSuccess { preferencesInitialized in
+            let segueName = preferencesInitialized ? "open" : "setupPreferences"
+            self.performSegue(withIdentifier: segueName, sender: self)
         }.onFailure { error in
             NotificationHelper.showNotificationFor(error)
         }
@@ -87,12 +87,13 @@ class LaunchViewController: UIViewController {
 
 extension LaunchViewController: LoginDelegate {
 
-    func didFinishLogin(_ success: Bool) {
+    func didFinishLogin(_ success: Bool, preferencesInitialized: Bool) {
         if success {
             unowned let unownedSelf = self
             let deadlineTime = DispatchTime.now() + .milliseconds(500)
+            let segueName = preferencesInitialized ? "open" : "setupPreferences"
             DispatchQueue.main.asyncAfter(deadline: deadlineTime, execute: {
-                unownedSelf.performSegue(withIdentifier: "open", sender: unownedSelf)
+                unownedSelf.performSegue(withIdentifier: segueName, sender: unownedSelf)
             })
         }
     }

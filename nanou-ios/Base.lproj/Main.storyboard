@@ -68,11 +68,12 @@
                     <connections>
                         <outlet property="buttonView" destination="41m-3W-abb" id="iSc-8c-mca"/>
                         <segue destination="iyy-QL-N5u" kind="custom" identifier="open" customClass="SegueFade" customModule="nanou_ios" customModuleProvider="target" id="u8l-AM-NsG"/>
+                        <segue destination="qee-wV-29g" kind="custom" identifier="setupPreferences" customClass="SegueFade" customModule="nanou_ios" customModuleProvider="target" id="x5V-bc-6Zw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="770-pT-SvC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-772" y="252"/>
+            <point key="canvasLocation" x="-1442" y="252"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="S01-vI-bHt">
@@ -451,7 +452,7 @@
                                 <rect key="frame" x="0.0" y="56" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zgr-Lb-KuT" id="Yob-AD-HPW">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" continuous="NO" minimumValueImage="TabUser" maximumValueImage="TabUserSelected" translatesAutoresizingMaskIntoConstraints="NO" id="SSt-oR-klI">
@@ -505,6 +506,54 @@
             </objects>
             <point key="canvasLocation" x="1048.8" y="-75.112443778110944"/>
         </scene>
+        <!--Setup Preferences-->
+        <scene sceneID="Uzg-rd-now">
+            <objects>
+                <viewController id="qee-wV-29g" customClass="InitialPreferenceViewController" customModule="nanou_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5xI-gD-p1f"/>
+                        <viewControllerLayoutGuide type="bottom" id="tCU-Hy-3EX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="quJ-fc-AVA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2bd-Mj-gGZ">
+                                <rect key="frame" x="0.0" y="42" width="375" height="587"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gzM-mc-fIh">
+                                <rect key="frame" x="16" y="612" width="343" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="fXk-Mz-n6X"/>
+                                </constraints>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="commitSelection:" destination="qee-wV-29g" eventType="touchUpInside" id="FtR-VJ-o1C"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="gzM-mc-fIh" secondAttribute="trailing" id="9TZ-i1-ijq"/>
+                            <constraint firstItem="2bd-Mj-gGZ" firstAttribute="top" secondItem="5xI-gD-p1f" secondAttribute="bottom" constant="22" id="F8v-4d-d6u"/>
+                            <constraint firstItem="2bd-Mj-gGZ" firstAttribute="leading" secondItem="quJ-fc-AVA" secondAttribute="leading" id="SJ9-Fd-AzR"/>
+                            <constraint firstItem="gzM-mc-fIh" firstAttribute="top" secondItem="2bd-Mj-gGZ" secondAttribute="bottom" constant="-17" id="ZGO-Ee-UiU"/>
+                            <constraint firstAttribute="trailing" secondItem="2bd-Mj-gGZ" secondAttribute="trailing" id="pa7-8w-6x6"/>
+                            <constraint firstItem="tCU-Hy-3EX" firstAttribute="top" secondItem="gzM-mc-fIh" secondAttribute="bottom" id="vc1-6U-wR0"/>
+                            <constraint firstItem="gzM-mc-fIh" firstAttribute="leading" secondItem="quJ-fc-AVA" secondAttribute="leadingMargin" id="ygs-96-tpT"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Setup Preferences" id="pEa-bA-dRY"/>
+                    <connections>
+                        <outlet property="sceneWrapperView" destination="2bd-Mj-gGZ" id="DYK-33-fPA"/>
+                        <segue destination="iyy-QL-N5u" kind="custom" identifier="open" customClass="SegueFade" customModule="nanou_ios" customModuleProvider="target" id="EL6-yF-4gS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HzT-Mv-Qvn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-668" y="-290.10494752623691"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Logo" width="200" height="59"/>
@@ -513,5 +562,8 @@
         <image name="TabVideo" width="25" height="25"/>
         <image name="TabVideoSelected" width="25" height="25"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="EL6-yF-4gS"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.94509803921568625" green="0.52156862745098043" blue="0.24705882352941178" alpha="1" colorSpace="calibratedRGB"/>
 </document>
