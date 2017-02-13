@@ -13,7 +13,13 @@ class UserProfileViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath == UserProfileViewController.logoutIndexPath {
+            CoreDataHelper.saveContext() // to avoid merge conflicts
             UserProfileHelper.deleteToken()
+            CoreDataHelper.deleteAll(Preference.self)
+            CoreDataHelper.deleteAll(Video.self)
+            CoreDataHelper.deleteAll(WatchedVideo.self)
+            CoreDataHelper.saveContext()
+
             self.performSegue(withIdentifier: "logout", sender: nil)
         }
         tableView.deselectRow(at: indexPath, animated: true)

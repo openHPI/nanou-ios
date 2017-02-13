@@ -71,4 +71,14 @@ class CoreDataHelper {
         }
     }
 
+    static func deleteAll(_ model: BaseModel.Type) {
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: model.fetchRequest())
+
+        do {
+            try self.context.execute(deleteRequest)
+        } catch let error as NSError {
+            log.error(error)
+        }
+    }
+
 }
