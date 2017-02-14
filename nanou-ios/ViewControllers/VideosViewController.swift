@@ -38,11 +38,6 @@ class VideosViewController: UICollectionViewController {
         self.syncVideos()
     }
 
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        self.syncVideos()
-    }
-
     func syncVideos() {
         SyncHelper.standard.fetch(helper: VideoHelper.self)
     }

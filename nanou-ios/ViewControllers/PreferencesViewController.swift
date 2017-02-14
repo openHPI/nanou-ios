@@ -34,11 +34,6 @@ class PreferencesViewController: UITableViewController {
         self.syncPreferences()
     }
 
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        self.syncPreferences()
-    }
-
     func syncPreferences() {
         SyncHelper.standard.fetch(helper: PreferenceHelper.self)
     }
