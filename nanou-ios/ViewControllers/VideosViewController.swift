@@ -110,6 +110,30 @@ extension VideosViewController: VideoCellDelegate {
 
     func didDismiss(cell: VideoCell) {
         log.debug("VideosViewController | dismiss video")
+
+        guard let indexPath = self.collectionView?.indexPath(for: cell) else {
+            log.error("VideosViewController | didDismiss | wrong indexPath")
+            return
+        }
+
+        guard let video = self.resultsController?.object(at: indexPath) else {
+            log.error("VideosViewController | didDismiss | video not found")
+            return
+        }
+
+        let now = Date() as NSDate
+        let progress = 0.0
+        let rating = -1.0
+
+        log.verbose("rated video \(video.id) with \(rating) (progress: \(progress))")
+
+        let _ = WatchedVideo.newEntity(forVideoId: video.id, withDate: now, progress: progress, rating: rating)
+        CoreDataHelper.context.delete(video)
+        CoreDataHelper.saveContext()
+
+        // TODO: when using procedure correctly, this call is no longer necessary
+        self.syncVideos()
+        CoreDataHelper.saveContext()
     }
 
 }
