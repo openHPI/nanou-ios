@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import AVKit
+import AVFoundation
 import CoreData
 
 class HistoryViewController: UITableViewController {
@@ -128,6 +130,34 @@ extension HistoryViewController {
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 88.0
+    }
+
+}
+
+// MARK: - UITableViewDelegate
+extension HistoryViewController {
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let historyVideo = self.resultsController?.object(at: indexPath)
+
+        guard let url = historyVideo?.streamUrl else {
+            log.error("HistoryViewController | invalid url string")
+            return
+        }
+
+        guard let videoUrl = URL(string: url) else {
+            log.error("HistoryViewController | invalid url")
+            return
+        }
+
+        let player = AVPlayer(url: videoUrl)
+        let playerViewController = AVPlayerViewController()
+        playerViewController.player = player
+
+        self.present(playerViewController, animated: true) {
+            self.tableView.deselectRow(at: indexPath, animated: true)
+            player.play()
+        }
     }
 
 }
