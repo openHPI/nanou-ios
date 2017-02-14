@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import TagListView
 
 class VideoCell: UICollectionViewCell {
 
@@ -15,7 +16,7 @@ class VideoCell: UICollectionViewCell {
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var providerLabel: UILabel!
-
+    @IBOutlet var tags: TagListView!
 
     @IBAction func tapDismiss(_ sender: Any) {
         self.delegate?.didDismiss(cell: self)

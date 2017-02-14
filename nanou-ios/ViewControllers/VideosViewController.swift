@@ -82,6 +82,13 @@ class VideosViewController: UICollectionViewController {
         videoCell.imageView.loadFrom(video?.imageUrl, orShow: "No thumbnail available")
         videoCell.imageView.layer.masksToBounds = true
         videoCell.providerLabel.text = video?.providerText
+        videoCell.tags.alignment = .center
+        videoCell.tags.removeAllTags()
+        for tag in video?.tags?.components(separatedBy: ",") ?? [] {
+            if tag.characters.count > 0 {
+                videoCell.tags.addTag(tag)
+            }
+        }
     }
 
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {

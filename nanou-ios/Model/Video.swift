@@ -29,6 +29,7 @@ class VideoSpine: BaseModelSpine<Video> {
     var streamUrl: URL?
     var imageUrl: URL?
     var providerName: String?
+    var tags: String?
 
     override class var resourceType: ResourceType {
         return "videos"
@@ -41,6 +42,7 @@ class VideoSpine: BaseModelSpine<Video> {
             "streamUrl": URLAttribute().serializeAs("stream_url"),
             "imageUrl": URLAttribute().serializeAs("image_url"),
             "providerName": Attribute().serializeAs("provider_name"),
+            "tags": Attribute(),
         ])
     }
 }

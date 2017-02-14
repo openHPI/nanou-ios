@@ -46,6 +46,7 @@ PODS:
     - SwiftyJSON (~> 3.1)
   - SwiftyBeaver (1.1.0)
   - SwiftyJSON (3.1.3)
+  - TagListView (1.1.0)
 
 DEPENDENCIES:
   - Alamofire (= 4.2.0)
@@ -59,6 +60,7 @@ DEPENDENCIES:
   - SIFloatingCollection (from `https://github.com/pavan309/SIFloatingCollection_Swift`, commit `e22f687`)
   - Spine (from `https://github.com/wvteijlingen/Spine.git`, commit `a87ea59`)
   - SwiftyBeaver (= 1.1.0)
+  - TagListView (~> 1.1)
 
 EXTERNAL SOURCES:
   SIFloatingCollection:
@@ -89,7 +91,8 @@ SPEC CHECKSUMS:
   Spine: 3a456d79af4371a5875518f5144c47e287b15ecb
   SwiftyBeaver: af90fecea02b46fe073dc8e622362da06886c039
   SwiftyJSON: 38a8ea2006779c0fc4c310cb2ee8195327740faf
+  TagListView: d0267a71393f3c73db5c9ea2f979ac1125fcab56
 
-PODFILE CHECKSUM: 11a8bd7b717d52283629b2cc291a0f2b46063461
+PODFILE CHECKSUM: 6acc0122f1e573e61fc255ba6223bc74af2c32cd
 
 COCOAPODS: 1.2.0
