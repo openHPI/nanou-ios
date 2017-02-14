@@ -73,7 +73,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="770-pT-SvC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1442" y="252"/>
+            <point key="canvasLocation" x="-1364" y="623"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="S01-vI-bHt">
@@ -87,12 +87,13 @@
                     </tabBar>
                     <connections>
                         <segue destination="hqd-OL-PSP" kind="relationship" identifier="videos" relationship="viewControllers" id="efP-oS-dlV"/>
+                        <segue destination="Jtt-vg-qzg" kind="relationship" relationship="viewControllers" id="iGe-AP-qZC"/>
                         <segue destination="L1Z-oi-xzN" kind="relationship" identifier="profile" relationship="viewControllers" id="8zH-Gb-gJB"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C59-44-ADF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="110" y="253"/>
+            <point key="canvasLocation" x="204" y="623"/>
         </scene>
         <!--Videos View Controller-->
         <scene sceneID="Dcp-QY-k0A">
@@ -586,10 +587,146 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HzT-Mv-Qvn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-668" y="-290.10494752623691"/>
+            <point key="canvasLocation" x="-569" y="111"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="HMx-iQ-Md6">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Jtt-vg-qzg" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="History" selectedImage="HistorySelected" id="Eix-9N-iTV">
+                        <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Cwd-gp-W83">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Wb3-tD-ctB" kind="relationship" relationship="rootViewController" id="PYR-Ta-xcO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8vW-D6-E9d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1049" y="1316"/>
+        </scene>
+        <!--Videos you watched-->
+        <scene sceneID="YR7-Hk-eHr">
+            <objects>
+                <tableViewController id="Wb3-tD-ctB" customClass="HistoryViewController" customModule="nanou_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="oAy-Sr-YWC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="historyVideoCell" rowHeight="88" id="Mai-tx-pd4" customClass="HistoryCell" customModule="nanou_ios" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="88"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Mai-tx-pd4" id="I48-5O-8Pe">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="88"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="z3B-Cb-3mk">
+                                            <rect key="frame" x="8" y="4" width="359" height="79.5"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oOc-Cg-qH0">
+                                                    <rect key="frame" x="0.0" y="0.0" width="79.5" height="79.5"/>
+                                                    <color key="backgroundColor" red="0.14901960784313725" green="0.1764705882352941" blue="0.17254901960784313" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="oOc-Cg-qH0" secondAttribute="height" multiplier="1:1" id="eAw-dI-bho"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="rRo-r0-AwO">
+                                                    <rect key="frame" x="87.5" y="24" width="271.5" height="55.5"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="AXm-sj-9Jp">
+                                                            <rect key="frame" x="0.0" y="0.0" width="271.5" height="20.5"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Video Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OuN-wA-pWM">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="81.5" height="20.5"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Provider" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mI4-w8-lhK">
+                                                                    <rect key="frame" x="207.5" y="0.0" width="64" height="20.5"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UN2-oe-m0W" customClass="TagListView" customModule="TagListView">
+                                                            <rect key="frame" x="0.0" y="24.5" width="271.5" height="16"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                                                    <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="selectedTextColor">
+                                                                    <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="tagBackgroundColor">
+                                                                    <color key="value" red="0.14901960780000001" green="0.1764705882" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="tagHighlightedBackgroundColor">
+                                                                    <color key="value" red="0.14901960780000001" green="0.1764705882" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="tagSelectedBackgroundColor">
+                                                                    <color key="value" red="0.14901960780000001" green="0.1764705882" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                    <real key="value" value="0.0"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                    <real key="value" value="2"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </view>
+                                                        <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Sxl-PN-hUM">
+                                                            <rect key="frame" x="0.0" y="53.5" width="271.5" height="2"/>
+                                                        </progressView>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="oOc-Cg-qH0" secondAttribute="bottom" id="P2a-dx-SQk"/>
+                                                <constraint firstItem="oOc-Cg-qH0" firstAttribute="leading" secondItem="z3B-Cb-3mk" secondAttribute="leading" id="YVL-Ux-gBf"/>
+                                                <constraint firstItem="oOc-Cg-qH0" firstAttribute="top" secondItem="z3B-Cb-3mk" secondAttribute="top" id="z2G-Gz-K6w"/>
+                                            </constraints>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="z3B-Cb-3mk" secondAttribute="trailing" constant="8" id="1y3-UE-fc2"/>
+                                        <constraint firstAttribute="bottom" secondItem="z3B-Cb-3mk" secondAttribute="bottom" constant="4" id="5Ka-Q3-EqL"/>
+                                        <constraint firstItem="z3B-Cb-3mk" firstAttribute="top" secondItem="I48-5O-8Pe" secondAttribute="top" constant="4" id="9kT-N8-wnO"/>
+                                        <constraint firstItem="z3B-Cb-3mk" firstAttribute="leading" secondItem="I48-5O-8Pe" secondAttribute="leading" constant="8" id="qhP-s2-YxQ"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="imageview" destination="oOc-Cg-qH0" id="Eb4-3f-v0G"/>
+                                    <outlet property="progressView" destination="Sxl-PN-hUM" id="LCZ-Ci-0CL"/>
+                                    <outlet property="providerLabel" destination="mI4-w8-lhK" id="ilI-l2-3tD"/>
+                                    <outlet property="tagListView" destination="UN2-oe-m0W" id="KC6-j7-YTp"/>
+                                    <outlet property="titleLabel" destination="OuN-wA-pWM" id="U1v-fW-McZ"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Wb3-tD-ctB" id="beQ-Er-Son"/>
+                            <outlet property="delegate" destination="Wb3-tD-ctB" id="hSp-ek-ywO"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Videos you watched" id="lRa-IW-vkp"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="12Y-WF-b59" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2024.8" y="1315.5922038980511"/>
         </scene>
     </scenes>
     <resources>
+        <image name="History" width="25" height="25"/>
+        <image name="HistorySelected" width="25" height="25"/>
         <image name="Logo" width="200" height="59"/>
         <image name="TabUser" width="25" height="25"/>
         <image name="TabUserSelected" width="25" height="25"/>
@@ -597,7 +734,7 @@
         <image name="TabVideoSelected" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="EL6-yF-4gS"/>
+        <segue reference="u8l-AM-NsG"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.94509803921568625" green="0.52156862745098043" blue="0.24705882352941178" alpha="1" colorSpace="calibratedRGB"/>
 </document>

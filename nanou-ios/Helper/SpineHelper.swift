@@ -77,6 +77,8 @@ class SpineHelper {
 
         spine.registerResource(PreferenceSpine.self)
         spine.registerResource(VideoSpine.self)
+        spine.registerResource(WatchedVideoSpine.self)
+        spine.registerResource(HistoryVideoSpine.self)
 
         return spine
     }()
