@@ -93,6 +93,11 @@ class LaunchViewController: UIViewController {
         self.present(nvc, animated: true, completion: nil)
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // we want call this every time the user leaves the launch screen
+        NetworkHelper.combineAccounts()
+    }
+
 }
 
 extension LaunchViewController: LoginDelegate {

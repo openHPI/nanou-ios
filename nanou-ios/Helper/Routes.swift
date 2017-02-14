@@ -17,6 +17,7 @@ struct Route {
 
     static let api = base + "api/"
     static let testLogin = api + "test-login/"
+    static let combineAccounts = api + "combine/"
     static let authstatus = api + "auth-status/"
     static let loginProviders = api + "login-providers/"
 

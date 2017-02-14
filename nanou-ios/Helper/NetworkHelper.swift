@@ -74,12 +74,25 @@ extension NetworkHelper {
                 }
 
             case .failure(let error):
-                log.error("Request 'status' | Failed with error: \(error)")
+                log.error("Request 'test-login' | Failed with error: \(error)")
                 promise.failure(NanouError.network(error))
             }
         }
 
         return promise.future
+    }
+
+    class func combineAccounts() {
+        let uuid = UIDevice.current.identifierForVendor ?? UUID.init()
+        let parameters: Parameters = ["vendorId": uuid]
+        Alamofire.request(Route.combineAccounts, parameters: parameters, headers: NetworkHelper.requestHeaders).responseJSON { response in
+            switch response.result {
+            case .success(_):
+                log.verbose("Request 'combine accounts' | success")
+            case .failure(_):
+                log.warning("Request 'combine accounts' | failed")
+            }
+        }
     }
 
 }
