@@ -8,11 +8,17 @@
 
 import UIKit
 
+struct LaunchRedirectData {
+    var preferencesInitialized: Bool
+}
+
 
 class LaunchViewController: UIViewController {
 
     @IBOutlet var buttonView: UIStackView!
     var gradientLayer: CALayer?
+
+    var redirectData: LaunchRedirectData?
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -52,8 +58,12 @@ class LaunchViewController: UIViewController {
     }
 
     func checkStatus() {
-        // TODO: Improve check -> if token valid or has offline video content
-        if UserProfileHelper.isLoggedIn {
+        if let redirectData = self.redirectData {
+            let segueName = redirectData.preferencesInitialized ? "open" : "setupPreferences"
+            self.redirectData = nil
+            self.performSegue(withIdentifier: segueName, sender: self)
+        } else if UserProfileHelper.isLoggedIn {
+            // TODO: Improve check -> if token valid or has offline video content
             self.performSegue(withIdentifier: "open", sender: self)
         } else {
             UIView.animate(withDuration: 0.25,
@@ -89,12 +99,7 @@ extension LaunchViewController: LoginDelegate {
 
     func didFinishLogin(_ success: Bool, preferencesInitialized: Bool) {
         if success {
-            unowned let unownedSelf = self
-            let deadlineTime = DispatchTime.now() + .milliseconds(500)
-            let segueName = preferencesInitialized ? "open" : "setupPreferences"
-            DispatchQueue.main.asyncAfter(deadline: deadlineTime, execute: {
-                unownedSelf.performSegue(withIdentifier: segueName, sender: unownedSelf)
-            })
+            self.redirectData = LaunchRedirectData(preferencesInitialized: preferencesInitialized)
         }
     }
 
