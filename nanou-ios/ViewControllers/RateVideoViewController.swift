@@ -11,6 +11,7 @@ import AVKit
 import AVFoundation
 import Cosmos
 import SDWebImage
+import TagListView
 
 
 class RateVideoViewController: UIViewController {
@@ -34,6 +35,7 @@ class RateVideoViewController: UIViewController {
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var providerLabel: UILabel!
+    @IBOutlet var tagListView: TagListView!
     @IBOutlet var ratingView: CosmosView!
     @IBOutlet var buttonStack: UIStackView!
     @IBOutlet var nextButton: UIButton!
@@ -79,6 +81,14 @@ class RateVideoViewController: UIViewController {
         self.imageView.addGestureRecognizer(tapGesture)
         self.imageView.isUserInteractionEnabled = true
 
+        self.tagListView.alignment = .center
+        self.tagListView.removeAllTags()
+        for tag in self.video?.tags?.components(separatedBy: ",") ?? [] {
+            if tag.characters.count > 0 {
+                self.tagListView.addTag(tag)
+            }
+        }
+
         self.nextButton.backgroundColor = UIColor.nanouOrange
         self.nextButton.tintColor = UIColor.white
         self.nextButton.layer.masksToBounds = true
@@ -87,6 +97,7 @@ class RateVideoViewController: UIViewController {
         // set all view but imageview to hidden
         self.titleLabel.isHidden = true
         self.providerLabel.isHidden = true
+        self.tagListView.isHidden = true
         self.ratingView.isHidden = true
         self.buttonStack.isHidden = true
 
@@ -105,6 +116,7 @@ class RateVideoViewController: UIViewController {
             self.playVideo {
                 self.titleLabel.isHidden = false
                 self.providerLabel.isHidden = false
+                self.tagListView.isHidden = false
                 self.ratingView.isHidden = false
                 self.buttonStack.isHidden = false
             }
