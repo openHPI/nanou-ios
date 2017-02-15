@@ -18,6 +18,7 @@ class UserProfileViewController: UITableViewController {
             CoreDataHelper.deleteAll(Preference.self)
             CoreDataHelper.deleteAll(Video.self)
             CoreDataHelper.deleteAll(WatchedVideo.self)
+            CoreDataHelper.deleteAll(HistoryVideo.self)
             CoreDataHelper.saveContext()
 
             self.performSegue(withIdentifier: "logout", sender: nil)
