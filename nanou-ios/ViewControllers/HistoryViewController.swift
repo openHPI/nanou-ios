@@ -15,6 +15,9 @@ class HistoryViewController: UITableViewController {
     var resultsController: NSFetchedResultsController<HistoryVideo>?
     var cellReuseIdentifier = "historyVideoCell"
 
+    var playerViewController: AVPlayerViewController?
+    var lastVideo: HistoryVideo?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,7 +35,42 @@ class HistoryViewController: UITableViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.trackWatchVideo()
         self.syncHistory()
+    }
+
+    func trackWatchVideo() {
+        defer {
+            self.playerViewController = nil
+            self.lastVideo = nil
+        }
+
+        guard let playerViewController = self.playerViewController else {
+            log.verbose("HistoryViewController | trackWatchVideo | cannot track watch video: no player vc")
+            return
+        }
+
+        guard let video = self.lastVideo else {
+            log.verbose("HistoryViewController | trackWatchVideo | cannot track watch video: no video")
+            return
+        }
+
+        guard
+            let videoTime = playerViewController.player?.currentTime(),
+            let videoDuration = playerViewController.player?.currentItem?.duration,
+            videoTime.isValid, videoDuration.isValid else {
+                log.verbose("HistoryViewController | trackWatchVideo | cannot track watch video: no valid video time")
+                return
+        }
+
+        let progress = videoTime.seconds / videoDuration.seconds
+        let rating = -1.0
+
+        log.verbose("rated video \(video.id) with \(rating) (progress: \(progress))")
+
+        let now = Date() as NSDate
+        let _ = WatchedVideo.newEntity(forVideoId: video.id, withDate: now, progress: progress, rating: rating)
+        CoreDataHelper.saveContext()
     }
 
     func syncHistory() {
@@ -153,6 +191,8 @@ extension HistoryViewController {
         let player = AVPlayer(url: videoUrl)
         let playerViewController = AVPlayerViewController()
         playerViewController.player = player
+        self.playerViewController = playerViewController
+        self.lastVideo = historyVideo
 
         self.present(playerViewController, animated: true) {
             self.tableView.deselectRow(at: indexPath, animated: true)
