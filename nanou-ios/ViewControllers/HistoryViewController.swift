@@ -86,6 +86,7 @@ class HistoryViewController: UITableViewController {
         let historyVideo = self.resultsController?.object(at: indexPath)
         historyCell.titleLabel.text = historyVideo?.name
         historyCell.providerLabel.text = historyVideo?.providerName
+        historyCell.countLabel.text = String(describing: historyVideo?.count ?? 1)
         historyCell.imageview.loadFrom(historyVideo?.imageUrl, orShow: "?")
         historyCell.imageview.layer.masksToBounds = true
         historyCell.imageview.layer.cornerRadius = 2.0

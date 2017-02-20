@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="15G1217" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="HistoryVideo" representedClassName=".HistoryVideo" syncable="YES" codeGenerationType="category">
+        <attribute name="count" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="imageUrl" optional="YES" attributeType="String" syncable="YES"/>
@@ -32,9 +33,9 @@
         <attribute name="videoId" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
+        <element name="HistoryVideo" positionX="-63" positionY="45" width="128" height="180"/>
         <element name="Preference" positionX="-63" positionY="-18" width="128" height="105"/>
         <element name="Video" positionX="-63" positionY="9" width="128" height="150"/>
         <element name="WatchedVideo" positionX="-63" positionY="45" width="128" height="105"/>
-        <element name="HistoryVideo" positionX="-63" positionY="45" width="128" height="165"/>
     </elements>
 </model>

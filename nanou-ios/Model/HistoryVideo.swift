@@ -23,6 +23,7 @@ class HistoryVideoSpine: BaseModelSpine<HistoryVideo> {
     var imageUrl: URL?
     var providerName: String?
     var tags: String?
+    var count: NSNumber?
 
     override class var resourceType: ResourceType {
         return "history"
@@ -31,6 +32,7 @@ class HistoryVideoSpine: BaseModelSpine<HistoryVideo> {
     override class var fields: [Field] {
         return fieldsFromDictionary([
             "name": Attribute(),
+            "count": Attribute(),
             "date": DateAttribute(),
             "progress": Attribute(),
             "streamUrl": URLAttribute().serializeAs("stream_url"),
