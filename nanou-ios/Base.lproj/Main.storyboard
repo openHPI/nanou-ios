@@ -109,9 +109,49 @@
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
+                        <view key="backgroundView" contentMode="scaleToFill" id="yQX-pM-Vef">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ikT-Rq-Uil">
+                                    <rect key="frame" x="62" y="208" width="250" height="250"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Well Done!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Prx-HK-57U">
+                                            <rect key="frame" x="32" y="32" width="186" height="32.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                            <color key="textColor" red="0.94509803920000002" green="0.52156862749999999" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="You've watched lots of videos." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UFs-VP-LC2">
+                                            <rect key="frame" x="32" y="64.5" width="186" height="133"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stay tuned for more!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RVt-KG-7KQ">
+                                            <rect key="frame" x="32" y="197.5" width="186" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="ikT-Rq-Uil" secondAttribute="height" multiplier="1:1" id="Bee-oD-PkK"/>
+                                    </constraints>
+                                    <edgeInsets key="layoutMargins" top="32" left="32" bottom="32" right="32"/>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="ikT-Rq-Uil" secondAttribute="trailing" id="CPo-bc-dLR"/>
+                                <constraint firstItem="ikT-Rq-Uil" firstAttribute="centerY" secondItem="yQX-pM-Vef" secondAttribute="centerY" id="IFy-nn-52y"/>
+                                <constraint firstItem="ikT-Rq-Uil" firstAttribute="leading" secondItem="yQX-pM-Vef" secondAttribute="leading" id="fpB-rM-9ip"/>
+                            </constraints>
+                            <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
+                        </view>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="videoCell" id="N52-wf-Udr" customClass="VideoCell" customModule="nanou_ios" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="250" height="350"/>
+                                <rect key="frame" x="0.0" y="159" width="250" height="350"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="250" height="350"/>
@@ -233,64 +273,6 @@
                                     <outlet property="titleLabel" destination="jxl-WM-xJu" id="xDZ-lm-LGS"/>
                                 </connections>
                             </collectionViewCell>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="infoCell" id="Hhv-9I-6uX">
-                                <rect key="frame" x="0.0" y="360" width="250" height="150"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="250" height="150"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yQX-pM-Vef">
-                                            <rect key="frame" x="0.0" y="0.0" width="250" height="150"/>
-                                            <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ikT-Rq-Uil">
-                                                    <rect key="frame" x="0.0" y="-50" width="250" height="250"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Well Done!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Prx-HK-57U">
-                                                            <rect key="frame" x="32" y="32" width="186" height="32.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                                            <color key="textColor" red="0.94509803920000002" green="0.52156862749999999" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="You've watched lots of videos." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UFs-VP-LC2">
-                                                            <rect key="frame" x="32" y="64.5" width="186" height="133"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stay tuned for more!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RVt-KG-7KQ">
-                                                            <rect key="frame" x="32" y="197.5" width="186" height="20.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="ikT-Rq-Uil" secondAttribute="height" multiplier="1:1" id="Bee-oD-PkK"/>
-                                                    </constraints>
-                                                    <edgeInsets key="layoutMargins" top="32" left="32" bottom="32" right="32"/>
-                                                </stackView>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                            <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="ikT-Rq-Uil" secondAttribute="trailing" id="CPo-bc-dLR"/>
-                                                <constraint firstItem="ikT-Rq-Uil" firstAttribute="centerY" secondItem="yQX-pM-Vef" secondAttribute="centerY" id="IFy-nn-52y"/>
-                                                <constraint firstItem="ikT-Rq-Uil" firstAttribute="leading" secondItem="yQX-pM-Vef" secondAttribute="leading" id="fpB-rM-9ip"/>
-                                            </constraints>
-                                            <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
-                                        </view>
-                                    </subviews>
-                                </view>
-                                <color key="backgroundColor" white="0.84999999999999998" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="yQX-pM-Vef" secondAttribute="bottom" id="SxX-PX-brm"/>
-                                    <constraint firstAttribute="trailing" secondItem="yQX-pM-Vef" secondAttribute="trailing" id="X6q-i9-ULY"/>
-                                    <constraint firstItem="yQX-pM-Vef" firstAttribute="leading" secondItem="Hhv-9I-6uX" secondAttribute="leading" id="oM0-LQ-m8e"/>
-                                    <constraint firstItem="yQX-pM-Vef" firstAttribute="top" secondItem="Hhv-9I-6uX" secondAttribute="top" id="sbC-1V-Ikv"/>
-                                </constraints>
-                                <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="8" right="0.0"/>
-                                <size key="customSize" width="250" height="150"/>
-                            </collectionViewCell>
                         </cells>
                         <connections>
                             <outlet property="dataSource" destination="mEa-Mq-2sQ" id="6Cv-9F-5SX"/>
@@ -299,6 +281,7 @@
                     </collectionView>
                     <navigationItem key="navigationItem" id="nfk-ct-KNy"/>
                     <connections>
+                        <outlet property="emptyState" destination="yQX-pM-Vef" id="OLy-wr-ith"/>
                         <segue destination="Jef-vz-Vji" kind="show" identifier="watchVideo" id="BfE-5s-cdG"/>
                     </connections>
                 </collectionViewController>

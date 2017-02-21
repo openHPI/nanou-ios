@@ -13,6 +13,24 @@ import SDWebImage
 class VideosViewController: UICollectionViewController {
     var resultsController: NSFetchedResultsController<Video>?
     var cellReuseIdentifier = "videoCell"
+    var emptyStateTimer: Timer?
+    var isCollectionViewEmpty = false {
+        didSet {
+            if self.isCollectionViewEmpty {
+                if self.emptyStateTimer != nil {
+                    return
+                }
+                self.emptyStateTimer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { timer in
+                    self.emptyState.isHidden = false
+                })
+            } else {
+                self.emptyStateTimer?.invalidate()
+                self.emptyStateTimer = nil
+                self.emptyState.isHidden = true
+            }
+        }
+    }
+    @IBOutlet var emptyState: UIView!
 
     var contentChangeOperations: [ContentChangeOperation] = []
 
@@ -31,6 +49,8 @@ class VideosViewController: UICollectionViewController {
         } catch {
             // TODO: Error handling.
         }
+
+        self.emptyState.isHidden = true
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -179,6 +199,7 @@ extension VideosViewController: NSFetchedResultsControllerDelegate {
                         collectionView.deleteItems(at: [change.indexPath!])
                     case .update:
                         // No need to update a cell that has not been loaded.
+                        collectionView.reloadItems(at: [change.indexPath!])
                         if let cell = collectionView.cellForItem(at: change.indexPath!) {
                             self.configureCollectionCell(cell, indexPath: change.indexPath!)
                         }
@@ -204,13 +225,15 @@ extension VideosViewController {
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         let objectCount = self.resultsController?.sections?[section].numberOfObjects ?? 0
-        return section == 0 && objectCount == 0 ? 1 : objectCount
+        if section == 0 {
+            self.isCollectionViewEmpty = (objectCount == 0)
+        }
+        return objectCount
     }
 
     override func collectionView(_ collectionView: UICollectionView,
                                  cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let objectCount = self.resultsController?.sections?[indexPath.section].numberOfObjects ?? 0
-        let reuseIdentifier = indexPath.section == 0 && objectCount == 0 ? "infoCell" : "videoCell"
+        let reuseIdentifier = "videoCell"
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
         self.configureCollectionCell(cell, indexPath: indexPath)
         return cell
@@ -240,10 +263,7 @@ extension VideosViewController: UICollectionViewDelegateFlowLayout {
         let tabBarHeight = self.tabBarController?.tabBar.frame.size.height ?? 0
 
         let cellSize = self.collectionView(collectionView, layout: collectionViewLayout, sizeForItemAt: IndexPath(item: 0, section: section))
-        var numberOfCellsInSection = CGFloat(self.resultsController?.sections?[section].numberOfObjects ?? 0)
-        if section == 0 && numberOfCellsInSection == 0 {
-            numberOfCellsInSection = 1  // Empty State
-        }
+        let numberOfCellsInSection = CGFloat(self.resultsController?.sections?[section].numberOfObjects ?? 0)
         let viewWidth = self.collectionView?.frame.size.width ?? 0
         let horizontalPadding = max(0, (viewWidth - 2*padding - numberOfCellsInSection * cellSize.width) / 2)
 
