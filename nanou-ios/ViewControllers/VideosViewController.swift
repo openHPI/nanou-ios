@@ -69,15 +69,16 @@ class VideosViewController: UICollectionViewController {
     }
 
     func configureCollectionCell(_ cell: UICollectionViewCell, indexPath: IndexPath) {
+        cell.layer.cornerRadius = 2.0
+        cell.layer.masksToBounds = true
+
         guard let videoCell = cell as? VideoCell else {
-            log.error("VideoViewController | retrieved wrong cell")
+            log.error("VideoViewController | retrieved wrong cell (video cell)")
             return
         }
 
         let video = self.resultsController?.object(at: indexPath)
         videoCell.delegate = self
-        videoCell.layer.cornerRadius = 2.0
-        videoCell.layer.masksToBounds = true
         videoCell.titleLabel.text = video?.name
         videoCell.imageView.loadFrom(video?.imageUrl, orShow: "No thumbnail available")
         videoCell.imageView.layer.masksToBounds = true
@@ -197,16 +198,20 @@ extension VideosViewController: NSFetchedResultsControllerDelegate {
 extension VideosViewController {
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return self.resultsController?.sections?.count ?? 0
+        let sectionCount = self.resultsController?.sections?.count ?? 0
+        return sectionCount == 0 ? 1 : sectionCount
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.resultsController?.sections?[section].numberOfObjects ?? 0
+        let objectCount = self.resultsController?.sections?[section].numberOfObjects ?? 0
+        return section == 0 && objectCount == 0 ? 1 : objectCount
     }
 
     override func collectionView(_ collectionView: UICollectionView,
                                  cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "videoCell", for: indexPath)
+        let objectCount = self.resultsController?.sections?[indexPath.section].numberOfObjects ?? 0
+        let reuseIdentifier = indexPath.section == 0 && objectCount == 0 ? "infoCell" : "videoCell"
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
         self.configureCollectionCell(cell, indexPath: indexPath)
         return cell
     }
@@ -235,7 +240,10 @@ extension VideosViewController: UICollectionViewDelegateFlowLayout {
         let tabBarHeight = self.tabBarController?.tabBar.frame.size.height ?? 0
 
         let cellSize = self.collectionView(collectionView, layout: collectionViewLayout, sizeForItemAt: IndexPath(item: 0, section: section))
-        let numberOfCellsInSection = CGFloat(self.resultsController?.sections?[section].numberOfObjects ?? 0)
+        var numberOfCellsInSection = CGFloat(self.resultsController?.sections?[section].numberOfObjects ?? 0)
+        if section == 0 && numberOfCellsInSection == 0 {
+            numberOfCellsInSection = 1  // Empty State
+        }
         let viewWidth = self.collectionView?.frame.size.width ?? 0
         let horizontalPadding = max(0, (viewWidth - 2*padding - numberOfCellsInSection * cellSize.width) / 2)
 
