@@ -18,6 +18,25 @@ class HistoryViewController: UITableViewController {
     var playerViewController: AVPlayerViewController?
     var lastVideo: HistoryVideo?
 
+    var emptyStateTimer: Timer?
+    var isTableViewEmpty = false {
+        didSet {
+            if self.isTableViewEmpty {
+                if self.emptyStateTimer != nil {
+                    return
+                }
+                self.emptyStateTimer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { timer in
+                    self.emptyState?.isHidden = false
+                })
+            } else {
+                self.emptyStateTimer?.invalidate()
+                self.emptyStateTimer = nil
+                self.emptyState?.isHidden = true
+            }
+        }
+    }
+    var emptyState: UIView?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,6 +50,19 @@ class HistoryViewController: UITableViewController {
         } catch {
             // TODO: Error handling.
         }
+
+        // Empty State
+        let frame = CGRect(origin: CGPoint.zero, size: self.view.bounds.size)
+        let messageLabel = UILabel(frame: frame)
+        messageLabel.text = "Go watch some videos!"
+        messageLabel.textColor = UIColor.nanouOrange
+        messageLabel.numberOfLines = 0
+        messageLabel.textAlignment = .center
+        messageLabel.font = UIFont.systemFont(ofSize: 27)
+        messageLabel.sizeToFit()
+
+        self.emptyState = messageLabel
+        self.tableView.backgroundView = messageLabel
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -158,7 +190,11 @@ extension HistoryViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.resultsController?.sections?[section].numberOfObjects ?? 0
+        let objectCount = self.resultsController?.sections?[section].numberOfObjects ?? 0
+        if section == 0 {
+            self.isTableViewEmpty = (objectCount == 0)
+        }
+        return objectCount
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
