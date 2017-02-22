@@ -165,7 +165,7 @@ extension HistoryViewController: NSFetchedResultsControllerDelegate {
             }
         case .move:
             self.tableView.deleteRows(at: [indexPath!], with: .fade)
-            self.tableView.insertRows(at: [indexPath!], with: .fade)
+            self.tableView.insertRows(at: [newIndexPath!], with: .fade)
         }
     }
 
