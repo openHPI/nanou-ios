@@ -32,6 +32,7 @@ class RateVideoViewController: UIViewController {
 
     var playerViewContoller: AVPlayerViewController?
 
+    @IBOutlet var durationLabel: UILabel!
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var providerLabel: UILabel!
@@ -71,6 +72,12 @@ class RateVideoViewController: UIViewController {
         self.titleLabel.text = self.video?.name
         self.providerLabel.text = self.video?.providerText
 
+        if let duration = self.video?.duration {
+            self.durationLabel.text = String(format: "%d:%2d", duration/60, duration % 60)
+        } else {
+            self.durationLabel.text = nil
+        }
+
         self.imageView.layer.cornerRadius = 2.0
         self.imageView.layer.masksToBounds = true
         self.imageView.loadFrom(self.video?.imageUrl, orShow: "No thumbnail available")
@@ -95,6 +102,7 @@ class RateVideoViewController: UIViewController {
         self.nextButton.layer.cornerRadius = 2.0
 
         // set all view but imageview to hidden
+        self.durationLabel.isHidden = true
         self.titleLabel.isHidden = true
         self.providerLabel.isHidden = true
         self.tagListView.isHidden = true
@@ -114,6 +122,7 @@ class RateVideoViewController: UIViewController {
         if !self.videoWasStartedBefore {
             self.videoWasStartedBefore = true
             self.playVideo {
+                self.durationLabel.isHidden = false
                 self.titleLabel.isHidden = false
                 self.providerLabel.isHidden = false
                 self.tagListView.isHidden = false

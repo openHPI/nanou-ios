@@ -17,5 +17,6 @@ class HistoryCell: UITableViewCell {
     @IBOutlet var providerLabel: UILabel!
     @IBOutlet var tagListView: TagListView!
     @IBOutlet var countLabel: UILabel!
+    @IBOutlet var durationLabel: UILabel!
 
 }

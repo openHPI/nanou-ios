@@ -13,6 +13,7 @@ class VideoCell: UICollectionViewCell {
 
     weak var delegate: VideoCellDelegate?
 
+    @IBOutlet var durationLabel: UILabel!
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var providerLabel: UILabel!

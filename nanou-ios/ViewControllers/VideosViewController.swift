@@ -104,6 +104,13 @@ class VideosViewController: UICollectionViewController {
         videoCell.imageView.layer.masksToBounds = true
         videoCell.providerLabel.text = video?.providerText
         videoCell.tags.alignment = .center
+
+        if let duration = video?.duration {
+            videoCell.durationLabel.text = String(format: "%d:%2d", duration/60, duration % 60)
+        } else {
+            videoCell.durationLabel.text = nil
+        }
+
         videoCell.tags.removeAllTags()
         for tag in video?.tags?.components(separatedBy: ",") ?? [] {
             if tag.characters.count > 0 {

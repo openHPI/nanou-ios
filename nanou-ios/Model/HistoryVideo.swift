@@ -18,6 +18,7 @@ class HistoryVideoSpine: BaseModelSpine<HistoryVideo> {
 
     var name: String?
     var date: NSDate?
+    var duration: NSNumber?
     var progress: NSNumber?
     var streamUrl: URL?
     var imageUrl: URL?
@@ -34,6 +35,7 @@ class HistoryVideoSpine: BaseModelSpine<HistoryVideo> {
             "name": Attribute(),
             "count": Attribute(),
             "date": DateAttribute(),
+            "duration": Attribute(),
             "progress": Attribute(),
             "streamUrl": URLAttribute().serializeAs("stream_url"),
             "imageUrl": URLAttribute().serializeAs("image_url"),

@@ -123,6 +123,13 @@ class HistoryViewController: UITableViewController {
         historyCell.imageview.layer.masksToBounds = true
         historyCell.imageview.layer.cornerRadius = 2.0
         historyCell.progressView.progress = Float(historyVideo?.progress ?? 0)
+
+        if let duration = historyVideo?.duration {
+            historyCell.durationLabel.text = String(format: "%d:%2d", duration/60, duration % 60)
+        } else {
+            historyCell.durationLabel.text = nil
+        }
+
         historyCell.tagListView.removeAllTags()
         for tag in historyVideo?.tags?.components(separatedBy: ",") ?? [] {
             if tag.characters.count > 0 {

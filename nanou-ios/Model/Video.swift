@@ -26,6 +26,7 @@ class VideoSpine: BaseModelSpine<Video> {
 
     var name: String?
     var downloadUrl: URL?
+    var duration: NSNumber?
     var streamUrl: URL?
     var imageUrl: URL?
     var providerName: String?
@@ -39,6 +40,7 @@ class VideoSpine: BaseModelSpine<Video> {
         return fieldsFromDictionary([
             "name": Attribute(),
             "downloadUrl": URLAttribute().serializeAs("url"),
+            "duration": Attribute(),
             "streamUrl": URLAttribute().serializeAs("stream_url"),
             "imageUrl": URLAttribute().serializeAs("image_url"),
             "providerName": Attribute().serializeAs("provider_name"),
