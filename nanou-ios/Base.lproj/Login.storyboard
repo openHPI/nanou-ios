@@ -9,11 +9,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Login with-->
+        <!--Anmelden mit-->
         <scene sceneID="an4-3a-X5b">
             <objects>
                 <collectionViewController id="A15-vE-cXH" customClass="LoginProviderViewController" customModule="nanou_ios" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" dataMode="prototypes" id="Wkz-cZ-Iyj">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="prototypes" id="Wkz-cZ-Iyj">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -65,9 +65,9 @@
                             <outlet property="delegate" destination="A15-vE-cXH" id="27M-fk-yY5"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Login with" id="1qd-Wz-7ba">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="U4w-tT-gAV"/>
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="JoL-a4-Abg">
+                    <navigationItem key="navigationItem" title="Anmelden mit" id="1qd-Wz-7ba">
+                        <barButtonItem key="backBarButtonItem" title="Zurück" id="U4w-tT-gAV"/>
+                        <barButtonItem key="leftBarButtonItem" title="Abbrechen" id="JoL-a4-Abg">
                             <connections>
                                 <action selector="cancel:" destination="A15-vE-cXH" id="2iA-YR-GHi"/>
                             </connections>
@@ -81,7 +81,7 @@
             </objects>
             <point key="canvasLocation" x="-1278" y="-171"/>
         </scene>
-        <!--Confirm-->
+        <!--Bestätigen-->
         <scene sceneID="7Aj-Ha-ZlY">
             <objects>
                 <viewController id="K80-gA-LUG" customClass="LoginConfirmationViewController" customModule="nanou_ios" customModuleProvider="target" sceneMemberID="viewController">
@@ -109,7 +109,7 @@
                             <constraint firstItem="uDl-ue-1Im" firstAttribute="leading" secondItem="rVQ-mJ-c1G" secondAttribute="leading" id="qEy-Cc-gy3"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Confirm" id="3Pf-9h-6xo"/>
+                    <navigationItem key="navigationItem" title="Bestätigen" id="3Pf-9h-6xo"/>
                     <connections>
                         <outlet property="webview" destination="uDl-ue-1Im" id="hA8-rZ-VTW"/>
                         <segue destination="mEG-2v-DEa" kind="unwind" identifier="cancel" customClass="SegueUnwindFromRight" customModule="nanou_ios" unwindAction="logoutWithSegue:" id="hWd-c5-kR8"/>

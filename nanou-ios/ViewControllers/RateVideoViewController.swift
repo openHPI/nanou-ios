@@ -80,7 +80,7 @@ class RateVideoViewController: UIViewController {
 
         self.imageView.layer.cornerRadius = 2.0
         self.imageView.layer.masksToBounds = true
-        self.imageView.loadFrom(self.video?.imageUrl, orShow: "No thumbnail available")
+        self.imageView.loadFrom(self.video?.imageUrl, orShow: "Keine Vorschau verfügbar")
 
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(RateVideoViewController.resumeVideo))
         tapGesture.numberOfTapsRequired = 1

@@ -54,7 +54,7 @@ class HistoryViewController: UITableViewController {
         // Empty State
         let frame = CGRect(origin: CGPoint.zero, size: self.view.bounds.size)
         let messageLabel = UILabel(frame: frame)
-        messageLabel.text = "Go watch some videos!"
+        messageLabel.text = "Los schau ein paar Videos!"
         messageLabel.textColor = UIColor.nanouOrange
         messageLabel.numberOfLines = 0
         messageLabel.textAlignment = .center

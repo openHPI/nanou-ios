@@ -116,19 +116,19 @@
                                 <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ikT-Rq-Uil">
                                     <rect key="frame" x="62" y="208" width="250" height="250"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Well Done!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Prx-HK-57U">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sehr gut!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Prx-HK-57U">
                                             <rect key="frame" x="32" y="32" width="186" height="32.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                             <color key="textColor" red="0.94509803920000002" green="0.52156862749999999" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="You've watched lots of videos." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UFs-VP-LC2">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Du hast schon viele Videos gesehen." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UFs-VP-LC2">
                                             <rect key="frame" x="32" y="64.5" width="186" height="133"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stay tuned for more!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RVt-KG-7KQ">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bleib gespannt auf mehr!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RVt-KG-7KQ">
                                             <rect key="frame" x="32" y="197.5" width="186" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -228,7 +228,7 @@
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CEn-m7-fEH">
                                                                     <rect key="frame" x="0.0" y="0.0" width="125" height="30"/>
-                                                                    <state key="normal" title="No thanks">
+                                                                    <state key="normal" title="Nein danke">
                                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     </state>
                                                                     <connections>
@@ -237,7 +237,7 @@
                                                                 </button>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kyr-li-xws">
                                                                     <rect key="frame" x="125" y="0.0" width="125" height="30"/>
-                                                                    <state key="normal" title="Watch now">
+                                                                    <state key="normal" title="Jetzt ansehen">
                                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     </state>
                                                                     <connections>
@@ -426,7 +426,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="44" id="LkC-E1-BcB"/>
                                                 </constraints>
-                                                <state key="normal" title="next video"/>
+                                                <state key="normal" title="nächstes Video"/>
                                                 <connections>
                                                     <action selector="tapWatched:" destination="Jef-vz-Vji" eventType="touchUpInside" id="oGf-Sx-kVe"/>
                                                 </connections>
@@ -436,7 +436,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="44" id="kCj-ZQ-kHP"/>
                                                 </constraints>
-                                                <state key="normal" title="go back"/>
+                                                <state key="normal" title="zurück"/>
                                                 <connections>
                                                     <action selector="tapGoBack" destination="Jef-vz-Vji" eventType="touchUpInside" id="OKa-x6-eKG"/>
                                                 </connections>
@@ -490,7 +490,7 @@
             </objects>
             <point key="canvasLocation" x="1049" y="623"/>
         </scene>
-        <!--User Profile View Controller-->
+        <!--Profil-->
         <scene sceneID="Ufm-O0-ceQ">
             <objects>
                 <tableViewController id="Mdq-m7-My4" customClass="UserProfileViewController" customModule="nanou_ios" customModuleProvider="target" sceneMemberID="viewController">
@@ -508,7 +508,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Preferences" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="635-RZ-DMZ">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Interessen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="635-RZ-DMZ">
                                                     <rect key="frame" x="15" y="0.0" width="325" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -532,7 +532,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Logout" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="e4Y-NB-Ecb">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Abmelden" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="e4Y-NB-Ecb">
                                                     <rect key="frame" x="15" y="0.0" width="345" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -550,7 +550,7 @@
                             <outlet property="delegate" destination="Mdq-m7-My4" id="6vG-NN-Wf2"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="hdU-Jd-r8e"/>
+                    <navigationItem key="navigationItem" title="Profil" id="hdU-Jd-r8e"/>
                     <connections>
                         <segue destination="DLE-XZ-HOB" kind="unwind" identifier="logout" customClass="SegueUnwindFade" customModule="nanou_ios" customModuleProvider="target" unwindAction="logoutWithSegue:" id="P4f-cg-rLB"/>
                     </connections>
@@ -560,7 +560,7 @@
             </objects>
             <point key="canvasLocation" x="2025" y="623"/>
         </scene>
-        <!--Preferences-->
+        <!--Interessen-->
         <scene sceneID="px1-Af-OdH">
             <objects>
                 <tableViewController id="FSO-Gb-aNI" customClass="PreferencesViewController" customModule="nanou_ios" customModuleProvider="target" sceneMemberID="viewController">
@@ -600,7 +600,7 @@
                             <outlet property="delegate" destination="FSO-Gb-aNI" id="7ME-CY-odc"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Preferences" id="IVo-gh-ZeO"/>
+                    <navigationItem key="navigationItem" title="Interessen" id="IVo-gh-ZeO"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IqA-1F-tLH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -648,7 +648,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="fXk-Mz-n6X"/>
                                 </constraints>
-                                <state key="normal" title="Done"/>
+                                <state key="normal" title="Fertig"/>
                                 <connections>
                                     <action selector="commitSelection:" destination="qee-wV-29g" eventType="touchUpInside" id="FtR-VJ-o1C"/>
                                 </connections>
@@ -836,7 +836,7 @@
         <image name="TabVideoSelected" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="u8l-AM-NsG"/>
+        <segue reference="EL6-yF-4gS"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.94509803921568625" green="0.52156862745098043" blue="0.24705882352941178" alpha="1" colorSpace="calibratedRGB"/>
 </document>

@@ -100,7 +100,7 @@ class VideosViewController: UICollectionViewController {
         let video = self.resultsController?.object(at: indexPath)
         videoCell.delegate = self
         videoCell.titleLabel.text = video?.name
-        videoCell.imageView.loadFrom(video?.imageUrl, orShow: "No thumbnail available")
+        videoCell.imageView.loadFrom(video?.imageUrl, orShow: "Keine Vorschau verfügbar")
         videoCell.imageView.layer.masksToBounds = true
         videoCell.providerLabel.text = video?.providerText
         videoCell.tags.alignment = .center
