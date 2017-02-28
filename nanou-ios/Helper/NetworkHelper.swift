@@ -148,14 +148,14 @@ extension NetworkHelper {
                 }
                 log.verbose("Request 'login providers' | retrieved json: \(json)")
 
-                guard let data = json["data"] as? [String: String] else {
+                guard let data = json["data"] as? [[String]] else {
                     log.error("Request 'login providers' | malformed JSON response")
                     promise.failure(NanouError.invalidData)
                     return
                 }
 
-                let providers = data.map { (name: String, url: String) -> LoginProvider in
-                    return LoginProvider(name: name, url: url)
+                let providers = data.map { (d: [String]) -> LoginProvider in
+                    return LoginProvider(name: d[0], url: d[1])
                 }
 
                 promise.success(providers)

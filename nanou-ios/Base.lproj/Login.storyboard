@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -14,44 +13,49 @@
         <scene sceneID="an4-3a-X5b">
             <objects>
                 <collectionViewController id="A15-vE-cXH" customClass="LoginProviderViewController" customModule="nanou_ios" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="prototypes" id="Wkz-cZ-Iyj">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" dataMode="prototypes" id="Wkz-cZ-Iyj">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="NX4-xC-zIx">
-                            <size key="itemSize" width="155" height="155"/>
+                            <size key="itemSize" width="168" height="68"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="LoginCell" reuseIdentifier="LoginCell" id="JK2-W2-ihN" customClass="LoginCell" customModule="nanou_ios" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="158" height="155"/>
+                                <rect key="frame" x="0.0" y="0.0" width="168" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="158" height="155"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="168" height="68"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qaa-p6-J3h">
-                                            <rect key="frame" x="8" y="63" width="142" height="30"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xrY-hX-XNH">
+                                            <rect key="frame" x="0.0" y="0.0" width="168" height="68"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7zp-wR-FsL">
+                                                    <rect key="frame" x="16" y="16" width="136" height="36"/>
+                                                </imageView>
+                                            </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="30" id="Hqc-dq-AvH"/>
+                                                <constraint firstItem="7zp-wR-FsL" firstAttribute="top" secondItem="xrY-hX-XNH" secondAttribute="top" constant="16" id="4YU-Gw-3XO"/>
+                                                <constraint firstAttribute="bottom" secondItem="7zp-wR-FsL" secondAttribute="bottom" constant="16" id="KAb-f9-JoL"/>
+                                                <constraint firstItem="7zp-wR-FsL" firstAttribute="leading" secondItem="xrY-hX-XNH" secondAttribute="leading" constant="16" id="d4v-or-uRQ"/>
+                                                <constraint firstAttribute="trailing" secondItem="7zp-wR-FsL" secondAttribute="trailing" constant="16" id="v57-3L-4gN"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        </view>
                                     </subviews>
                                 </view>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="qaa-p6-J3h" firstAttribute="trailing" secondItem="JK2-W2-ihN" secondAttribute="trailingMargin" id="0Wn-Vq-DAw"/>
-                                    <constraint firstItem="qaa-p6-J3h" firstAttribute="leading" secondItem="JK2-W2-ihN" secondAttribute="leadingMargin" id="OeS-YN-e7M"/>
-                                    <constraint firstItem="qaa-p6-J3h" firstAttribute="centerY" secondItem="JK2-W2-ihN" secondAttribute="centerY" id="gX4-dS-eWl"/>
+                                    <constraint firstItem="xrY-hX-XNH" firstAttribute="leading" secondItem="JK2-W2-ihN" secondAttribute="leading" id="AtJ-BH-PH9"/>
+                                    <constraint firstItem="xrY-hX-XNH" firstAttribute="top" secondItem="JK2-W2-ihN" secondAttribute="top" id="bBJ-sZ-VX7"/>
+                                    <constraint firstAttribute="trailing" secondItem="xrY-hX-XNH" secondAttribute="trailing" id="eot-zF-HbR"/>
+                                    <constraint firstAttribute="bottom" secondItem="xrY-hX-XNH" secondAttribute="bottom" id="jRn-HB-ztm"/>
                                 </constraints>
-                                <size key="customSize" width="158" height="155"/>
                                 <connections>
-                                    <outlet property="title" destination="qaa-p6-J3h" id="VcO-ms-EJa"/>
+                                    <outlet property="imageView" destination="7zp-wR-FsL" id="YYa-8f-rKv"/>
                                     <segue destination="K80-gA-LUG" kind="show" identifier="sociallogin" id="7ug-Bd-mU2"/>
                                 </connections>
                             </collectionViewCell>

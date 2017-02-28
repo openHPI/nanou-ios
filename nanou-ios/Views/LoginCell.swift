@@ -9,5 +9,5 @@
 import UIKit
 
 class LoginCell: UICollectionViewCell {
-    @IBOutlet var title: UILabel!
+    @IBOutlet var imageView: UIImageView!
 }

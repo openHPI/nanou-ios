@@ -43,6 +43,7 @@
 		509D51C41DE5CDA70019BB63 /* Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509D51C31DE5CDA70019BB63 /* Routes.swift */; };
 		50B270381E2FBF1F00F72502 /* SyncHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B270371E2FBF1F00F72502 /* SyncHelper.swift */; };
 		50B270451E3218C500F72502 /* SaveProcedure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B270441E3218C500F72502 /* SaveProcedure.swift */; };
+		50B76C961E65769300A86123 /* ImageViewPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B76C951E65769300A86123 /* ImageViewPlaceholder.swift */; };
 		50BEDB4E1E37798900591F5D /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BEDB4D1E37798900591F5D /* Video.swift */; };
 		50CFFAA51E27AD8A00EA0CFE /* LoginDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CFFAA41E27AD8A00EA0CFE /* LoginDelegate.swift */; };
 		50CFFAA71E27B3A100EA0CFE /* InitialPreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CFFAA61E27B3A100EA0CFE /* InitialPreferenceViewController.swift */; };
@@ -101,6 +102,7 @@
 		509D51C31DE5CDA70019BB63 /* Routes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Routes.swift; path = Helper/Routes.swift; sourceTree = "<group>"; };
 		50B270371E2FBF1F00F72502 /* SyncHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SyncHelper.swift; path = Helper/SyncHelper.swift; sourceTree = "<group>"; };
 		50B270441E3218C500F72502 /* SaveProcedure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SaveProcedure.swift; path = Procedures/SaveProcedure.swift; sourceTree = "<group>"; };
+		50B76C951E65769300A86123 /* ImageViewPlaceholder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageViewPlaceholder.swift; path = Helper/ImageViewPlaceholder.swift; sourceTree = "<group>"; };
 		50BEDB4D1E37798900591F5D /* Video.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Video.swift; path = Model/Video.swift; sourceTree = "<group>"; };
 		50CFFAA41E27AD8A00EA0CFE /* LoginDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginDelegate.swift; path = Helper/LoginDelegate.swift; sourceTree = "<group>"; };
 		50CFFAA61E27B3A100EA0CFE /* InitialPreferenceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InitialPreferenceViewController.swift; path = ViewControllers/InitialPreferenceViewController.swift; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 				50B270371E2FBF1F00F72502 /* SyncHelper.swift */,
 				50F64E351E3B83CB00419003 /* PagedUICollectionViewLayout.swift */,
 				501040771E40A5EF0043F62E /* RemoteImageView.swift */,
+				50B76C951E65769300A86123 /* ImageViewPlaceholder.swift */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -433,6 +436,7 @@
 				5000A1701DF6B2980070636E /* NotificationHelper.swift in Sources */,
 				5084F7C71E43E7AB006AA1EA /* BaseModelHelper.swift in Sources */,
 				504CCEAF1DF808CC00CF0DFD /* SpineHelper.swift in Sources */,
+				50B76C961E65769300A86123 /* ImageViewPlaceholder.swift in Sources */,
 				502936D21DF867280087A2D4 /* PreferencesViewController.swift in Sources */,
 				502936BC1DF838B60087A2D4 /* CoreDataHelper.swift in Sources */,
 				5084F7CB1E447BA5006AA1EA /* CoreDataNetworkProcedure.swift in Sources */,

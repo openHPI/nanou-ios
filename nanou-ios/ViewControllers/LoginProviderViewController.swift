@@ -16,21 +16,10 @@ struct LoginProvider {
 class LoginProviderViewController: UICollectionViewController {
     var delegate: LoginDelegate?
     var loginProviders: [LoginProvider]?
-    var gradientLayer: CALayer?
-
-    override func viewDidLoad() {
-        self.gradientLayer = CAGradientLayer.nanouGradientLayer(frame: self.view.bounds, reverse: true)
-        self.view.layer.insertSublayer(self.gradientLayer!, at: 0)
-    }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.updateLoginProviders()
-    }
-
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        self.gradientLayer?.frame = self.view.bounds
     }
 
     func updateLoginProviders() {
@@ -93,11 +82,25 @@ extension LoginProviderViewController {
     override func collectionView(_ collectionView: UICollectionView,
                                  cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LoginCell", for: indexPath)
-        cell.backgroundColor = UIColor(white: 0.0, alpha: 0.15)
+        let gradientLayer = CAGradientLayer.nanouGradientLayer(frame: cell.bounds, reverse: true)
+        cell.layer.insertSublayer(gradientLayer, at: 0)
         cell.layer.cornerRadius = 2.0
         cell.layer.masksToBounds = true
         if let loginCell = cell as? LoginCell {
-            loginCell.title.text = self.loginProviders?[indexPath.item].name
+            if let loginProviderName = self.loginProviders?[indexPath.item].name {
+                switch loginProviderName {
+                case "openHPI":
+                    loginCell.imageView.image = UIImage(named: "openhpi-logo")
+                case "google":
+                    loginCell.imageView.image = UIImage(named: "google-logo")
+                case "facebook":
+                    loginCell.imageView.image = UIImage(named: "facebook-logo")
+                default:
+                    loginCell.imageView.show(placeholder: loginProviderName)
+                }
+            } else {
+                loginCell.imageView.image = nil
+            }
         }
         return cell
     }
@@ -105,7 +108,7 @@ extension LoginProviderViewController {
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
-fileprivate let cellSize: CGSize = CGSize(width: 150, height: 50)
+fileprivate let cellSize: CGSize = CGSize(width: 168, height: 68)
 
 extension LoginProviderViewController: UICollectionViewDelegateFlowLayout {
 
