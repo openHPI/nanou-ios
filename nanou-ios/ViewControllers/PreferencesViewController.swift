@@ -132,7 +132,10 @@ extension PreferencesViewController: PreferenceCellDelegate {
         }
 
         let preference = self.resultsController?.object(at: indexPath)
+        let oldValue = preference?.weight
         preference?.weight = NSDecimalNumber(value: value)
+
+        FirebaseHelper.logPreferenceChange(preference: preference, from: oldValue?.floatValue ?? -1.0, to: value)
 
         CoreDataHelper.saveContext()
     }

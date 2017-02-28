@@ -100,6 +100,10 @@ class HistoryViewController: UITableViewController {
 
         log.verbose("rated video \(video.id) with \(rating) (progress: \(progress))")
 
+
+        FirebaseHelper.logHistoryVideoPlaybackStop(historyVideo: video, at: progress)
+
+
         let now = Date() as NSDate
         let _ = WatchedVideo.newEntity(forVideoId: video.id, withDate: now, progress: progress, rating: rating)
         CoreDataHelper.saveContext()
@@ -240,6 +244,13 @@ extension HistoryViewController {
 
         self.present(playerViewController, animated: true) {
             self.tableView.deselectRow(at: indexPath, animated: true)
+
+            let videoTime = player.currentTime()
+            let videoDuration = player.currentItem?.duration ?? CMTimeMake(1, 1)
+            let progress = videoTime.seconds / videoDuration.seconds
+
+            FirebaseHelper.logHistoryVideoPlaybackStart(historyVideo: historyVideo, at: progress)
+
             player.play()
         }
     }

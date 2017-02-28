@@ -5,6 +5,7 @@ target 'nanou-ios' do
   pod 'Alamofire', '4.2.0'
   pod 'BrightFutures', '5.1.0'
   pod 'Cosmos', '~> 8.0'
+  pod 'Firebase/Core', '~> 3.11'
   pod 'TagListView', '~> 1.1'
   pod 'LNRSimpleNotifications', '0.5.3'
   pod 'ProcedureKit', '4.0.0'

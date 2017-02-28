@@ -65,6 +65,12 @@ class RateVideoViewController: UIViewController {
     }
 
     @IBAction func tapGoBack() {
+        let videoTime = self.playerViewContoller?.player?.currentTime() ?? CMTimeMake(0, 1)
+        let videoDuration = self.playerViewContoller?.player?.currentItem?.duration ?? CMTimeMake(1, 1)
+        let progress = videoTime.seconds / videoDuration.seconds
+
+        FirebaseHelper.logVideoGoBack(video: self.video, time: progress)
+
         let _ = self.navigationController?.popViewController(animated: true)
     }
 
@@ -121,7 +127,7 @@ class RateVideoViewController: UIViewController {
 
         if !self.videoWasStartedBefore {
             self.videoWasStartedBefore = true
-            self.playVideo {
+            self.playVideo(automatically: true) {
                 self.durationLabel.isHidden = false
                 self.titleLabel.isHidden = false
                 self.providerLabel.isHidden = false
@@ -129,15 +135,27 @@ class RateVideoViewController: UIViewController {
                 self.ratingView.isHidden = false
                 self.buttonStack.isHidden = false
             }
+        } else {
+            let videoTime = self.playerViewContoller?.player?.currentTime() ?? CMTimeMake(0, 1)
+            let videoDuration = self.playerViewContoller?.player?.currentItem?.duration ?? CMTimeMake(1, 1)
+            let progress = videoTime.seconds / videoDuration.seconds
+
+            FirebaseHelper.logVideoPlaybackStop(video: self.video, at: progress)
         }
     }
 
     func resumeVideo() {
-        self.playVideo()
+        self.playVideo(automatically: false)
     }
 
-    func playVideo(_ completion: (() -> (Void))? = nil) {
+    func playVideo(automatically: Bool, _ completion: (() -> (Void))? = nil) {
         if let playerVc = self.playerViewContoller {
+            let videoTime = playerVc.player?.currentTime() ?? CMTimeMake(0, 1)
+            let videoDuration = playerVc.player?.currentItem?.duration ?? CMTimeMake(1, 1)
+            let progress = videoTime.seconds / videoDuration.seconds
+
+            FirebaseHelper.logVideoPlaybackStart(video: self.video, at: progress, automatic: automatically)
+
             self.present(playerVc, animated: true) {
                 playerVc.player?.play()
                 if let completion = completion {

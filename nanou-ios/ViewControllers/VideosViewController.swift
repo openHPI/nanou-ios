@@ -68,6 +68,7 @@ class VideosViewController: UICollectionViewController {
     }
 
     func syncVideos() {
+        FirebaseHelper.logVideoFetch()
         SyncHelper.standard.fetch(helper: VideoHelper.self)
     }
 
@@ -144,6 +145,12 @@ class VideosViewController: UICollectionViewController {
 extension VideosViewController: VideoCellDelegate {
 
     func didSelect(cell: VideoCell) {
+        if let indexPath = self.collectionView?.indexPath(for: cell), let video = self.resultsController?.object(at: indexPath) {
+            FirebaseHelper.logVideoSelect(video: video)
+        } else {
+            log.error("VideosViewController | Failed to log video select")
+        }
+
         self.performSegue(withIdentifier: "watchVideo", sender: cell)
     }
 
@@ -165,6 +172,8 @@ extension VideosViewController: VideoCellDelegate {
         let rating = -1.0
 
         log.verbose("rated video \(video.id) with \(rating) (progress: \(progress))")
+
+        FirebaseHelper.logVideoDismiss(video: video)
 
         let _ = WatchedVideo.newEntity(forVideoId: video.id, withDate: now, progress: progress, rating: rating)
         CoreDataHelper.context.delete(video)

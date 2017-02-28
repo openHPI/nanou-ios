@@ -44,6 +44,8 @@
 		50B270381E2FBF1F00F72502 /* SyncHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B270371E2FBF1F00F72502 /* SyncHelper.swift */; };
 		50B270451E3218C500F72502 /* SaveProcedure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B270441E3218C500F72502 /* SaveProcedure.swift */; };
 		50B76C961E65769300A86123 /* ImageViewPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B76C951E65769300A86123 /* ImageViewPlaceholder.swift */; };
+		50B76C981E65C03800A86123 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 50B76C971E65C03800A86123 /* GoogleService-Info.plist */; };
+		50B76C9A1E65C70000A86123 /* FirebaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B76C991E65C70000A86123 /* FirebaseHelper.swift */; };
 		50BEDB4E1E37798900591F5D /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BEDB4D1E37798900591F5D /* Video.swift */; };
 		50CFFAA51E27AD8A00EA0CFE /* LoginDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CFFAA41E27AD8A00EA0CFE /* LoginDelegate.swift */; };
 		50CFFAA71E27B3A100EA0CFE /* InitialPreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CFFAA61E27B3A100EA0CFE /* InitialPreferenceViewController.swift */; };
@@ -103,6 +105,8 @@
 		50B270371E2FBF1F00F72502 /* SyncHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SyncHelper.swift; path = Helper/SyncHelper.swift; sourceTree = "<group>"; };
 		50B270441E3218C500F72502 /* SaveProcedure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SaveProcedure.swift; path = Procedures/SaveProcedure.swift; sourceTree = "<group>"; };
 		50B76C951E65769300A86123 /* ImageViewPlaceholder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageViewPlaceholder.swift; path = Helper/ImageViewPlaceholder.swift; sourceTree = "<group>"; };
+		50B76C971E65C03800A86123 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		50B76C991E65C70000A86123 /* FirebaseHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirebaseHelper.swift; path = Helper/FirebaseHelper.swift; sourceTree = "<group>"; };
 		50BEDB4D1E37798900591F5D /* Video.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Video.swift; path = Model/Video.swift; sourceTree = "<group>"; };
 		50CFFAA41E27AD8A00EA0CFE /* LoginDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginDelegate.swift; path = Helper/LoginDelegate.swift; sourceTree = "<group>"; };
 		50CFFAA61E27B3A100EA0CFE /* InitialPreferenceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InitialPreferenceViewController.swift; path = ViewControllers/InitialPreferenceViewController.swift; sourceTree = "<group>"; };
@@ -164,6 +168,7 @@
 				50240B381DE43F0E00CB6681 /* Assets.xcassets */,
 				50240B3A1DE43F0E00CB6681 /* LaunchScreen.storyboard */,
 				50240B3D1DE43F0E00CB6681 /* Info.plist */,
+				50B76C971E65C03800A86123 /* GoogleService-Info.plist */,
 				50240B351DE43F0E00CB6681 /* nanou_ios.xcdatamodeld */,
 			);
 			path = "nanou-ios";
@@ -234,6 +239,7 @@
 				50F64E351E3B83CB00419003 /* PagedUICollectionViewLayout.swift */,
 				501040771E40A5EF0043F62E /* RemoteImageView.swift */,
 				50B76C951E65769300A86123 /* ImageViewPlaceholder.swift */,
+				50B76C991E65C70000A86123 /* FirebaseHelper.swift */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -334,6 +340,7 @@
 			files = (
 				50D503271E254C4600C16D14 /* Login.storyboard in Resources */,
 				50240B3C1DE43F0E00CB6681 /* LaunchScreen.storyboard in Resources */,
+				50B76C981E65C03800A86123 /* GoogleService-Info.plist in Resources */,
 				50240B391DE43F0E00CB6681 /* Assets.xcassets in Resources */,
 				50240B341DE43F0E00CB6681 /* Main.storyboard in Resources */,
 			);
@@ -437,6 +444,7 @@
 				5084F7C71E43E7AB006AA1EA /* BaseModelHelper.swift in Sources */,
 				504CCEAF1DF808CC00CF0DFD /* SpineHelper.swift in Sources */,
 				50B76C961E65769300A86123 /* ImageViewPlaceholder.swift in Sources */,
+				50B76C9A1E65C70000A86123 /* FirebaseHelper.swift in Sources */,
 				502936D21DF867280087A2D4 /* PreferencesViewController.swift in Sources */,
 				502936BC1DF838B60087A2D4 /* CoreDataHelper.swift in Sources */,
 				5084F7CB1E447BA5006AA1EA /* CoreDataNetworkProcedure.swift in Sources */,
