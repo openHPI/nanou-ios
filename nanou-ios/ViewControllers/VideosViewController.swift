@@ -115,7 +115,7 @@ class VideosViewController: UICollectionViewController {
         videoCell.tags.alignment = .center
 
         if let duration = video?.duration {
-            videoCell.durationLabel.text = String(format: "%d:%2d", duration/60, duration % 60)
+            videoCell.durationLabel.text = String(format: "%d:%02d", duration/60, duration % 60)
         } else {
             videoCell.durationLabel.text = nil
         }

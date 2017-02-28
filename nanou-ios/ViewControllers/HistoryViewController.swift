@@ -125,7 +125,7 @@ class HistoryViewController: UITableViewController {
         historyCell.progressView.progress = Float(historyVideo?.progress ?? 0)
 
         if let duration = historyVideo?.duration {
-            historyCell.durationLabel.text = String(format: "%d:%2d", duration/60, duration % 60)
+            historyCell.durationLabel.text = String(format: "%d:%02d", duration/60, duration % 60)
         } else {
             historyCell.durationLabel.text = nil
         }

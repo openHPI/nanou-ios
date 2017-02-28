@@ -73,7 +73,7 @@ class RateVideoViewController: UIViewController {
         self.providerLabel.text = self.video?.providerText
 
         if let duration = self.video?.duration {
-            self.durationLabel.text = String(format: "%d:%2d", duration/60, duration % 60)
+            self.durationLabel.text = String(format: "%d:%02d", duration/60, duration % 60)
         } else {
             self.durationLabel.text = nil
         }
