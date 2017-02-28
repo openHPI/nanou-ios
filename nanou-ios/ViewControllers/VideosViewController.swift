@@ -14,6 +14,7 @@ class VideosViewController: UICollectionViewController {
     var resultsController: NSFetchedResultsController<Video>?
     var cellReuseIdentifier = "videoCell"
     var emptyStateTimer: Timer?
+    var videosSynced = false
     var isCollectionViewEmpty = false {
         didSet {
             if self.isCollectionViewEmpty {
@@ -53,9 +54,17 @@ class VideosViewController: UICollectionViewController {
         self.emptyState.isHidden = true
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.syncVideos()
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if !self.videosSynced {
+            self.syncVideos()
+            self.videosSynced = true
+        }
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.videosSynced = false
     }
 
     func syncVideos() {
