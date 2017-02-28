@@ -523,16 +523,20 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection id="ufU-kz-xVQ">
+                            <tableViewSection headerTitle="Verbesserungen" id="ufU-kz-xVQ">
+                                <string key="footerTitle">Die App ist noch ein Prototyp. Um zukünftig eine bestmögliche Nutzung bereitstellen zu können,  sammeln wir Daten über das Nutzungsverhalten in der App. </string>
+                                <cells/>
+                            </tableViewSection>
+                            <tableViewSection id="4FU-Es-o70">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="e4Y-NB-Ecb" style="IBUITableViewCellStyleDefault" id="sAJ-Uk-klQ">
-                                        <rect key="frame" x="0.0" y="115" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="NBh-46-iWm" style="IBUITableViewCellStyleDefault" id="VRr-VB-03h">
+                                        <rect key="frame" x="0.0" y="239" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sAJ-Uk-klQ" id="o2D-en-khx">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VRr-VB-03h" id="KCo-ZJ-5B7">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Abmelden" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="e4Y-NB-Ecb">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Abmelden" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NBh-46-iWm">
                                                     <rect key="frame" x="15" y="0.0" width="345" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
