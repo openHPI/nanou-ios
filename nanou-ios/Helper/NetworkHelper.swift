@@ -169,3 +169,61 @@ extension NetworkHelper {
     }
 
 }
+
+// MARK: - Survey
+extension NetworkHelper {
+
+    class func latestSurvey() -> Future<Survey?, NanouError> {
+        let promise = Promise<Survey?, NanouError>()
+
+        Alamofire.request(Route.surveyLatest, headers: NetworkHelper.requestHeaders).responseJSON { response in
+            switch response.result {
+            case .success(let data):
+                guard let json = data as? NSDictionary else {
+                    log.error("Request 'latest survey' | malformed JSON response or timeout")
+                    promise.failure(NanouError.invalidData)
+                    return
+                }
+                log.verbose("Request 'latest survey' | retrieved json: \(json)")
+
+                guard let d = json["data"] as? [String: Any] else {
+                    log.error("Request 'latest survey' | malformed JSON response")
+                    promise.failure(NanouError.invalidData)
+                    return
+                }
+
+                if
+                    let fetchedId = d["id"] as? String,
+                    let attributes = d["attributes"] as? [String: String],
+                    let urlString = attributes["link"],
+                    let fetchedUrl = URL(string: urlString) {
+                    promise.success(Survey(id: fetchedId, url: fetchedUrl))
+                } else {
+                    promise.success(nil)
+                }
+            case .failure(let error):
+                log.error("Request 'latest survey' | Failed with error: \(error)")
+                promise.failure(NanouError.network(error))
+            }
+        }
+
+        return promise.future
+    }
+
+    class func completeSurvey(withId surveyId: String) -> Future<Void, NanouError> {
+        let promise = Promise<Void, NanouError>()
+
+        Alamofire.request(Route.surveyComplete(withId: surveyId), method: .post, headers: NetworkHelper.requestHeaders).responseJSON { response in
+            switch response.result {
+            case .success(_):
+                promise.success()
+            case .failure(let error):
+                log.error("Request 'complete survey' | Failed with error: \(error)")
+                promise.failure(NanouError.network(error))
+            }
+        }
+
+        return promise.future
+    }
+
+}

@@ -34,6 +34,7 @@
 		50601B511E535FEB00000D4A /* HistoryVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50601B501E535FEB00000D4A /* HistoryVideo.swift */; };
 		50601B531E5364E900000D4A /* HistoryHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50601B521E5364E900000D4A /* HistoryHelper.swift */; };
 		50601B551E53947200000D4A /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50601B541E53947200000D4A /* HistoryCell.swift */; };
+		506661FE1E6701B90060FF2F /* SurveyHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506661FD1E6701B90060FF2F /* SurveyHelper.swift */; };
 		5084F7C51E421808006AA1EA /* SpineNetworkProcedure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5084F7C41E421808006AA1EA /* SpineNetworkProcedure.swift */; };
 		5084F7C71E43E7AB006AA1EA /* BaseModelHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5084F7C61E43E7AB006AA1EA /* BaseModelHelper.swift */; };
 		5084F7C91E43E81C006AA1EA /* FetchProdecure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5084F7C81E43E81C006AA1EA /* FetchProdecure.swift */; };
@@ -95,6 +96,7 @@
 		50601B501E535FEB00000D4A /* HistoryVideo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HistoryVideo.swift; path = Model/HistoryVideo.swift; sourceTree = "<group>"; };
 		50601B521E5364E900000D4A /* HistoryHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HistoryHelper.swift; path = Model/HistoryHelper.swift; sourceTree = "<group>"; };
 		50601B541E53947200000D4A /* HistoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HistoryCell.swift; path = Views/HistoryCell.swift; sourceTree = "<group>"; };
+		506661FD1E6701B90060FF2F /* SurveyHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SurveyHelper.swift; path = Helper/SurveyHelper.swift; sourceTree = "<group>"; };
 		5084F7C41E421808006AA1EA /* SpineNetworkProcedure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpineNetworkProcedure.swift; path = Procedures/SpineNetworkProcedure.swift; sourceTree = "<group>"; };
 		5084F7C61E43E7AB006AA1EA /* BaseModelHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseModelHelper.swift; path = Helper/BaseModelHelper.swift; sourceTree = "<group>"; };
 		5084F7C81E43E81C006AA1EA /* FetchProdecure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FetchProdecure.swift; path = Procedures/FetchProdecure.swift; sourceTree = "<group>"; };
@@ -240,6 +242,7 @@
 				501040771E40A5EF0043F62E /* RemoteImageView.swift */,
 				50B76C951E65769300A86123 /* ImageViewPlaceholder.swift */,
 				50B76C991E65C70000A86123 /* FirebaseHelper.swift */,
+				506661FD1E6701B90060FF2F /* SurveyHelper.swift */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -474,6 +477,7 @@
 				50B270451E3218C500F72502 /* SaveProcedure.swift in Sources */,
 				504BC3361DF4532E00671614 /* UserProfileViewController.swift in Sources */,
 				502936D61DF8C2F50087A2D4 /* PreferenceCell.swift in Sources */,
+				506661FE1E6701B90060FF2F /* SurveyHelper.swift in Sources */,
 				50E9085C1E38E863005931C1 /* VideosViewController.swift in Sources */,
 				504BC3341DF448F200671614 /* Json.swift in Sources */,
 			);

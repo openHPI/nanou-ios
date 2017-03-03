@@ -20,5 +20,10 @@ struct Route {
     static let combineAccounts = api + "combine/"
     static let authstatus = api + "auth-status/"
     static let loginProviders = api + "login-providers/"
+    static let surveyLatest = api + "surveys/latest/"
+
+    static func surveyComplete(withId id: String) -> String {
+        return self.api + "surveys/\(id)/complete/"
+    }
 
 }
