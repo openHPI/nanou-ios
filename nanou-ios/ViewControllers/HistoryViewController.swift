@@ -113,6 +113,14 @@ class HistoryViewController: UITableViewController {
         SyncHelper.standard.fetch(helper: HistoryHelper.self)
     }
 
+    func showEmptyState() {
+        var objectCount = 0
+        if let sections = self.resultsController?.sections, sections.count > 0 {
+            objectCount = sections[0].numberOfObjects
+        }
+        self.isTableViewEmpty = (objectCount == 0)
+    }
+
     func configureTableCell(cell: UITableViewCell, indexPath: IndexPath) {
         guard let historyCell = cell as? HistoryCell else {
             log.error("HistoryViewController | retrieved wrong cell")
@@ -162,6 +170,7 @@ extension HistoryViewController: NSFetchedResultsControllerDelegate {
         case .update:
             break
         }
+        self.showEmptyState()
     }
 
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
@@ -178,6 +187,7 @@ extension HistoryViewController: NSFetchedResultsControllerDelegate {
             self.tableView.deleteRows(at: [indexPath!], with: .fade)
             self.tableView.insertRows(at: [newIndexPath!], with: .fade)
         }
+        self.showEmptyState()
     }
 
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
@@ -201,11 +211,8 @@ extension HistoryViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let objectCount = self.resultsController?.sections?[section].numberOfObjects ?? 0
-        if section == 0 {
-            self.isTableViewEmpty = (objectCount == 0)
-        }
-        return objectCount
+        self.showEmptyState()
+        return self.resultsController?.sections?[section].numberOfObjects ?? 0
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
