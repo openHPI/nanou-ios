@@ -63,6 +63,11 @@ class HistoryViewController: UITableViewController {
 
         self.emptyState = messageLabel
         self.tableView.backgroundView = messageLabel
+
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(HistoryViewController.didEndPlayback),
+                                               name: NSNotification.Name.AVPlayerItemDidPlayToEndTime,
+                                               object: nil)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -145,6 +150,15 @@ class HistoryViewController: UITableViewController {
         for tag in historyVideo?.tags?.components(separatedBy: ",") ?? [] {
             if tag.characters.count > 0 {
                 historyCell.tagListView.addTag(tag)
+            }
+        }
+    }
+
+    func didEndPlayback() {
+        if let queuePlayer = self.playerViewController?.player as? AVQueuePlayer {
+            let lastItem = queuePlayer.items().last
+            if queuePlayer.currentItem == lastItem {
+                self.playerViewController?.dismiss(animated: true, completion: nil)
             }
         }
     }

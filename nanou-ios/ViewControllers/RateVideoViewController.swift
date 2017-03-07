@@ -125,6 +125,11 @@ class RateVideoViewController: UIViewController {
                 self.ratingActive = true
             }
         }
+
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(RateVideoViewController.didEndPlayback),
+                                               name: NSNotification.Name.AVPlayerItemDidPlayToEndTime,
+                                               object: nil)
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -185,6 +190,15 @@ class RateVideoViewController: UIViewController {
         let playerViewController = AVPlayerViewController()
         playerViewController.player = player
         return playerViewController
+    }
+
+    func didEndPlayback() {
+        if let queuePlayer = self.playerViewController?.player as? AVQueuePlayer {
+            let lastItem = queuePlayer.items().last
+            if queuePlayer.currentItem == lastItem {
+                self.playerViewController?.dismiss(animated: true, completion: nil)
+            }
+        }
     }
 
 }
