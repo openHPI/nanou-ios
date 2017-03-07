@@ -77,25 +77,24 @@ class HistoryViewController: UITableViewController {
             self.lastVideo = nil
         }
 
-        guard let playerViewController = self.playerViewController else {
-            log.verbose("HistoryViewController | trackWatchVideo | cannot track watch video: no player vc")
-            return
-        }
-
         guard let video = self.lastVideo else {
             log.verbose("HistoryViewController | trackWatchVideo | cannot track watch video: no video")
             return
         }
 
-        guard
-            let videoTime = playerViewController.player?.currentTime(),
-            let videoDuration = playerViewController.player?.currentItem?.duration,
-            videoTime.isValid, videoDuration.isValid else {
-                log.verbose("HistoryViewController | trackWatchVideo | cannot track watch video: no valid video time")
-                return
+        var progress = 1.0
+        if
+            let queuePlayer = self.playerViewController?.player as? AVQueuePlayer,
+            let videoTime = queuePlayer.items()[safe: 0]?.currentTime(),
+            let videoDuration = queuePlayer.items()[safe: 0]?.duration,
+            queuePlayer.items().count > 1, videoTime.isValid, videoDuration.isValid {
+            if queuePlayer.items().count == 3 {
+                progress = 0.0
+            } else {
+                progress = videoTime.seconds / videoDuration.seconds
+            }
         }
 
-        let progress = videoTime.seconds / videoDuration.seconds
         let rating = -1.0
 
         log.verbose("rated video \(video.id) with \(rating) (progress: \(progress))")
@@ -243,7 +242,7 @@ extension HistoryViewController {
             return
         }
 
-        let player = AVPlayer(url: videoUrl)
+        let player = AVQueuePlayer(contentUrl: videoUrl)
         let playerViewController = AVPlayerViewController()
         playerViewController.player = player
         self.playerViewController = playerViewController

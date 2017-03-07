@@ -39,6 +39,7 @@
 		5084F7C71E43E7AB006AA1EA /* BaseModelHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5084F7C61E43E7AB006AA1EA /* BaseModelHelper.swift */; };
 		5084F7C91E43E81C006AA1EA /* FetchProdecure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5084F7C81E43E81C006AA1EA /* FetchProdecure.swift */; };
 		5084F7CB1E447BA5006AA1EA /* CoreDataNetworkProcedure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5084F7CA1E447BA5006AA1EA /* CoreDataNetworkProcedure.swift */; };
+		5094C2651E6F709F008BEA0B /* CollectionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5094C2641E6F709F008BEA0B /* CollectionHelper.swift */; };
 		509D51BD1DE5999A0019BB63 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509D51BC1DE5999A0019BB63 /* LaunchViewController.swift */; };
 		509D51C11DE5C7870019BB63 /* LoginCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509D51C01DE5C7870019BB63 /* LoginCell.swift */; };
 		509D51C41DE5CDA70019BB63 /* Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509D51C31DE5CDA70019BB63 /* Routes.swift */; };
@@ -50,6 +51,8 @@
 		50BEDB4E1E37798900591F5D /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BEDB4D1E37798900591F5D /* Video.swift */; };
 		50CFFAA51E27AD8A00EA0CFE /* LoginDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CFFAA41E27AD8A00EA0CFE /* LoginDelegate.swift */; };
 		50CFFAA71E27B3A100EA0CFE /* InitialPreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CFFAA61E27B3A100EA0CFE /* InitialPreferenceViewController.swift */; };
+		50D13BCE1E6EDD74004B9A11 /* intro-outro.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 50D13BCD1E6EDD74004B9A11 /* intro-outro.mp4 */; };
+		50D13BD01E6EF438004B9A11 /* AVPlayerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D13BCF1E6EF438004B9A11 /* AVPlayerHelper.swift */; };
 		50D503271E254C4600C16D14 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50D503251E254C4600C16D14 /* Login.storyboard */; };
 		50D503291E26A0C600C16D14 /* LoginProviderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D503281E26A0C600C16D14 /* LoginProviderViewController.swift */; };
 		50E9085C1E38E863005931C1 /* VideosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E9085B1E38E862005931C1 /* VideosViewController.swift */; };
@@ -101,6 +104,7 @@
 		5084F7C61E43E7AB006AA1EA /* BaseModelHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseModelHelper.swift; path = Helper/BaseModelHelper.swift; sourceTree = "<group>"; };
 		5084F7C81E43E81C006AA1EA /* FetchProdecure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FetchProdecure.swift; path = Procedures/FetchProdecure.swift; sourceTree = "<group>"; };
 		5084F7CA1E447BA5006AA1EA /* CoreDataNetworkProcedure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataNetworkProcedure.swift; path = Procedures/CoreDataNetworkProcedure.swift; sourceTree = "<group>"; };
+		5094C2641E6F709F008BEA0B /* CollectionHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CollectionHelper.swift; path = Helper/CollectionHelper.swift; sourceTree = "<group>"; };
 		509D51BC1DE5999A0019BB63 /* LaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LaunchViewController.swift; path = ViewControllers/LaunchViewController.swift; sourceTree = "<group>"; };
 		509D51C01DE5C7870019BB63 /* LoginCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginCell.swift; path = Views/LoginCell.swift; sourceTree = "<group>"; };
 		509D51C31DE5CDA70019BB63 /* Routes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Routes.swift; path = Helper/Routes.swift; sourceTree = "<group>"; };
@@ -112,6 +116,8 @@
 		50BEDB4D1E37798900591F5D /* Video.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Video.swift; path = Model/Video.swift; sourceTree = "<group>"; };
 		50CFFAA41E27AD8A00EA0CFE /* LoginDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginDelegate.swift; path = Helper/LoginDelegate.swift; sourceTree = "<group>"; };
 		50CFFAA61E27B3A100EA0CFE /* InitialPreferenceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InitialPreferenceViewController.swift; path = ViewControllers/InitialPreferenceViewController.swift; sourceTree = "<group>"; };
+		50D13BCD1E6EDD74004B9A11 /* intro-outro.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "intro-outro.mp4"; sourceTree = "<group>"; };
+		50D13BCF1E6EF438004B9A11 /* AVPlayerHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AVPlayerHelper.swift; path = Helper/AVPlayerHelper.swift; sourceTree = "<group>"; };
 		50D503261E254C4600C16D14 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
 		50D503281E26A0C600C16D14 /* LoginProviderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginProviderViewController.swift; path = ViewControllers/LoginProviderViewController.swift; sourceTree = "<group>"; };
 		50E9085B1E38E862005931C1 /* VideosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideosViewController.swift; path = ViewControllers/VideosViewController.swift; sourceTree = "<group>"; };
@@ -168,6 +174,7 @@
 				50240B321DE43F0E00CB6681 /* Main.storyboard */,
 				50D503251E254C4600C16D14 /* Login.storyboard */,
 				50240B381DE43F0E00CB6681 /* Assets.xcassets */,
+				50D13BCD1E6EDD74004B9A11 /* intro-outro.mp4 */,
 				50240B3A1DE43F0E00CB6681 /* LaunchScreen.storyboard */,
 				50240B3D1DE43F0E00CB6681 /* Info.plist */,
 				50B76C971E65C03800A86123 /* GoogleService-Info.plist */,
@@ -243,6 +250,8 @@
 				50B76C951E65769300A86123 /* ImageViewPlaceholder.swift */,
 				50B76C991E65C70000A86123 /* FirebaseHelper.swift */,
 				506661FD1E6701B90060FF2F /* SurveyHelper.swift */,
+				50D13BCF1E6EF438004B9A11 /* AVPlayerHelper.swift */,
+				5094C2641E6F709F008BEA0B /* CollectionHelper.swift */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -341,6 +350,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50D13BCE1E6EDD74004B9A11 /* intro-outro.mp4 in Resources */,
 				50D503271E254C4600C16D14 /* Login.storyboard in Resources */,
 				50240B3C1DE43F0E00CB6681 /* LaunchScreen.storyboard in Resources */,
 				50B76C981E65C03800A86123 /* GoogleService-Info.plist in Resources */,
@@ -446,6 +456,7 @@
 				5000A1701DF6B2980070636E /* NotificationHelper.swift in Sources */,
 				5084F7C71E43E7AB006AA1EA /* BaseModelHelper.swift in Sources */,
 				504CCEAF1DF808CC00CF0DFD /* SpineHelper.swift in Sources */,
+				50D13BD01E6EF438004B9A11 /* AVPlayerHelper.swift in Sources */,
 				50B76C961E65769300A86123 /* ImageViewPlaceholder.swift in Sources */,
 				50B76C9A1E65C70000A86123 /* FirebaseHelper.swift in Sources */,
 				502936D21DF867280087A2D4 /* PreferencesViewController.swift in Sources */,
@@ -472,6 +483,7 @@
 				50240B2F1DE43F0E00CB6681 /* AppDelegate.swift in Sources */,
 				50F64E381E3B85E700419003 /* VideoCell.swift in Sources */,
 				50601B551E53947200000D4A /* HistoryCell.swift in Sources */,
+				5094C2651E6F709F008BEA0B /* CollectionHelper.swift in Sources */,
 				50B270381E2FBF1F00F72502 /* SyncHelper.swift in Sources */,
 				50601B511E535FEB00000D4A /* HistoryVideo.swift in Sources */,
 				50B270451E3218C500F72502 /* SaveProcedure.swift in Sources */,

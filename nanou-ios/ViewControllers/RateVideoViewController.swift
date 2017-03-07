@@ -17,7 +17,7 @@ import TagListView
 class RateVideoViewController: UIViewController {
     var video: Video? {
         didSet {
-            self.playerViewContoller = self.configuredPlayerViewController(for: self.video)
+            self.playerViewController = self.configuredPlayerViewController(for: self.video)
         }
     }
     var videoWasStartedBefore = false
@@ -30,7 +30,7 @@ class RateVideoViewController: UIViewController {
         }
     }
 
-    var playerViewContoller: AVPlayerViewController?
+    var playerViewController: AVPlayerViewController?
 
     @IBOutlet var durationLabel: UILabel!
     @IBOutlet var imageView: UIImageView!
@@ -46,14 +46,19 @@ class RateVideoViewController: UIViewController {
             let _ = self.navigationController?.popViewController(animated: true)
         }
 
-        guard
-            let videoTime = self.playerViewContoller?.player?.currentTime(),
-            let videoDuration = self.playerViewContoller?.player?.currentItem?.duration,
-            videoTime.isValid, videoDuration.isValid else {
-            return
+        var progress = 1.0
+        if
+            let queuePlayer = self.playerViewController?.player as? AVQueuePlayer,
+            let videoTime = queuePlayer.items()[safe: 0]?.currentTime(),
+            let videoDuration = queuePlayer.items()[safe: 0]?.duration,
+            queuePlayer.items().count > 1, videoTime.isValid, videoDuration.isValid {
+            if queuePlayer.items().count == 3 {
+                progress = 0.0
+            } else {
+                progress = videoTime.seconds / videoDuration.seconds
+            }
         }
 
-        let progress = videoTime.seconds / videoDuration.seconds
         let rating = self.ratingActive ? (self.ratingView.rating - 1) / Double(self.ratingView.settings.totalStars - 1) : -1.0
 
         log.debug("tapWatched")
@@ -65,8 +70,8 @@ class RateVideoViewController: UIViewController {
     }
 
     @IBAction func tapGoBack() {
-        let videoTime = self.playerViewContoller?.player?.currentTime() ?? CMTimeMake(0, 1)
-        let videoDuration = self.playerViewContoller?.player?.currentItem?.duration ?? CMTimeMake(1, 1)
+        let videoTime = self.playerViewController?.player?.currentTime() ?? CMTimeMake(0, 1)
+        let videoDuration = self.playerViewController?.player?.currentItem?.duration ?? CMTimeMake(1, 1)
         let progress = videoTime.seconds / videoDuration.seconds
 
         FirebaseHelper.logVideoGoBack(video: self.video, time: progress)
@@ -136,8 +141,8 @@ class RateVideoViewController: UIViewController {
                 self.buttonStack.isHidden = false
             }
         } else {
-            let videoTime = self.playerViewContoller?.player?.currentTime() ?? CMTimeMake(0, 1)
-            let videoDuration = self.playerViewContoller?.player?.currentItem?.duration ?? CMTimeMake(1, 1)
+            let videoTime = self.playerViewController?.player?.currentTime() ?? CMTimeMake(0, 1)
+            let videoDuration = self.playerViewController?.player?.currentItem?.duration ?? CMTimeMake(1, 1)
             let progress = videoTime.seconds / videoDuration.seconds
 
             FirebaseHelper.logVideoPlaybackStop(video: self.video, at: progress)
@@ -149,7 +154,7 @@ class RateVideoViewController: UIViewController {
     }
 
     func playVideo(automatically: Bool, _ completion: (() -> (Void))? = nil) {
-        if let playerVc = self.playerViewContoller {
+        if let playerVc = self.playerViewController {
             let videoTime = playerVc.player?.currentTime() ?? CMTimeMake(0, 1)
             let videoDuration = playerVc.player?.currentItem?.duration ?? CMTimeMake(1, 1)
             let progress = videoTime.seconds / videoDuration.seconds
@@ -176,7 +181,7 @@ class RateVideoViewController: UIViewController {
             return nil
         }
 
-        let player = AVPlayer(url: videoUrl)
+        let player = AVQueuePlayer(contentUrl: videoUrl)
         let playerViewController = AVPlayerViewController()
         playerViewController.player = player
         return playerViewController
