@@ -87,19 +87,7 @@ class HistoryViewController: UITableViewController {
             return
         }
 
-        var progress = 1.0
-        if
-            let queuePlayer = self.playerViewController?.player as? AVQueuePlayer,
-            let videoTime = queuePlayer.items()[safe: 0]?.currentTime(),
-            let videoDuration = queuePlayer.items()[safe: 0]?.duration,
-            queuePlayer.items().count > 1, videoTime.isValid, videoDuration.isValid {
-            if queuePlayer.items().count == 3 {
-                progress = 0.0
-            } else {
-                progress = videoTime.seconds / videoDuration.seconds
-            }
-        }
-
+        let progress = (self.playerViewController?.player as? NanouPlayer)?.progress ?? -1.0
         let rating = -1.0
 
         log.verbose("rated video \(video.id) with \(rating) (progress: \(progress))")
@@ -155,11 +143,8 @@ class HistoryViewController: UITableViewController {
     }
 
     func didEndPlayback() {
-        if let queuePlayer = self.playerViewController?.player as? AVQueuePlayer {
-            let lastItem = queuePlayer.items().last
-            if queuePlayer.currentItem == lastItem {
-                self.playerViewController?.dismiss(animated: true, completion: nil)
-            }
+        if let player = self.playerViewController?.player as? NanouPlayer, player.isLastItem {
+            self.playerViewController?.dismiss(animated: true, completion: nil)
         }
     }
 
@@ -256,7 +241,7 @@ extension HistoryViewController {
             return
         }
 
-        let player = AVQueuePlayer(contentUrl: videoUrl)
+        let player = NanouPlayer(contentUrl: videoUrl)
         let playerViewController = AVPlayerViewController()
         playerViewController.player = player
         self.playerViewController = playerViewController

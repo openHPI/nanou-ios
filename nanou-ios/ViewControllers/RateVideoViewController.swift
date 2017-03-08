@@ -42,23 +42,7 @@ class RateVideoViewController: UIViewController {
     @IBOutlet var nextButton: UIButton!
 
     @IBAction func tapWatched(_ sender: Any) {
-        defer {
-            let _ = self.navigationController?.popViewController(animated: true)
-        }
-
-        var progress = 1.0
-        if
-            let queuePlayer = self.playerViewController?.player as? AVQueuePlayer,
-            let videoTime = queuePlayer.items()[safe: 0]?.currentTime(),
-            let videoDuration = queuePlayer.items()[safe: 0]?.duration,
-            queuePlayer.items().count > 1, videoTime.isValid, videoDuration.isValid {
-            if queuePlayer.items().count == 3 {
-                progress = 0.0
-            } else {
-                progress = videoTime.seconds / videoDuration.seconds
-            }
-        }
-
+        let progress = (self.playerViewController?.player as? NanouPlayer)?.progress ?? -1.0
         let rating = self.ratingActive ? (self.ratingView.rating - 1) / Double(self.ratingView.settings.totalStars - 1) : -1.0
 
         log.debug("tapWatched")
@@ -67,6 +51,8 @@ class RateVideoViewController: UIViewController {
         let now = Date() as NSDate
         let _ = WatchedVideo.newEntity(forVideoId: self.video?.id, withDate: now, progress: progress, rating: rating)
         CoreDataHelper.saveContext()
+
+        let _ = self.navigationController?.popViewController(animated: true)
     }
 
     @IBAction func tapGoBack() {
@@ -186,18 +172,15 @@ class RateVideoViewController: UIViewController {
             return nil
         }
 
-        let player = AVQueuePlayer(contentUrl: videoUrl)
+        let player = NanouPlayer(contentUrl: videoUrl)
         let playerViewController = AVPlayerViewController()
         playerViewController.player = player
         return playerViewController
     }
 
     func didEndPlayback() {
-        if let queuePlayer = self.playerViewController?.player as? AVQueuePlayer {
-            let lastItem = queuePlayer.items().last
-            if queuePlayer.currentItem == lastItem {
-                self.playerViewController?.dismiss(animated: true, completion: nil)
-            }
+        if let player = self.playerViewController?.player as? NanouPlayer, player.isLastItem {
+            self.playerViewController?.dismiss(animated: true, completion: nil)
         }
     }
 
