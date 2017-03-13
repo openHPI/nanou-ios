@@ -1,6 +1,8 @@
 use_frameworks!
 platform :ios, '10.0'
 
+plugin 'cocoapods-acknowledgements', :settings_bundle => true
+
 target 'nanou-ios' do
   pod 'Alamofire', '4.2.0'
   pod 'BrightFutures', '5.1.0'

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		442521D251E1AF99244ABFBC /* Pods-nanou-ios-settings-metadata.plist in Resources */ = {isa = PBXBuildFile; fileRef = 94E75077FC5E0AFCD8BA5603 /* Pods-nanou-ios-settings-metadata.plist */; };
 		5000A1701DF6B2980070636E /* NotificationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5000A16F1DF6B2980070636E /* NotificationHelper.swift */; };
 		501040781E40A5EF0043F62E /* RemoteImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501040771E40A5EF0043F62E /* RemoteImageView.swift */; };
 		5010407A1E40E5700043F62E /* WatchedVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501040791E40E5700043F62E /* WatchedVideo.swift */; };
@@ -34,6 +35,7 @@
 		50601B511E535FEB00000D4A /* HistoryVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50601B501E535FEB00000D4A /* HistoryVideo.swift */; };
 		50601B531E5364E900000D4A /* HistoryHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50601B521E5364E900000D4A /* HistoryHelper.swift */; };
 		50601B551E53947200000D4A /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50601B541E53947200000D4A /* HistoryCell.swift */; };
+		506371101E76E7CB000C68DD /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5063710F1E76E7CB000C68DD /* Settings.bundle */; };
 		506661FE1E6701B90060FF2F /* SurveyHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506661FD1E6701B90060FF2F /* SurveyHelper.swift */; };
 		5084F7C51E421808006AA1EA /* SpineNetworkProcedure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5084F7C41E421808006AA1EA /* SpineNetworkProcedure.swift */; };
 		5084F7C71E43E7AB006AA1EA /* BaseModelHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5084F7C61E43E7AB006AA1EA /* BaseModelHelper.swift */; };
@@ -64,6 +66,7 @@
 		50F64E361E3B83CB00419003 /* PagedUICollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F64E351E3B83CB00419003 /* PagedUICollectionViewLayout.swift */; };
 		50F64E381E3B85E700419003 /* VideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F64E371E3B85E700419003 /* VideoCell.swift */; };
 		8361F0707357994E12F56B4C /* Pods_nanou_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBEE94DB21BBCFA5A5869180 /* Pods_nanou_ios.framework */; };
+		96561516D2860D3BE15BA1CE /* Pods-nanou-ios-metadata.plist in Resources */ = {isa = PBXBuildFile; fileRef = 82E305D9A22B7B300B1D9842 /* Pods-nanou-ios-metadata.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -98,6 +101,7 @@
 		50601B501E535FEB00000D4A /* HistoryVideo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HistoryVideo.swift; path = Model/HistoryVideo.swift; sourceTree = "<group>"; };
 		50601B521E5364E900000D4A /* HistoryHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HistoryHelper.swift; path = Model/HistoryHelper.swift; sourceTree = "<group>"; };
 		50601B541E53947200000D4A /* HistoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HistoryCell.swift; path = Views/HistoryCell.swift; sourceTree = "<group>"; };
+		5063710F1E76E7CB000C68DD /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		506661FD1E6701B90060FF2F /* SurveyHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SurveyHelper.swift; path = Helper/SurveyHelper.swift; sourceTree = "<group>"; };
 		5084F7C41E421808006AA1EA /* SpineNetworkProcedure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpineNetworkProcedure.swift; path = Procedures/SpineNetworkProcedure.swift; sourceTree = "<group>"; };
 		5084F7C61E43E7AB006AA1EA /* BaseModelHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseModelHelper.swift; path = Helper/BaseModelHelper.swift; sourceTree = "<group>"; };
@@ -127,6 +131,8 @@
 		50EA85A11DF597B900DFFE09 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Error.swift; path = Helper/Error.swift; sourceTree = "<group>"; };
 		50F64E351E3B83CB00419003 /* PagedUICollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PagedUICollectionViewLayout.swift; path = Helper/PagedUICollectionViewLayout.swift; sourceTree = "<group>"; };
 		50F64E371E3B85E700419003 /* VideoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoCell.swift; path = Views/VideoCell.swift; sourceTree = "<group>"; };
+		82E305D9A22B7B300B1D9842 /* Pods-nanou-ios-metadata.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = "Pods-nanou-ios-metadata.plist"; path = "Pods/Pods-nanou-ios-metadata.plist"; sourceTree = "<group>"; };
+		94E75077FC5E0AFCD8BA5603 /* Pods-nanou-ios-settings-metadata.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = "Pods-nanou-ios-settings-metadata.plist"; path = "nanou-ios/Settings.bundle/Pods-nanou-ios-settings-metadata.plist"; sourceTree = "<group>"; };
 		FBEE94DB21BBCFA5A5869180 /* Pods_nanou_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_nanou_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -177,6 +183,7 @@
 				50240B3D1DE43F0E00CB6681 /* Info.plist */,
 				50B76C971E65C03800A86123 /* GoogleService-Info.plist */,
 				50240B351DE43F0E00CB6681 /* nanou_ios.xcdatamodeld */,
+				5063710F1E76E7CB000C68DD /* Settings.bundle */,
 			);
 			path = "nanou-ios";
 			sourceTree = "<group>";
@@ -269,6 +276,8 @@
 			children = (
 				1D78B86D79986E5EE78F052A /* Pods-nanou-ios.debug.xcconfig */,
 				08A9B99B0EAA70F22CC17622 /* Pods-nanou-ios.release.xcconfig */,
+				82E305D9A22B7B300B1D9842 /* Pods-nanou-ios-metadata.plist */,
+				94E75077FC5E0AFCD8BA5603 /* Pods-nanou-ios-settings-metadata.plist */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -347,12 +356,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				506371101E76E7CB000C68DD /* Settings.bundle in Resources */,
 				50D13BCE1E6EDD74004B9A11 /* intro-outro.mp4 in Resources */,
 				50D503271E254C4600C16D14 /* Login.storyboard in Resources */,
 				50240B3C1DE43F0E00CB6681 /* LaunchScreen.storyboard in Resources */,
 				50B76C981E65C03800A86123 /* GoogleService-Info.plist in Resources */,
 				50240B391DE43F0E00CB6681 /* Assets.xcassets in Resources */,
 				50240B341DE43F0E00CB6681 /* Main.storyboard in Resources */,
+				96561516D2860D3BE15BA1CE /* Pods-nanou-ios-metadata.plist in Resources */,
+				442521D251E1AF99244ABFBC /* Pods-nanou-ios-settings-metadata.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
