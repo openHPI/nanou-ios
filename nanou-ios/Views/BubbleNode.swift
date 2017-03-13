@@ -15,7 +15,7 @@ class BubbleNode: SIFloatingNode {
     var preference: Preference?
 
     class func instantiate(preference: Preference) -> BubbleNode! {
-        let node = BubbleNode(circleOfRadius: 50)
+        let node = BubbleNode(circleOfRadius: 60)
         configureNode(node, preference: preference)
         return node
     }
@@ -35,12 +35,20 @@ class BubbleNode: SIFloatingNode {
         node.labelNode.isUserInteractionEnabled = false
         node.labelNode.verticalAlignmentMode = .center
         node.labelNode.horizontalAlignmentMode = .center
+
+
+        let padding = CGFloat(8.0)
+        let nodeSize = CGSize(width: node.frame.width - 2*padding, height: node.frame.height - 2*padding)
+        let labelSize = CGSize(width: node.labelNode.frame.width, height: node.labelNode.frame.height)
+        let scalingFactor = min(min(nodeSize.width / labelSize.width, nodeSize.height / labelSize.height), 1)
+        node.labelNode.fontSize *= scalingFactor
+
         node.addChild(node.labelNode)
     }
 
     override func selectingAnimation() -> SKAction? {
         removeAction(forKey: BubbleNode.removingKey)
-        let scaleAction = SKAction.scale(to: 1.3, duration: 0.2)
+        let scaleAction = SKAction.scale(to: 1.15, duration: 0.2)
         let colorAction = colorTransitionAction(from: UIColor.nanouOrange, to: UIColor.nanouPink, duration: 0.2)
         return SKAction.group([scaleAction, colorAction])
     }
