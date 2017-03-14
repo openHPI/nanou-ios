@@ -18,6 +18,7 @@ class VideoCell: UICollectionViewCell {
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var providerLabel: UILabel!
     @IBOutlet var tags: TagListView!
+    @IBOutlet var licenseButton: UIButton!
 
     @IBAction func tapDismiss(_ sender: Any) {
         self.delegate?.didDismiss(cell: self)
@@ -27,9 +28,14 @@ class VideoCell: UICollectionViewCell {
         self.delegate?.didSelect(cell: self)
     }
 
+    @IBAction func tapLicense(_ sender: Any) {
+        self.delegate?.didTapLicense(cell: self)
+    }
+
 }
 
 protocol VideoCellDelegate: class {
     func didSelect(cell: VideoCell)
     func didDismiss(cell: VideoCell)
+    func didTapLicense(cell: VideoCell)
 }

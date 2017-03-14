@@ -10,6 +10,7 @@ import UIKit
 import AVKit
 import AVFoundation
 import CoreData
+import SafariServices
 
 class HistoryViewController: UITableViewController {
     var resultsController: NSFetchedResultsController<HistoryVideo>?
@@ -134,12 +135,23 @@ class HistoryViewController: UITableViewController {
             historyCell.durationLabel.text = nil
         }
 
+        DispatchQueue.main.async {
+            if let licenseName = historyVideo?.licenseName {
+                historyCell.licenseButton.setTitle(licenseName, for: .normal)
+                historyCell.licenseButton.isHidden = false
+            } else {
+                historyCell.licenseButton.isHidden = true
+            }
+        }
+
         historyCell.tagListView.removeAllTags()
         for tag in historyVideo?.tags?.components(separatedBy: ",") ?? [] {
             if tag.characters.count > 0 {
                 historyCell.tagListView.addTag(tag)
             }
         }
+
+        historyCell.delegate = self
     }
 
     func didEndPlayback() {
@@ -220,7 +232,7 @@ extension HistoryViewController {
     }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 88.0
+        return 110.0
     }
 
 }
@@ -257,6 +269,19 @@ extension HistoryViewController {
             FirebaseHelper.logHistoryVideoPlaybackStart(historyVideo: historyVideo, at: progress)
 
             player.play()
+        }
+    }
+
+}
+
+extension HistoryViewController: HistoryCellDelegate {
+
+    func didTapLicense(cell: HistoryCell) {
+        if let indexPath = self.tableView?.indexPath(for: cell), let video = self.resultsController?.object(at: indexPath), let urlString = video.licenseUrl, let licenseUrl = URL(string: urlString) {
+            let safariViewController = SFSafariViewController(url: licenseUrl)
+            self.present(safariViewController, animated: true, completion: nil)
+        } else {
+            log.error("HistoryViewController | Failed to show license")
         }
     }
 

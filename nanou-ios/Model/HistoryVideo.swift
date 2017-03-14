@@ -22,6 +22,8 @@ class HistoryVideoSpine: BaseModelSpine<HistoryVideo> {
     var progress: NSNumber?
     var streamUrl: URL?
     var imageUrl: URL?
+    var licenseName: String?
+    var licenseUrl: URL?
     var providerName: String?
     var tags: String?
     var count: NSNumber?
@@ -40,6 +42,8 @@ class HistoryVideoSpine: BaseModelSpine<HistoryVideo> {
             "streamUrl": URLAttribute().serializeAs("stream_url"),
             "imageUrl": URLAttribute().serializeAs("image_url"),
             "providerName": Attribute().serializeAs("provider_name"),
+            "licenseName": Attribute().serializeAs("license_name"),
+            "licenseUrl": URLAttribute().serializeAs("license_url"),
             "tags": Attribute(),
         ])
     }

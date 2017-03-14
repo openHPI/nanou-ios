@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import SDWebImage
+import SafariServices
 
 class VideosViewController: UICollectionViewController {
     var resultsController: NSFetchedResultsController<Video>?
@@ -135,6 +136,15 @@ class VideosViewController: UICollectionViewController {
             videoCell.durationLabel.text = nil
         }
 
+        DispatchQueue.main.async {
+            if let licenseName = video?.licenseName {
+                videoCell.licenseButton.setTitle(licenseName, for: .normal)
+                videoCell.licenseButton.isHidden = false
+            } else {
+                videoCell.licenseButton.isHidden = true
+            }
+        }
+
         videoCell.tags.removeAllTags()
         for tag in video?.tags?.components(separatedBy: ",") ?? [] {
             if tag.characters.count > 0 {
@@ -196,6 +206,15 @@ extension VideosViewController: VideoCellDelegate {
         // TODO: when using procedure correctly, this call is no longer necessary
         self.syncVideos()
         CoreDataHelper.saveContext()
+    }
+
+    func didTapLicense(cell: VideoCell) {
+        if let indexPath = self.collectionView?.indexPath(for: cell), let video = self.resultsController?.object(at: indexPath), let urlString = video.licenseUrl, let licenseUrl = URL(string: urlString) {
+            let safariViewController = SFSafariViewController(url: licenseUrl)
+            self.present(safariViewController, animated: true, completion: nil)
+        } else {
+            log.error("VideosViewController | Failed to show license")
+        }
     }
 
 }

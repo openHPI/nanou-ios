@@ -11,6 +11,9 @@ import TagListView
 
 class HistoryCell: UITableViewCell {
 
+    weak var delegate: HistoryCellDelegate?
+
+
     @IBOutlet var imageview: UIImageView!
     @IBOutlet var progressView: UIProgressView!
     @IBOutlet var titleLabel: UILabel!
@@ -18,5 +21,14 @@ class HistoryCell: UITableViewCell {
     @IBOutlet var tagListView: TagListView!
     @IBOutlet var countLabel: UILabel!
     @IBOutlet var durationLabel: UILabel!
+    @IBOutlet var licenseButton: UIButton!
 
+    @IBAction func tapLicense(_ sender: Any) {
+        self.delegate?.didTapLicense(cell: self)
+    }
+
+}
+
+protocol HistoryCellDelegate: class {
+    func didTapLicense(cell: HistoryCell)
 }
