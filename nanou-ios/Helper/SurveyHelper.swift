@@ -29,6 +29,7 @@ struct SurveyHelper {
 
     func setAsked() {
         UserDefaults.standard.set(true, forKey: self.surveyAskForLatestSurveyBefore)
+        UserDefaults.standard.synchronize()
     }
 
     var latestSurveyURL: URL? {

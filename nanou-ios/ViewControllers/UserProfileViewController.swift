@@ -35,6 +35,11 @@ class UserProfileViewController: UITableViewController {
         UserProfileConfigItem(reuseIdentifier: "logoutCell"),
     ]
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.tableView.reloadSections(IndexSet(integer: 1), with: .automatic)
+    }
+
 }
 
 
