@@ -34,6 +34,10 @@ class NanouPlayer: AVQueuePlayer {
     }
 
     convenience init(contentUrl: URL) {
+        // play audio when device is muted
+        try? AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+
+        // add intro and outro video
         let introOutroUrl = Bundle.main.url(forResource: "intro-outro", withExtension: "mp4")!
         let introItem = AVPlayerItem(url: introOutroUrl)
         let outroItem = AVPlayerItem(url: introOutroUrl)
