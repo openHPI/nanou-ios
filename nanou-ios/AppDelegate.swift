@@ -8,6 +8,7 @@
 
 import UIKit
 
+import AVKit
 import CoreData
 import SwiftyBeaver
 import Firebase
@@ -66,6 +67,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Saves changes in the application's managed object context before the application terminates.
         FirebaseHelper.logAppSuspend()
         CoreDataHelper.saveContext()
+    }
+
+    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+        let tabBarController = window?.rootViewController?.presentedViewController as? UITabBarController
+        let navigationController = tabBarController?.selectedViewController as? UINavigationController
+        if navigationController?.viewControllers.last is RateVideoViewController, navigationController?.visibleViewController is AVPlayerViewController {
+            return UIInterfaceOrientationMask.portrait
+        }
+        return UIInterfaceOrientationMask.all
     }
 
 }

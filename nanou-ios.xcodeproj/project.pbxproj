@@ -65,6 +65,7 @@
 		50EA85A21DF597B900DFFE09 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EA85A11DF597B900DFFE09 /* Error.swift */; };
 		50F64E361E3B83CB00419003 /* PagedUICollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F64E351E3B83CB00419003 /* PagedUICollectionViewLayout.swift */; };
 		50F64E381E3B85E700419003 /* VideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F64E371E3B85E700419003 /* VideoCell.swift */; };
+		50FF4F081E7FDAAB00E87F3A /* DeviceOrientationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FF4F071E7FDAAB00E87F3A /* DeviceOrientationHelper.swift */; };
 		8361F0707357994E12F56B4C /* Pods_nanou_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBEE94DB21BBCFA5A5869180 /* Pods_nanou_ios.framework */; };
 		96561516D2860D3BE15BA1CE /* Pods-nanou-ios-metadata.plist in Resources */ = {isa = PBXBuildFile; fileRef = 82E305D9A22B7B300B1D9842 /* Pods-nanou-ios-metadata.plist */; };
 /* End PBXBuildFile section */
@@ -131,6 +132,7 @@
 		50EA85A11DF597B900DFFE09 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Error.swift; path = Helper/Error.swift; sourceTree = "<group>"; };
 		50F64E351E3B83CB00419003 /* PagedUICollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PagedUICollectionViewLayout.swift; path = Helper/PagedUICollectionViewLayout.swift; sourceTree = "<group>"; };
 		50F64E371E3B85E700419003 /* VideoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoCell.swift; path = Views/VideoCell.swift; sourceTree = "<group>"; };
+		50FF4F071E7FDAAB00E87F3A /* DeviceOrientationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeviceOrientationHelper.swift; path = Helper/DeviceOrientationHelper.swift; sourceTree = "<group>"; };
 		82E305D9A22B7B300B1D9842 /* Pods-nanou-ios-metadata.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = "Pods-nanou-ios-metadata.plist"; path = "Pods/Pods-nanou-ios-metadata.plist"; sourceTree = "<group>"; };
 		94E75077FC5E0AFCD8BA5603 /* Pods-nanou-ios-settings-metadata.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = "Pods-nanou-ios-settings-metadata.plist"; path = "nanou-ios/Settings.bundle/Pods-nanou-ios-settings-metadata.plist"; sourceTree = "<group>"; };
 		FBEE94DB21BBCFA5A5869180 /* Pods_nanou_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_nanou_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -256,6 +258,7 @@
 				50B76C991E65C70000A86123 /* FirebaseHelper.swift */,
 				506661FD1E6701B90060FF2F /* SurveyHelper.swift */,
 				50D13BCF1E6EF438004B9A11 /* NanouPlayer.swift */,
+				50FF4F071E7FDAAB00E87F3A /* DeviceOrientationHelper.swift */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -495,6 +498,7 @@
 				50B270381E2FBF1F00F72502 /* SyncHelper.swift in Sources */,
 				50601B511E535FEB00000D4A /* HistoryVideo.swift in Sources */,
 				50B270451E3218C500F72502 /* SaveProcedure.swift in Sources */,
+				50FF4F081E7FDAAB00E87F3A /* DeviceOrientationHelper.swift in Sources */,
 				504BC3361DF4532E00671614 /* UserProfileViewController.swift in Sources */,
 				502936D61DF8C2F50087A2D4 /* PreferenceCell.swift in Sources */,
 				506661FE1E6701B90060FF2F /* SurveyHelper.swift in Sources */,
