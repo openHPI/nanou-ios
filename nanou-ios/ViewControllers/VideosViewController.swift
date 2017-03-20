@@ -202,10 +202,6 @@ extension VideosViewController: VideoCellDelegate {
         let _ = WatchedVideo.newEntity(forVideoId: video.id, withDate: now, progress: progress, rating: rating)
         CoreDataHelper.context.delete(video)
         CoreDataHelper.saveContext()
-
-        // TODO: when using procedure correctly, this call is no longer necessary
-        self.syncVideos()
-        CoreDataHelper.saveContext()
     }
 
     func didTapLicense(cell: VideoCell) {

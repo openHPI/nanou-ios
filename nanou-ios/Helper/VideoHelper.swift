@@ -14,7 +14,7 @@ struct VideoHelper: BaseModelHelper {
     static func sync() -> Future<[Video], NanouError> {
         // contains also Xikolo provider method (get)
         return SpineHelper.findAll(type: VideoSpine.self).flatMap { spineVideos -> Future<[Video], NanouError> in
-            return SpineModelHelper.syncObjectsFuture(objectsToUpdateRequest: Video.fetchRequest(), spineObjects: spineVideos, inject: nil, save: false)
+            return SpineModelHelper.syncObjectsFuture(objectsToUpdateRequest: Video.fetchRequest(), spineObjects: spineVideos, inject: nil, save: true)
         }
     }
 

@@ -45,10 +45,14 @@ class SyncHelper {
                 let networksave = NetworkProcedure<SaveProcedure<WatchedVideo>> {
                     return SaveProcedure(resource: insert.resource())
                 }
-                let networkfetch = NetworkProcedure<FetchProcedure<VideoHelper>> {
+                let videosFetch = NetworkProcedure<FetchProcedure<VideoHelper>> {
                     return FetchProcedure(helper: VideoHelper.self)
                 }
-                networkfetch.add(dependency: networksave)
+                videosFetch.add(dependency: networksave)
+                let historyFetch = NetworkProcedure<FetchProcedure<HistoryHelper>> {
+                    return FetchProcedure(helper: HistoryHelper.self)
+                }
+                historyFetch.add(dependency: networksave)
 
                 let coreDataDelete = BlockProcedure(block: {
                     CoreDataHelper.context.delete(insert)
@@ -56,7 +60,7 @@ class SyncHelper {
                 coreDataDelete.add(dependency: networksave)
                 coreDataDelete.add(condition: NoFailedDependenciesCondition())
 
-                self.queue.add(operations: networksave, networkfetch, coreDataDelete)
+                self.queue.add(operations: networksave, videosFetch, historyFetch, coreDataDelete)
             }
         }
     }
