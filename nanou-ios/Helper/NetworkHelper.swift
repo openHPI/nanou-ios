@@ -56,11 +56,7 @@ extension NetworkHelper {
                 }
                 log.verbose("Request 'test-login' | retrieved authentication status: \(token)")
 
-                guard let authenticated = json["authenticated"] as? Bool else {
-                    log.error("Login | missing authentication value")
-                    return
-                }
-
+                let authenticated = json["authenticated"] as? Bool ?? false
 
                 if authenticated {
                     UserProfileHelper.storeToken(token)
