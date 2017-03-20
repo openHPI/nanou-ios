@@ -20,7 +20,7 @@ class NanouPlayer: AVQueuePlayer {
             if itemCount == 1 {  // outro playing (so almost done)
                 return 1.0
             } else if itemCount == 2 {  // main content playing
-                if currentItem.currentTime().isValid, currentItem.duration.isValid {
+                if currentItem.currentTime().isValid, currentItem.duration.isValid, currentItem.duration.seconds > 0 {
                     return currentItem.currentTime().seconds / currentItem.duration.seconds
                 } else {  // time invalid
                     return -1.0
