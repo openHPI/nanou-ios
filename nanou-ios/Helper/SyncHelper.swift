@@ -65,10 +65,19 @@ class SyncHelper {
         }
     }
 
-    func fetch<T: BaseModelHelper>(helper: T.Type) {
+    func fetch<T: BaseModelHelper>(helper: T.Type, _ completion: ((Int) -> ())? = nil) {
         let networkfetch = NetworkProcedure<FetchProcedure<T>> {
             return FetchProcedure(helper: helper)
         }
+
+        if let completion = completion {
+            let completionProcedure = BlockProcedure(block: {
+                completion(networkfetch.output.success?.payload?.count ?? 0)
+            })
+            completionProcedure.add(dependency: networkfetch)
+            self.queue.add(operation: completionProcedure)
+        }
+
         self.queue.add(operation: networkfetch)
     }
 

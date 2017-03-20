@@ -11,28 +11,36 @@ import CoreData
 import SDWebImage
 import SafariServices
 
+enum CollectionViewState {
+    case displaying
+    case loading
+    case empty
+}
+
 class VideosViewController: UICollectionViewController {
     var resultsController: NSFetchedResultsController<Video>?
     var cellReuseIdentifier = "videoCell"
     var emptyStateTimer: Timer?
     var videosSynced = false
-    var isCollectionViewEmpty = false {
+    var collectionViewState: CollectionViewState = .displaying {
         didSet {
-            if self.isCollectionViewEmpty {
-                if self.emptyStateTimer != nil {
-                    return
-                }
-                self.emptyStateTimer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { timer in
+            DispatchQueue.main.async {
+                switch self.collectionViewState {
+                case .displaying:
+                    self.emptyState.isHidden = true
+                    self.loadingView.isHidden = true
+                case .loading:
+                    self.emptyState.isHidden = true
+                    self.loadingView.isHidden = false
+                case .empty:
                     self.emptyState.isHidden = false
-                })
-            } else {
-                self.emptyStateTimer?.invalidate()
-                self.emptyStateTimer = nil
-                self.emptyState.isHidden = true
+                    self.loadingView.isHidden = true
+                }
             }
         }
     }
     @IBOutlet var emptyState: UIView!
+    @IBOutlet var loadingView: UIView!
 
     var contentChangeOperations: [ContentChangeOperation] = []
 
@@ -58,6 +66,7 @@ class VideosViewController: UICollectionViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if !self.videosSynced {
+            self.collectionViewState = .loading
             self.syncVideos()
             self.videosSynced = true
         }
@@ -70,7 +79,9 @@ class VideosViewController: UICollectionViewController {
 
     func syncVideos() {
         FirebaseHelper.logVideoFetch()
-        SyncHelper.standard.fetch(helper: VideoHelper.self)
+        SyncHelper.standard.fetch(helper: VideoHelper.self) { count in
+            self.collectionViewState = count == 0 ? .empty : .displaying
+        }
         SurveyHelper.standard.fetchLatestSurvey { survey in
             if let survey = survey, !SurveyHelper.standard.askedForLatestBefore {
                 let alert = UIAlertController(title: "Hilf uns die App zu besseren",
@@ -202,6 +213,8 @@ extension VideosViewController: VideoCellDelegate {
         let _ = WatchedVideo.newEntity(forVideoId: video.id, withDate: now, progress: progress, rating: rating)
         CoreDataHelper.context.delete(video)
         CoreDataHelper.saveContext()
+
+        self.collectionViewState = .loading
     }
 
     func didTapLicense(cell: VideoCell) {
@@ -278,11 +291,7 @@ extension VideosViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        let objectCount = self.resultsController?.sections?[section].numberOfObjects ?? 0
-        if section == 0 {
-            self.isCollectionViewEmpty = (objectCount == 0)
-        }
-        return objectCount
+        return self.resultsController?.sections?[section].numberOfObjects ?? 0
     }
 
     override func collectionView(_ collectionView: UICollectionView,

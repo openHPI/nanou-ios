@@ -20,30 +20,32 @@ class HistoryViewController: UITableViewController {
     var lastVideo: HistoryVideo?
 
     var emptyStateTimer: Timer?
-    var isTableViewEmpty = false {
+    var tableViewState: CollectionViewState = .displaying {
         didSet {
-            if self.isTableViewEmpty {
-                if self.emptyStateTimer != nil {
-                    return
-                }
-                self.emptyStateTimer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { timer in
+            DispatchQueue.main.async {
+                switch self.tableViewState {
+                case .displaying:
+                    self.emptyState?.isHidden = true
+                    self.loadingView?.isHidden = true
+                case .loading:
+                    self.emptyState?.isHidden = true
+                    self.loadingView?.isHidden = false
+                case .empty:
                     self.emptyState?.isHidden = false
-                })
-            } else {
-                self.emptyStateTimer?.invalidate()
-                self.emptyStateTimer = nil
-                self.emptyState?.isHidden = true
+                    self.loadingView?.isHidden = true
+                }
             }
         }
     }
     var emptyState: UIView?
+    var loadingView: UIView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         let request: NSFetchRequest<HistoryVideo> = HistoryVideo.fetchRequest()
         request.sortDescriptors = [NSSortDescriptor(key: "date", ascending: false)]
-        self.resultsController = CoreDataHelper.createResultsController(fetchRequest: request, sectionNameKeyPath: "date")
+        self.resultsController = CoreDataHelper.createResultsController(fetchRequest: request, sectionNameKeyPath: nil)
         self.resultsController?.delegate = self
 
         do {
@@ -53,17 +55,35 @@ class HistoryViewController: UITableViewController {
         }
 
         // Empty State
-        let frame = CGRect(origin: CGPoint.zero, size: self.view.bounds.size)
-        let messageLabel = UILabel(frame: frame)
-        messageLabel.text = "Los schau ein paar Videos!"
-        messageLabel.textColor = UIColor.nanouOrange
-        messageLabel.numberOfLines = 0
-        messageLabel.textAlignment = .center
-        messageLabel.font = UIFont.systemFont(ofSize: 27)
-        messageLabel.sizeToFit()
+        let emptyFrame = CGRect(origin: CGPoint.zero, size: self.view.bounds.size)
+        let emptyLabel = UILabel(frame: emptyFrame)
+        emptyLabel.text = "Los schau ein paar Videos!"
+        emptyLabel.textColor = UIColor.nanouOrange
+        emptyLabel.numberOfLines = 0
+        emptyLabel.textAlignment = .center
+        emptyLabel.font = UIFont.systemFont(ofSize: 27)
+        emptyLabel.sizeToFit()
+        emptyLabel.isHidden = true
+        self.emptyState = emptyLabel
 
-        self.emptyState = messageLabel
-        self.tableView.backgroundView = messageLabel
+
+        // Loading View
+        let loadingFrame = CGRect(origin: CGPoint.zero, size: self.view.bounds.size)
+        let loadingLabel = UILabel(frame: loadingFrame)
+        loadingLabel.text = "Laden ..."
+        loadingLabel.textColor = UIColor.nanouOrange
+        loadingLabel.numberOfLines = 0
+        loadingLabel.textAlignment = .center
+        loadingLabel.font = UIFont.systemFont(ofSize: 21)
+        loadingLabel.sizeToFit()
+        loadingLabel.isHidden = true
+        self.loadingView = loadingLabel
+
+        self.tableView.backgroundView = UIView(frame: loadingFrame)
+        self.tableView.backgroundView?.addSubview(self.emptyState!)
+        self.tableView.backgroundView?.addSubview(self.loadingView!)
+        self.emptyState?.frame = emptyFrame
+        self.loadingView?.frame = loadingFrame
 
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(HistoryViewController.didEndPlayback),
@@ -73,6 +93,7 @@ class HistoryViewController: UITableViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.tableViewState = .loading
         self.trackWatchVideo()
         self.syncHistory()
     }
@@ -103,15 +124,9 @@ class HistoryViewController: UITableViewController {
     }
 
     func syncHistory() {
-        SyncHelper.standard.fetch(helper: HistoryHelper.self)
-    }
-
-    func showEmptyState() {
-        var objectCount = 0
-        if let sections = self.resultsController?.sections, sections.count > 0 {
-            objectCount = sections[0].numberOfObjects
+        SyncHelper.standard.fetch(helper: HistoryHelper.self) { count in
+            self.tableViewState = count == 0 ? .empty : .displaying
         }
-        self.isTableViewEmpty = (objectCount == 0)
     }
 
     func configureTableCell(cell: UITableViewCell, indexPath: IndexPath) {
@@ -180,7 +195,6 @@ extension HistoryViewController: NSFetchedResultsControllerDelegate {
         case .update:
             break
         }
-        self.showEmptyState()
     }
 
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
@@ -190,14 +204,12 @@ extension HistoryViewController: NSFetchedResultsControllerDelegate {
         case .delete:
             self.tableView.deleteRows(at: [indexPath!], with: .fade)
         case .update:
-            if let cell = tableView.cellForRow(at: indexPath!) {
-                self.configureTableCell(cell: cell, indexPath: indexPath!)
-            }
+            self.tableView.deleteRows(at: [indexPath!], with: .fade)
+            self.tableView.insertRows(at: [newIndexPath!], with: .fade)
         case .move:
             self.tableView.deleteRows(at: [indexPath!], with: .fade)
             self.tableView.insertRows(at: [newIndexPath!], with: .fade)
         }
-        self.showEmptyState()
     }
 
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
@@ -221,7 +233,7 @@ extension HistoryViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        self.showEmptyState()
+//        self.showEmptyState()
         return self.resultsController?.sections?[section].numberOfObjects ?? 0
     }
 

@@ -99,7 +99,7 @@
         <scene sceneID="Dcp-QY-k0A">
             <objects>
                 <collectionViewController automaticallyAdjustsScrollViewInsets="NO" id="mEa-Mq-2sQ" customClass="VideosViewController" customModule="nanou_ios" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="A8r-YU-Aui">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="A8r-YU-Aui">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -111,47 +111,82 @@
                         </collectionViewFlowLayout>
                         <view key="backgroundView" contentMode="scaleToFill" id="yQX-pM-Vef">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <autoresizingMask key="autoresizingMask"/>
                             <subviews>
-                                <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ikT-Rq-Uil">
-                                    <rect key="frame" x="62" y="208" width="250" height="250"/>
+                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rkv-KO-rai">
+                                    <rect key="frame" x="0.0" y="20" width="375" height="599"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sehr gut!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Prx-HK-57U">
-                                            <rect key="frame" x="32" y="32" width="186" height="32.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ikT-Rq-Uil">
+                                            <rect key="frame" x="-5" y="-61" width="250" height="250"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sehr gut!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Prx-HK-57U">
+                                                    <rect key="frame" x="32" y="32" width="186" height="32.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                                    <color key="textColor" red="0.94509803920000002" green="0.52156862749999999" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Du hast schon viele Videos gesehen." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UFs-VP-LC2">
+                                                    <rect key="frame" x="32" y="64.5" width="186" height="133"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bleib gespannt auf mehr!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RVt-KG-7KQ">
+                                                    <rect key="frame" x="32" y="197.5" width="186" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="ikT-Rq-Uil" secondAttribute="height" multiplier="1:1" id="Bee-oD-PkK"/>
+                                            </constraints>
+                                            <edgeInsets key="layoutMargins" top="32" left="32" bottom="32" right="32"/>
+                                        </stackView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstItem="ikT-Rq-Uil" firstAttribute="centerX" secondItem="Rkv-KO-rai" secondAttribute="centerX" id="j5a-hB-7EC"/>
+                                        <constraint firstItem="ikT-Rq-Uil" firstAttribute="centerY" secondItem="Rkv-KO-rai" secondAttribute="centerY" id="lH4-l2-jxi"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sKt-c6-qSs">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="619"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Laden ..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DI6-CD-RWX">
+                                            <rect key="frame" x="8" y="276" width="359" height="67"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="NLM-2y-RVg"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                             <color key="textColor" red="0.94509803920000002" green="0.52156862749999999" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Du hast schon viele Videos gesehen." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UFs-VP-LC2">
-                                            <rect key="frame" x="32" y="64.5" width="186" height="133"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bleib gespannt auf mehr!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RVt-KG-7KQ">
-                                            <rect key="frame" x="32" y="197.5" width="186" height="20.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                     </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" secondItem="ikT-Rq-Uil" secondAttribute="height" multiplier="1:1" id="Bee-oD-PkK"/>
+                                        <constraint firstAttribute="trailing" secondItem="DI6-CD-RWX" secondAttribute="trailing" id="5BQ-Ln-Fkv"/>
+                                        <constraint firstItem="DI6-CD-RWX" firstAttribute="centerY" secondItem="sKt-c6-qSs" secondAttribute="centerY" id="9Yr-hj-De6"/>
+                                        <constraint firstItem="DI6-CD-RWX" firstAttribute="leading" secondItem="sKt-c6-qSs" secondAttribute="leading" id="zt0-iA-6Zo"/>
                                     </constraints>
-                                    <edgeInsets key="layoutMargins" top="32" left="32" bottom="32" right="32"/>
-                                </stackView>
+                                </view>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstAttribute="trailing" secondItem="ikT-Rq-Uil" secondAttribute="trailing" id="CPo-bc-dLR"/>
-                                <constraint firstItem="ikT-Rq-Uil" firstAttribute="centerY" secondItem="yQX-pM-Vef" secondAttribute="centerY" id="IFy-nn-52y"/>
-                                <constraint firstItem="ikT-Rq-Uil" firstAttribute="leading" secondItem="yQX-pM-Vef" secondAttribute="leading" id="fpB-rM-9ip"/>
+                                <constraint firstAttribute="bottom" secondItem="sKt-c6-qSs" secondAttribute="bottom" id="7vj-N5-9sj"/>
+                                <constraint firstItem="sKt-c6-qSs" firstAttribute="top" secondItem="yQX-pM-Vef" secondAttribute="top" id="ANK-3V-AJ6"/>
+                                <constraint firstItem="Rkv-KO-rai" firstAttribute="top" secondItem="yQX-pM-Vef" secondAttribute="top" id="BrV-7l-fNq"/>
+                                <constraint firstItem="sKt-c6-qSs" firstAttribute="leading" secondItem="yQX-pM-Vef" secondAttribute="leading" id="C3o-p5-8Vg"/>
+                                <constraint firstAttribute="trailing" secondItem="sKt-c6-qSs" secondAttribute="trailing" id="QZw-dx-1TL"/>
+                                <constraint firstAttribute="trailing" secondItem="Rkv-KO-rai" secondAttribute="trailing" id="YLq-ew-2Fm"/>
+                                <constraint firstItem="Rkv-KO-rai" firstAttribute="leading" secondItem="yQX-pM-Vef" secondAttribute="leading" id="cXU-aW-SKr"/>
+                                <constraint firstAttribute="bottom" secondItem="Rkv-KO-rai" secondAttribute="bottom" id="n6s-Sf-eLz"/>
                             </constraints>
                             <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
                         </view>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="videoCell" id="N52-wf-Udr" customClass="VideoCell" customModule="nanou_ios" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="109" width="250" height="450"/>
+                                <rect key="frame" x="0.0" y="108.5" width="250" height="450"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="250" height="450"/>
@@ -298,7 +333,8 @@
                     </collectionView>
                     <navigationItem key="navigationItem" id="nfk-ct-KNy"/>
                     <connections>
-                        <outlet property="emptyState" destination="yQX-pM-Vef" id="OLy-wr-ith"/>
+                        <outlet property="emptyState" destination="Rkv-KO-rai" id="9lT-ay-OKU"/>
+                        <outlet property="loadingView" destination="sKt-c6-qSs" id="p8z-K5-GU2"/>
                         <segue destination="Jef-vz-Vji" kind="show" identifier="watchVideo" id="BfE-5s-cdG"/>
                     </connections>
                 </collectionViewController>
@@ -593,7 +629,7 @@
                                 <rect key="frame" x="0.0" y="56" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zgr-Lb-KuT" id="Yob-AD-HPW">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" continuous="NO" minimumValueImage="Like" maximumValueImage="LikeSelected" translatesAutoresizingMaskIntoConstraints="NO" id="SSt-oR-klI">
