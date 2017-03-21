@@ -186,7 +186,7 @@
                         </view>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="videoCell" id="N52-wf-Udr" customClass="VideoCell" customModule="nanou_ios" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="108.5" width="250" height="450"/>
+                                <rect key="frame" x="0.0" y="109" width="250" height="450"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="250" height="450"/>
@@ -199,7 +199,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="250" height="255.5"/>
                                                     <color key="backgroundColor" red="0.14901960780000001" green="0.1764705882" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 </imageView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="uFT-nx-Aso">
+                                                <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="uFT-nx-Aso">
                                                     <rect key="frame" x="0.0" y="271.5" width="250" height="170.5"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="UCc-V9-3DZ">
@@ -302,7 +302,7 @@
                                                 <constraint firstAttribute="trailing" secondItem="uFT-nx-Aso" secondAttribute="trailing" id="gSV-iF-hmE"/>
                                                 <constraint firstAttribute="bottom" secondItem="uFT-nx-Aso" secondAttribute="bottom" constant="8" id="ovg-7g-AO0"/>
                                                 <constraint firstItem="uFT-nx-Aso" firstAttribute="top" secondItem="qYE-tX-0BH" secondAttribute="bottom" constant="16" id="uxR-JP-A1W"/>
-                                                <constraint firstItem="qYE-tX-0BH" firstAttribute="height" secondItem="uFT-nx-Aso" secondAttribute="height" multiplier="3:2" id="vIU-gw-mqW"/>
+                                                <constraint firstItem="qYE-tX-0BH" firstAttribute="height" relation="lessThanOrEqual" secondItem="uFT-nx-Aso" secondAttribute="height" multiplier="3:2" id="vIU-gw-mqW"/>
                                             </constraints>
                                             <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
                                         </view>
@@ -629,7 +629,7 @@
                                 <rect key="frame" x="0.0" y="56" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zgr-Lb-KuT" id="Yob-AD-HPW">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" continuous="NO" minimumValueImage="Like" maximumValueImage="LikeSelected" translatesAutoresizingMaskIntoConstraints="NO" id="SSt-oR-klI">
