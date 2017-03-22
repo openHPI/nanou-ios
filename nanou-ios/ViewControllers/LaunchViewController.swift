@@ -63,16 +63,28 @@ class LaunchViewController: UIViewController {
             self.redirectData = nil
             self.performSegue(withIdentifier: segueName, sender: self)
         } else if UserProfileHelper.isLoggedIn {
-            // TODO: Improve check -> if token valid or has offline video content
-            self.performSegue(withIdentifier: "open", sender: self)
+            NetworkHelper.status().onSuccess(callback: { valid in
+                if valid {
+                    self.performSegue(withIdentifier: "open", sender: self)
+                } else {
+                    self.showButtons()
+                }
+            }).onFailure(callback: { error in
+                log.error("LaunchViewController | checkStatus | failed to retrieve token status")
+                self.showButtons()
+            })
         } else {
-            UIView.animate(withDuration: 0.25,
-                           delay: 0.0,
-                           options: .curveEaseInOut,
-                           animations: {
-                            self.buttonView.alpha = 1.0
-            }, completion: nil)
+            self.showButtons()
         }
+    }
+
+    func showButtons() {
+        UIView.animate(withDuration: 0.25,
+                       delay: 0.0,
+                       options: .curveEaseInOut,
+                       animations: {
+                        self.buttonView.alpha = 1.0
+        }, completion: nil)
     }
 
     @IBAction func testLogin(_ sender: Any) {
