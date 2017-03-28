@@ -6,6 +6,7 @@ xcode_sdk:
   - iphonesimulator
 
 before_install:
+  - gem install cocoapods-acknowledgements
   - gem install xcpretty
   - pod repo update
 script:
