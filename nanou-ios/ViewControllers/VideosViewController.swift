@@ -84,7 +84,7 @@ class VideosViewController: UICollectionViewController {
         }
         SurveyHelper.standard.fetchLatestSurvey { survey in
             if let survey = survey, !SurveyHelper.standard.askedForLatestBefore {
-                let alert = UIAlertController(title: "Hilf uns die App zu besseren",
+                let alert = UIAlertController(title: "Hilf uns die App zu verbesseren",
                                               message: "Mit einer Umfrage wollen wir das Konzept der App verbessern. Die Umfrage kann auch jeder Zeit im Nutzer-Tab aufgerufen werden.",
                                               preferredStyle: UIAlertControllerStyle.alert)
                 alert.addAction(UIAlertAction(title: "Abbrechen", style: UIAlertActionStyle.cancel, handler: { action in

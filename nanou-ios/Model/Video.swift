@@ -14,7 +14,7 @@ class Video: BaseModel {
 
     var providerText: String? {
         if let providerName = self.providerName {
-            return "Content of \(providerName)"
+            return "Content von \(providerName)"
         }
         return nil
     }
