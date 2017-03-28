@@ -15,6 +15,7 @@ class InitialPreferenceViewController: UIViewController {
 
     @IBOutlet var sceneWrapperView: UIView!
 
+    var skView: SKView!
     var floatingCollectionScene: BubblesScene!
 
     override func viewDidLoad() {
@@ -22,12 +23,12 @@ class InitialPreferenceViewController: UIViewController {
 
         self.navigationItem.hidesBackButton = true
 
-        let skView = SKView(frame: UIScreen.main.bounds)
-        skView.backgroundColor = SKColor.white
-        self.sceneWrapperView.addSubview(skView)
+        self.skView = SKView(frame: UIScreen.main.bounds)
+        self.skView.backgroundColor = SKColor.white
+        self.sceneWrapperView.addSubview(self.skView)
 
         self.floatingCollectionScene = BubblesScene(size: skView.bounds.size)
-        skView.presentScene(floatingCollectionScene)
+        self.skView.presentScene(floatingCollectionScene)
 
         PreferenceHelper.sync().onSuccess { preferences in
             log.info("InitialPreferenceViewController | sync succeeded")
@@ -38,6 +39,12 @@ class InitialPreferenceViewController: UIViewController {
         }.onFailure { error in
             log.warning("InitialPreferenceViewController | sync failed")
         }
+    }
+
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        self.skView.frame = self.view.bounds
+        self.floatingCollectionScene.size = self.view.bounds.size
     }
 
     @IBAction func commitSelection(_ sender: Any) {
