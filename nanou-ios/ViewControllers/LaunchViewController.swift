@@ -40,7 +40,11 @@ class LaunchViewController: UIViewController {
         unowned let unownedSelf = self
         let deadlineTime = DispatchTime.now() + .milliseconds(500)
         DispatchQueue.main.asyncAfter(deadline: deadlineTime, execute: {
-            unownedSelf.checkStatus()
+            if OnboardingHelper.shouldShowOnboarding {
+                OnboardingHelper.showOnboarding(in: unownedSelf)
+            } else {
+                unownedSelf.checkStatus()
+            }
         })
     }
 

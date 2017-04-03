@@ -48,6 +48,7 @@ PODS:
     - libwebp/core
   - libwebp/webp (0.5.1)
   - LNRSimpleNotifications (0.5.3)
+  - Onboard (2.3.1)
   - ProcedureKit (4.0.0):
     - ProcedureKit/Standard (= 4.0.0)
   - ProcedureKit/Mobile (4.0.0):
@@ -74,6 +75,7 @@ DEPENDENCIES:
   - Cosmos (~> 8.0)
   - Firebase/Core (~> 3.11)
   - LNRSimpleNotifications (= 0.5.3)
+  - Onboard (~> 2.3)
   - ProcedureKit (= 4.0.0)
   - ProcedureKit/Mobile (= 4.0.0)
   - ProcedureKit/Network (= 4.0.0)
@@ -112,6 +114,7 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   libwebp: b9126f8982a95370cf4eaad9bb3fefd57f052c15
   LNRSimpleNotifications: 13aa05e2f65ccf196f736def89178007f30a5182
+  Onboard: b6871f25ac753175b2ab9a362fb2feb26a81a311
   ProcedureKit: 6f5ec25362038e2b27d42393d24d8b0f49d3571a
   Result: 1b3e431f37cbcd3ad89c6aa9ab0ae55515fae3b6
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
@@ -121,6 +124,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: 38a8ea2006779c0fc4c310cb2ee8195327740faf
   TagListView: d0267a71393f3c73db5c9ea2f979ac1125fcab56
 
-PODFILE CHECKSUM: 5237931cf3e2df58c4eba04b286e884b22ca1f36
+PODFILE CHECKSUM: 84dbf0ee99a6736df51e16ee187337d985f61c9d
 
 COCOAPODS: 1.2.0

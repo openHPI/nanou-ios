@@ -33,4 +33,27 @@ extension CAGradientLayer {
         return gradient
     }
 
+    class func gradientLayer(frame: CGRect, colors: [CGColor]) -> CAGradientLayer {
+        let gradient: CAGradientLayer = CAGradientLayer()
+        gradient.frame = frame
+        gradient.colors = colors
+        return gradient
+    }
+
+}
+
+extension UIImage {
+
+    class func onboardingGradient(frame: CGRect) -> UIImage? {
+        let colors = [UIColor.white.cgColor]
+        let gradientLayer = CAGradientLayer.gradientLayer(frame: frame, colors: colors)
+
+        UIGraphicsBeginImageContextWithOptions(frame.size, false, 0.0)
+        gradientLayer.render(in: UIGraphicsGetCurrentContext()!)
+        let gradientImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+
+        return gradientImage
+    }
+
 }

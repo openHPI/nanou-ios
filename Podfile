@@ -10,6 +10,7 @@ target 'nanou-ios' do
   pod 'Firebase/Core', '~> 3.11'
   pod 'TagListView', '~> 1.1'
   pod 'LNRSimpleNotifications', '0.5.3'
+  pod 'Onboard', '~> 2.3'
   pod 'ProcedureKit', '4.0.0'
   pod 'ProcedureKit/Network', '4.0.0'
   pod 'ProcedureKit/Mobile', '4.0.0'
