@@ -37,9 +37,11 @@ class RateVideoViewController: UIViewController {
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var providerLabel: UILabel!
     @IBOutlet var tagListView: TagListView!
+    @IBOutlet var dependencyLabel: UILabel!
     @IBOutlet var ratingView: CosmosView!
     @IBOutlet var buttonStack: UIStackView!
     @IBOutlet var nextButton: UIButton!
+
 
     @IBAction func tapWatched(_ sender: Any) {
         let progress = (self.playerViewController?.player as? NanouPlayer)?.progress ?? -1.0
@@ -93,6 +95,16 @@ class RateVideoViewController: UIViewController {
             }
         }
 
+        if let dependencyCount = video?.dependencyCount, dependencyCount > 0 {
+            if dependencyCount == 1 {
+                self.dependencyLabel.text = "Hilft 1 Video freizuschalten"
+            } else {
+                self.dependencyLabel.text = String(format: "Hilft %d Videos freizuschalten", dependencyCount)
+            }
+        } else {
+            self.dependencyLabel.text = nil
+        }
+
         self.nextButton.backgroundColor = UIColor.nanouOrange
         self.nextButton.tintColor = UIColor.white
         self.nextButton.layer.masksToBounds = true
@@ -103,6 +115,7 @@ class RateVideoViewController: UIViewController {
         self.titleLabel.isHidden = true
         self.providerLabel.isHidden = true
         self.tagListView.isHidden = true
+        self.dependencyLabel.isHidden = true
         self.ratingView.isHidden = true
         self.buttonStack.isHidden = true
 
@@ -128,6 +141,7 @@ class RateVideoViewController: UIViewController {
                 self.titleLabel.isHidden = false
                 self.providerLabel.isHidden = false
                 self.tagListView.isHidden = false
+                self.dependencyLabel.isHidden = false
                 self.ratingView.isHidden = false
                 self.buttonStack.isHidden = false
             }

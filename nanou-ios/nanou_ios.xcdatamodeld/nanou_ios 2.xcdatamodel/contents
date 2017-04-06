@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="15G1421" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="HistoryVideo" representedClassName=".HistoryVideo" syncable="YES" codeGenerationType="category">
+        <attribute name="count" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="duration" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="imageUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="licenseName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="licenseUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="progress" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="providerName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="streamUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tags" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Preference" representedClassName=".Preference" syncable="YES" codeGenerationType="category">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="id" attributeType="String" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="weight" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+    </entity>
+    <entity name="Video" representedClassName=".Video" syncable="YES" codeGenerationType="category">
+        <attribute name="dependencyCount" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="downloadUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="duration" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="imageUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="licenseName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="licenseUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="providerName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="streamUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tags" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="WatchedVideo" representedClassName=".WatchedVideo" syncable="YES" codeGenerationType="category">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="progress" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="rating" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="videoId" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="HistoryVideo" positionX="-63" positionY="45" width="128" height="225"/>
+        <element name="Preference" positionX="-63" positionY="-18" width="128" height="105"/>
+        <element name="Video" positionX="-63" positionY="9" width="128" height="210"/>
+        <element name="WatchedVideo" positionX="-63" positionY="45" width="128" height="105"/>
+    </elements>
+</model>

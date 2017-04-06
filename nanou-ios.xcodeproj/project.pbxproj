@@ -90,6 +90,7 @@
 		502936CF1DF854340087A2D4 /* PreferenceHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreferenceHelper.swift; path = Helper/PreferenceHelper.swift; sourceTree = "<group>"; };
 		502936D11DF867280087A2D4 /* PreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreferencesViewController.swift; path = ViewControllers/PreferencesViewController.swift; sourceTree = "<group>"; };
 		502936D51DF8C2F50087A2D4 /* PreferenceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreferenceCell.swift; path = Views/PreferenceCell.swift; sourceTree = "<group>"; };
+		504327851E96C31E00B282D7 /* nanou_ios 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "nanou_ios 2.xcdatamodel"; sourceTree = "<group>"; };
 		504BC3331DF448F200671614 /* Json.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Json.swift; path = Helper/Json.swift; sourceTree = "<group>"; };
 		504BC3351DF4532E00671614 /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserProfileViewController.swift; path = ViewControllers/UserProfileViewController.swift; sourceTree = "<group>"; };
 		504CAFF11E1BCE7800EF5482 /* BubbleNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BubbleNode.swift; path = Views/BubbleNode.swift; sourceTree = "<group>"; };
@@ -709,9 +710,10 @@
 		50240B351DE43F0E00CB6681 /* nanou_ios.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				504327851E96C31E00B282D7 /* nanou_ios 2.xcdatamodel */,
 				50240B361DE43F0E00CB6681 /* nanou_ios.xcdatamodel */,
 			);
-			currentVersion = 50240B361DE43F0E00CB6681 /* nanou_ios.xcdatamodel */;
+			currentVersion = 504327851E96C31E00B282D7 /* nanou_ios 2.xcdatamodel */;
 			path = nanou_ios.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

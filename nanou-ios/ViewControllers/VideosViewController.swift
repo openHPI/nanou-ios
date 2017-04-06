@@ -147,6 +147,16 @@ class VideosViewController: UICollectionViewController {
             videoCell.durationLabel.text = nil
         }
 
+        if let dependencyCount = video?.dependencyCount, dependencyCount > 0 {
+            if dependencyCount == 1 {
+                videoCell.dependencyLabel.text = "Hilft 1 Video freizuschalten"
+            } else {
+                videoCell.dependencyLabel.text = String(format: "Hilft %d Videos freizuschalten", dependencyCount)
+            }
+        } else {
+            videoCell.dependencyLabel.text = nil
+        }
+
         DispatchQueue.main.async {
             if let licenseName = video?.licenseName {
                 videoCell.licenseButton.setTitle(licenseName, for: .normal)

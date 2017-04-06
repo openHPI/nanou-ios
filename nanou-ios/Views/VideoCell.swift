@@ -18,6 +18,7 @@ class VideoCell: UICollectionViewCell {
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var providerLabel: UILabel!
     @IBOutlet var tags: TagListView!
+    @IBOutlet var dependencyLabel: UILabel!
     @IBOutlet var licenseButton: UIButton!
 
     @IBAction func tapDismiss(_ sender: Any) {

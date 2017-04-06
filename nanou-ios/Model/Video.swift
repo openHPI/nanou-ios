@@ -24,6 +24,7 @@ class Video: BaseModel {
 
 class VideoSpine: BaseModelSpine<Video> {
 
+    var dependencyCount: NSNumber?
     var name: String?
     var downloadUrl: URL?
     var duration: NSNumber?
@@ -40,6 +41,7 @@ class VideoSpine: BaseModelSpine<Video> {
 
     override class var fields: [Field] {
         return fieldsFromDictionary([
+            "dependencyCount": Attribute().serializeAs("dependency_count"),
             "name": Attribute(),
             "downloadUrl": URLAttribute().serializeAs("url"),
             "duration": Attribute(),
