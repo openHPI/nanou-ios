@@ -53,7 +53,7 @@ extension UserProfileViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 1 {
+        if section == UserProfileViewController.surveyIndexPath.section {
             return SurveyHelper.standard.latestSurveyURL != nil ? 1 : 0
         }
         return 1
