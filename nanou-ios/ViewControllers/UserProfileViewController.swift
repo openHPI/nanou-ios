@@ -26,11 +26,13 @@ struct UserProfileConfigItem {
 }
 
 class UserProfileViewController: UITableViewController {
-    static let surveyIndexPath = IndexPath(row: 0, section: 1)
-    static let logoutIndexPath = IndexPath(row: 0, section: 2)
+    static let helpIndexPath = IndexPath(row: 0, section: 1)
+    static let surveyIndexPath = IndexPath(row: 0, section: 2)
+    static let logoutIndexPath = IndexPath(row: 0, section: 3)
 
     static let config = [
         UserProfileConfigItem(reuseIdentifier: "preferencesCell"),
+        UserProfileConfigItem(reuseIdentifier: "helpCell"),
         UserProfileConfigItem(reuseIdentifier: "surveyCell", header: "Verbesserung", footer: "Die App ist noch ein Prototyp. Um zukünftig eine bestmögliche Nutzung bereitstellen zu können,  sammeln wir Daten über das Nutzungsverhalten in der App. "),
         UserProfileConfigItem(reuseIdentifier: "logoutCell"),
     ]
@@ -93,6 +95,8 @@ extension UserProfileViewController {
             SurveyHelper.standard.reset()
 
             self.performSegue(withIdentifier: "logout", sender: nil)
+        } else if indexPath == UserProfileViewController.helpIndexPath {
+            OnboardingHelper.showOnboarding(in: self)
         }
         tableView.deselectRow(at: indexPath, animated: true)
     }
