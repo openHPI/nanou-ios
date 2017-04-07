@@ -60,7 +60,7 @@ struct OnboardingHelper {
         let page4 = NanouOnboardingContentViewController(body: "Video ansehen und bewerten. Das verbessert die nächsten Vorschläge.", image: UIImage(named: "OnboardingPage5")!, buttonText: "Weiter", action: nil)
         page4.movesToNextViewController = true
 
-        let page5 = NanouOnboardingContentViewController(body: "Ein neues Video wird fregeschaltet, da die Videos aufeinander aufbauen.", image: UIImage(named: "OnboardingPage2")!, buttonText: "Weiter", action: nil)
+        let page5 = NanouOnboardingContentViewController(body: "Ein neues Video wird freigeschaltet, da die Videos aufeinander aufbauen.", image: UIImage(named: "OnboardingPage2")!, buttonText: "Weiter", action: nil)
         page5.movesToNextViewController = true
 
         let page6 = NanouOnboardingContentViewController(body: "Falls das Video nicht gefällt, einfach wegklicken. Es wird später wieder vorgeschlagen.", image: UIImage(named: "OnboardingPage4")!, buttonText: "Fertig", action: {
